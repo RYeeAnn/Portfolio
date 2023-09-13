@@ -19,7 +19,9 @@ function Hero() {
     <div className="hero">
       <div className="hero__content">
         <div className="hero__title">
-          <TypingAnimation texts={['Hello there! My name is Ryan Yee', ...jobTitles]} />
+          <div className="hero__title-inner">
+            <TypingAnimation texts={['Hello there! My name is Ryan Yee', ...jobTitles]} />
+          </div>
         </div>
       </div>
     </div>

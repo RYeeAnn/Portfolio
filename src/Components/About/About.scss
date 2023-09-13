@@ -75,6 +75,7 @@
 
     &__text p {
         line-height: 1.2rem;
+        text-align: justify;
     }
 
     &__inside-container {
@@ -87,6 +88,7 @@
     &__me {
         text-align: start;
         margin-left: 16px;
+        margin-right: 16px;
 
         @include tablet {
             margin-right: 32px;

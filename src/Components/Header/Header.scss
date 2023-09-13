@@ -2,10 +2,13 @@
 @use "../../partials/variables.scss" as *;
 
 .header {
-
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    h1 {
+      padding-left: 16px;
+    }
 
     &__nav {
       display: flex;
