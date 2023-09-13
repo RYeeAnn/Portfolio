@@ -6,7 +6,6 @@ import Hero from '../../Components/Hero/Hero';
 import Projects from '../../Components/Projects/Projects';
 import Skills from '../../Components/Skills/Skills';
 import './HomePage.scss';
-import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/Footer';
 import Contact from '../../Components/Contact/Contact';
 
