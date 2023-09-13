@@ -1,0 +1,12 @@
+@use "../../partials/mixins.scss" as *;
+@use "../../partials/variables.scss" as *;
+
+.footer {
+    color: white;
+    background-color: black;
+
+    &__text {
+        display: flex;
+        justify-content: space-around;
+    }
+}

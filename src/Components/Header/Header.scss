@@ -1,0 +1,66 @@
+@use "../../partials/mixins.scss" as *;
+@use "../../partials/variables.scss" as *;
+
+.header {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__nav {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      list-style: none;
+      gap: 1rem;
+      padding-bottom: 2rem;
+
+      @include tablet {
+        padding-bottom: 0;
+      }
+    }
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 100;
+  }
+}
+
+.clickable-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: blue;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+
+  &:hover {
+    color: rgb(35, 172, 218);
+  }
+
+  &:hover:before {
+    width: 100%;
+    background-color: rgb(35, 172, 218);
+  }
+}
+
+
+.clickable-link.active {
+  border-bottom: 2px solid rgb(35, 172, 218);
+}
