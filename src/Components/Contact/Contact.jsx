@@ -17,7 +17,7 @@ function Contact() {
     <div className="contact">
       <div className="contact__container">
         <div className="contact__card" id="contact">
-          <h2>Want to talk?</h2>
+          <h2 className='contact__title'>Want to talk?</h2>
           <p>Did you see anything that was of interest to you? Feel free to connect with me and lets chat!</p>
           <div className="contact__info">
             <p><img src={name} alt="Name" />Ryan Yee</p>

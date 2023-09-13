@@ -5,12 +5,15 @@
 .projects {
   
     &__container {
-      text-align: center;
     }
   
     &__title {
+      text-align: center;
       margin: 50px;
       padding-top: 2rem;
+      text-decoration: underline;
+      text-decoration-color: rgb(35, 172, 218);
+      text-underline-offset: 8px;
     }
   
     &__card-container {
@@ -24,14 +27,17 @@
   }
   
     &__card {
-      background-color: #f0f0f0;
+      background-color: white;
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 2rem;
       margin-left: 16px;
       margin-right: 16px;
       transition: transform 0.2s ease-in-out;
-      width: calc(33.33% - 10px);
+
+      @include tablet {
+        width: calc(33.33% - 10px);
+      }
 
       &:hover {
         transform: scale(1.05);

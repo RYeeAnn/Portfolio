@@ -1,88 +1,103 @@
+@use "../../partials/mixins.scss" as *;
+@use "../../partials/variables.scss" as *;
+
 .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: #f5f5f5; /* Set a background color or image for the contact section */
+  background-image: url("../../assets/background.png");
+
+  &__container {
+    text-align: center;
+  }
+
+  &__card {
+    font-size: 12px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 1rem;
+    max-width: 200px; /* Adjust the maximum width as needed */
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    @include tablet {
+      max-width: 600px;
+      padding: 4rem;
+    }
+  }
+
+  &__card h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    text-decoration: underline;
+    text-decoration-color: rgb(35, 172, 218);
+    text-underline-offset: 8px;
+    color: #333;
+  }
+
+  &__info {
+    margin-top: 16px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    background-color: #f5f5f5; /* Set a background color or image for the contact section */
-    background-image: url('../../assets/background.png');
-  
-    &__container {
-      text-align: center;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    img {
+      width: 20px;
     }
-  
-    &__card {
-      font-size: 12px;
-      border: 2px solid transparent;
-      border-radius: 10px;
-      padding: 2rem;
-      max-width: 400px; /* Adjust the maximum width as needed */
-      background-color: white;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    }
-  
-    &__card h2 {
-      font-size: 24px;
-      margin-bottom: 16px;
-    }
-  
-    &__info {
-      margin-top: 16px;
+
+    p {
+      color: rgb(35, 172, 218);
       display: flex;
-      flex-direction: column;
-      align-items: start;
+      align-items: center;
+      gap: 6px;
 
-      img {
-        width: 20px;
-      }
-
-      p {
+      a {
+        color: rgb(131, 131, 229);
         color: rgb(35, 172, 218);
-        display: flex;
-        align-items: center;
-        gap: 6px;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        transition: color 0.3s ease;
 
-        a {
-            color: rgb(131, 131, 229);
-            color: rgb(35, 172, 218);
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            transition: color 0.3s ease;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: royalblue;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s ease;
+        }
 
-            &:before {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                background-color: royalblue;
-                transform: scaleX(0);
-                transform-origin: left;
-                transition: transform 0.3s ease;
-              }
-
-            &:hover {
-                color: rgb(131, 131, 229);
-                &:before {
-                    transform: scaleX(1);
-                }
-            }
+        &:hover {
+          color: rgb(131, 131, 229);
+          &:before {
+            transform: scaleX(1);
+          }
         }
       }
     }
-  
-    &__info p {
-      margin-bottom: 8px;
-    }
-  
-    a {
-      color: blue; /* Style the LinkedIn link */
-      text-decoration: none;
-    }
-  
-    a:hover {
-      text-decoration: underline; /* Add underline on hover for the LinkedIn link */
-    }
   }
-  
+
+  &__info p {
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: blue; /* Style the LinkedIn link */
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline; /* Add underline on hover for the LinkedIn link */
+  }
+}

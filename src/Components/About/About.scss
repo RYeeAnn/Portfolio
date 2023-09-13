@@ -14,12 +14,12 @@
 
         @include tablet {
             align-items: center;
-            margin: 32px;
         }
     }
 
     &__image {
         width: 200px;
+        height: 400px;
         margin: 16px 16px 16px 16px;
     }
 
@@ -64,6 +64,9 @@
     &__title {
         text-align: center;
         padding-top: 32px;
+        text-decoration: underline;
+        text-decoration-color: rgb(35, 172, 218);
+        text-underline-offset: 8px;
 
         @include tablet {
             padding-top: 0;
@@ -71,7 +74,7 @@
     }
 
     &__text p {
-        line-height: 2rem;
+        line-height: 1.2rem;
     }
 
     &__inside-container {
