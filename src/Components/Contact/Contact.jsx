@@ -21,7 +21,7 @@ function Contact() {
           <p>Did you see anything that was of interest to you? Feel free to connect with me and lets chat!</p>
           <div className="contact__info">
             <p><img src={name} alt="Name" />Ryan Yee</p>
-            <p><img src={email} alt="Email" /><a href={emailLink}>RYeeAn16@gmail.com</a></p>
+            <p><img src={email} alt="Email" /><a href={emailLink}>ryeean16@gmail.com</a></p>
             <p><img src={phone} alt="Phone" /><a href={phoneLink}>(604) 728-3585</a></p>
             <p><img src={linkedin} alt="Linkedin" /><a href={linkedinLink}>Linkedin</a></p>
             <p><img src={github} alt="Github" /><a href={githubLink}>Github</a></p>
