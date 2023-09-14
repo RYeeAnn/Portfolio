@@ -69,6 +69,7 @@
         text-decoration: underline;
         text-decoration-color: rgb(35, 172, 218);
         text-underline-offset: 8px;
+        letter-spacing: 2px;
 
         @include tablet {
             padding-top: 0;

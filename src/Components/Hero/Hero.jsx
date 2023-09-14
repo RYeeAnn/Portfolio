@@ -20,7 +20,7 @@ function Hero() {
       <div className="hero__content">
         <div className="hero__title">
           <div className="hero__title-inner">
-            <TypingAnimation texts={['Hello there! My name is Ryan Yee', ...jobTitles]} />
+            <TypingAnimation texts={['Hello there! My name is Ryan Yee.', ...jobTitles]} />
           </div>
         </div>
       </div>
