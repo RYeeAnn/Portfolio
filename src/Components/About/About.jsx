@@ -6,11 +6,13 @@ import location from '../../assets/location.png';
 import title from '../../assets/title.png';
 import resume from '../../assets/resume.png';
 import linkedin from '../../assets/linkedin.png';
+import github from '../../assets/github.png';
 
 function About() {
 
     const resumeLink = "https://drive.google.com/file/d/1zsTsxIkBx-44a-lwmfMD_d4WW5wNrBYO/view?usp=sharing";
     const linkedinLink = "https://www.linkedin.com/in/ryeean/";
+    const githubLink = "https://github.com/RYeeAnn";
 
     return (
         <div className="about" id="about">
@@ -28,6 +30,9 @@ function About() {
                                     </a>
                                     <a href={linkedinLink}>
                                     <p><img src={linkedin} alt="Linkedin" className="about__icons" />Linkedin</p>
+                                    </a>
+                                    <a href={githubLink}>
+                                        <p><img src={github} alt="Github" className="about__icons" />Github</p>
                                     </a>
                                 </div>
                             </div>
