@@ -36,7 +36,7 @@ function Projects() {
 
           {/* Card 3 */}
           <div className="projects__card">
-            <img src={bandsite} alt="Project 3" className="projects__image" />
+            <a href="https://github.com/RYeeAnn/brainstation-bandsite"><img src={bandsite} alt="Project 3" className="projects__image" /></a>
             <div className="projects__info">
               <h3>BandSite</h3>
               <p>BandSite is a fully responsive project built to mimic a fanpage for a mock band, built during my enrollment in BrainStation's intensive web development bootcamp.</p>
