@@ -10,7 +10,7 @@ import github from '../../assets/github.png';
 
 function About() {
 
-    // const resumeLink = "https://drive.google.com/file/d/1zsTsxIkBx-44a-lwmfMD_d4WW5wNrBYO/view?usp=sharing";
+    // const resumeLink = "https://drive.google.com/file/d/1KOkLk90cvv8M5gIq4w8BX9xJD8Xe1AJ3/view?usp=sharing";
     const linkedinLink = "https://www.linkedin.com/in/ryeean/";
     const githubLink = "https://github.com/RYeeAnn";
 
@@ -25,9 +25,9 @@ function About() {
                                     <p><img src={name} alt="Name" className="about__icons" />Ryan Yee</p>
                                     <p><img src={location} alt="Location" className="about__icons" />Vancouver, BC</p>
                                     <p><img src={title} alt="Title" className="about__icons" />Full-Stack Developer</p>
-                                    {/* <a href={resumeLink}> */}
+                                    <a href={resumeLink}>
                                     <p><img src={resume} alt="Resume" className="about__icons" />Resume</p>
-                                    {/* </a> */}
+                                    </a>
                                     <a href={linkedinLink}>
                                     <p><img src={linkedin} alt="Linkedin" className="about__icons" />Linkedin</p>
                                     </a>
