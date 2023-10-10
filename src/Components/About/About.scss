@@ -17,6 +17,10 @@
             font-size: 16px;
             margin: 64px 16px 64px 16px;
         }
+
+        @include desktop {
+            margin: 64px 115px 64px 115px;
+        }
     }
 
     &__image {
@@ -86,7 +90,6 @@
         @include tablet {
             display: flex;
             gap: 2rem;
-            padding-bottom: 32px;
         }
     }
 
