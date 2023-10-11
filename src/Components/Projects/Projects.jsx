@@ -2,6 +2,7 @@
 import React from 'react';
 import './Projects.scss';
 import cruisin from '../../assets/cruisin.png';
+import cruisinVideo from '../../assets/cruisinVideo.mp4'
 import brainflix from '../../assets/brainflix.png';
 import bandsite from '../../assets/bandsite.png';
 import instock from '../../assets/instock.png'
@@ -12,11 +13,15 @@ function Projects() {
       <div className="projects__container">
         <h2 className="projects__title" id="projects">Projects</h2>
         <div className="projects__card-container">
+
           {/* Card 1 */}
           <div className="projects__card">
-            <a href="https://cruisin.netlify.app/"><img src={cruisin} alt="Project 1" className="projects__image" /></a>
+          <video controls className="projects__image" poster={cruisin}>
+            <source src={cruisinVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
             <div className="projects__info">
-              <h3>Cruisin'</h3>
+              <a href="https://cruisin.netlify.app/"><h3>Cruisin'</h3></a>
               <p>My first full-stack project I created with the purpose of helping driver's with their vehicle concerns.</p>
               <p>Deployed front-end using Netlify and back-end using Heroku.</p>
               <p><b>React, Express, MySQL</b></p>
@@ -44,6 +49,7 @@ function Projects() {
               <p><a href="https://github.com/RYeeAnn/brainstation-bandsite">Click here for github repo</a></p>
             </div>
           </div>
+
           {/* Card 4 */}
           <div className="projects__card">
             <a href="https://github.com/RYeeAnn/brainstation-instock"><img src={instock} alt="Project 4" className="projects__image" /></a>
