@@ -50,6 +50,16 @@
         a {
             text-decoration: none;
             color: inherit;
+            transition: transform 0.2s, color 0.2s; // transition for smooth effect
+            
+            &:hover {
+                transform: scale(1.05); // scale the link up a bit on hover
+                color: rgb(35, 172, 240); // change color on hover (optional)
+            }
+    
+            &:active {
+                transform: scale(0.95); // scale down a bit on click
+            }
         }
 
         @include tablet {
