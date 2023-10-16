@@ -38,7 +38,7 @@ function Projects() {
             <div className="projects__info">
               <h3>Shnake</h3>
               <p>A simple snake game inspired by classic games that was played as a kid. Created and coded using Javascript and React.js.</p>
-              <p>This is a project I created to challenged my self with the purpose of self-learning. This is my first ever "game" that I have coded and wanted to start out with a simple game that everyone knows ... Everyone knows this game, right?</p>
+              <p>This is a project created to challenged my self with the purpose of self-learning. This is my first ever "game" I have coded and wanted to start out with a simple game that everyone knows.</p>
               <p><b>JavaScript, React, Sass</b></p>
               <p><a href="https://github.com/RYeeAnn/Shnake">Click here for github repo</a></p>
             </div>
