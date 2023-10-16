@@ -29,4 +29,8 @@
         }
     }
   }
+
+  @include desktop {
+    padding: 6rem
+  }
 }

@@ -17,3 +17,9 @@
         @content;
     }
 }
+
+@mixin largeDesktop {
+    @media screen and (min-width: $large-desktop-size) {
+        @content;
+    }
+}
