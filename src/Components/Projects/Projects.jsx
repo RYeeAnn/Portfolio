@@ -21,7 +21,7 @@ function Projects() {
           <video controls className="projects__image" poster={cruisin}>
             <source src={cruisinVideo} type="video/mp4" />
             Your browser does not support the video tag.
-        </video>
+          </video>
             <div className="projects__info">
               <a href="https://cruisin.netlify.app/"><h3>Cruisin'</h3></a>
               <p>My first full-stack project I created with the purpose of helping driver's with their vehicle concerns.</p>
@@ -89,6 +89,15 @@ function Projects() {
               <p><a href="https://github.com/RYeeAnn/brainstation-instock-server">Click here for the back-end repo</a></p>
             </div>
           </div>
+
+          {/* Card 6 */}
+          <div className="projects__card">
+            <img src alt="Project 7" className="projects__image" />
+            <div className="projects__info">
+              <h3>More projects in progress . . .</h3>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
