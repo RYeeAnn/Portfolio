@@ -31,6 +31,10 @@
   }
 
   @include desktop {
-    padding: 14rem
+    padding: 6rem;
+  }
+
+  @include largeDesktop {
+    padding: 12rem;
   }
 }
