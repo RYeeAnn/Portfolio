@@ -3,7 +3,7 @@ import './Hero.scss';
 import TypingAnimation from '../TypingAnimation/TypingAnimation';
 
 function Hero() {
-  const jobTitles = ['Front-end Developer', 'Back-end Developer', 'Full-stack Developer'];
+  const jobTitles = ['I am from Vancouver, BC', 'Automotive to now Full-Stack Developer!'];
 
   useEffect(() => {
     const interval = setInterval(() => {
