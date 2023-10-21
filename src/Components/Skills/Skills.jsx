@@ -5,10 +5,14 @@ import html from '../../assets/html.png';
 import css from '../../assets/css.jpeg';
 import sass from '../../assets/sass.jpeg';
 import javascript from '../../assets/javascript.png';
+import typescript from '../../assets/Typescript.png';
+import python from '../../assets/python.png';
 import react from '../../assets/react.png';
 import node from '../../assets/node.png';
 import express from '../../assets/express.png';
 import mysql from '../../assets/mysql.png';
+import aws from '../../assets/aws.png';
+import mongoldb from '../../assets/mongodb.png';
 import git from '../../assets/git.png';
 
 function Skills() {
@@ -35,6 +39,16 @@ function Skills() {
             <p>JavaScript</p>
           </div>
           <div className="skills__item">
+            <img src={typescript} alt="typescript" />
+            <p>TypeScript</p>
+            <p>In the process of self-learning . . .</p>
+          </div>
+          <div className="skills__item">
+            <img src={python} alt="python" />
+            <p>Python</p>
+            <p>In the process of self-learning . . .</p>
+          </div>
+          <div className="skills__item">
             <img src={react} alt="react" />
             <p>React</p>
           </div>
@@ -49,6 +63,16 @@ function Skills() {
           <div className="skills__item">
             <img src={mysql} alt="mysql" />
             <p>MySQL</p>
+          </div>
+          <div className="skills__item">
+            <img src={aws} alt="aws" />
+            <p>AWS</p>
+            <p>In the process of self-learning . . .</p>
+          </div>
+          <div className="skills__item">
+            <img src={mongoldb} alt="mongoldb" />
+            <p>MongolDB</p>
+            <p>In the process of self-learning . . .</p>
           </div>
           <div className="skills__item">
             <img src={git} alt="git" />
