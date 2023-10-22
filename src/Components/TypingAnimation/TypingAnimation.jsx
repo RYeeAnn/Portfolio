@@ -6,7 +6,7 @@ function TypingAnimation({ texts }) {
   const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
-    const typingSpeed = 50; // Adjust typing speed as needed
+    const typingSpeed = 30; // Adjust typing speed as needed
     const eraseDelay = 1000; // Delay before erasing text (1 second)
 
     let timer;

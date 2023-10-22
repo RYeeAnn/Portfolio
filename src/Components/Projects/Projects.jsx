@@ -90,7 +90,7 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 6 */}
+          {/* Card 7 */}
           <div className="projects__card">
             <img src alt="Project 7" className="projects__image" />
             <div className="projects__info">

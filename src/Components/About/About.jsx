@@ -24,7 +24,7 @@ function About() {
                                 <div className="about__paragraphs">
                                     <p><img src={name} alt="Name" className="about__icons" />Ryan Yee</p>
                                     <p><img src={location} alt="Location" className="about__icons" />Vancouver, BC</p>
-                                    <p><img src={title} alt="Title" className="about__icons" />Full-Stack Developer</p>
+                                    <p><img src={title} alt="Title" className="about__icons" />Software Engineer</p>
                                     <a href={resumeLink}>
                                     <p><img src={resume} alt="Resume" className="about__icons" />Resume</p>
                                     </a>
