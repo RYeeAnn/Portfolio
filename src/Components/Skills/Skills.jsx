@@ -46,7 +46,6 @@ function Skills() {
           <div className="skills__item">
             <img src={python} alt="python" />
             <p>Python</p>
-            <p>In the process of self-learning . . .</p>
           </div>
           <div className="skills__item">
             <img src={react} alt="react" />
