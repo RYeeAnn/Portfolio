@@ -7,6 +7,7 @@ import sass from '../../assets/sass.jpeg';
 import javascript from '../../assets/javascript.png';
 import typescript from '../../assets/Typescript.png';
 import python from '../../assets/python.png';
+import flask from '../../assets/flask.png';
 import react from '../../assets/react.png';
 import node from '../../assets/node.png';
 import express from '../../assets/express.png';
@@ -46,6 +47,10 @@ function Skills() {
           <div className="skills__item">
             <img src={python} alt="python" />
             <p>Python</p>
+          </div>
+          <div className="skills__item">
+            <img src={flask} alt="flask" />
+            <p>Flask</p>
           </div>
           <div className="skills__item">
             <img src={react} alt="react" />
