@@ -50,6 +50,17 @@
 
     p {
       font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
+
+  &__proficiency-star {
+    width: 10px !important;  
+    height: 10px !important; 
+    margin-left: 5px;
+  }
+  
+  
 }

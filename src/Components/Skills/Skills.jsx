@@ -15,6 +15,7 @@ import mysql from '../../assets/mysql.png';
 import aws from '../../assets/aws.png';
 import mongoldb from '../../assets/mongodb.png';
 import git from '../../assets/git.png';
+import star from '../../assets/star.png';
 
 function Skills() {
   return (
@@ -25,24 +26,23 @@ function Skills() {
           {/* Add your grid items here */}
           <div className="skills__item">
             <img src={html} alt="html" />
-            <p>HTML</p>
+            <p>HTML <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
           </div>
           <div className="skills__item">
             <img src={css} alt="css" />
-            <p>CSS</p>
+            <p>CSS <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
           </div>
           <div className="skills__item">
             <img src={sass} alt="sass" />
-            <p>Sass</p>
+            <p>SASS <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
           </div>
           <div className="skills__item">
             <img src={javascript} alt="javascript" />
-            <p>JavaScript</p>
+            <p>JavaScript <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
           </div>
           <div className="skills__item">
             <img src={typescript} alt="typescript" />
             <p>TypeScript</p>
-            <p>In the process of self-learning . . .</p>
           </div>
           <div className="skills__item">
             <img src={python} alt="python" />
@@ -54,7 +54,7 @@ function Skills() {
           </div>
           <div className="skills__item">
             <img src={react} alt="react" />
-            <p>React</p>
+            <p>React <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
           </div>
           <div className="skills__item">
             <img src={node} alt="node" />
@@ -66,17 +66,15 @@ function Skills() {
           </div>
           <div className="skills__item">
             <img src={mysql} alt="mysql" />
-            <p>MySQL</p>
+            <p>MySQL <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
           </div>
           <div className="skills__item">
             <img src={aws} alt="aws" />
             <p>AWS</p>
-            <p>In the process of self-learning . . .</p>
           </div>
           <div className="skills__item">
             <img src={mongoldb} alt="mongoldb" />
             <p>MongolDB</p>
-            <p>In the process of self-learning . . .</p>
           </div>
           <div className="skills__item">
             <img src={git} alt="git" />
