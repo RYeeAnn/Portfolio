@@ -8,6 +8,7 @@ import bandsite from '../../assets/bandsite.png';
 import instock from '../../assets/instock.png';
 import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
+import ryansCafe from '../../assets/ryans-cafe.png';
 
 function Projects() {
   return (
@@ -34,7 +35,18 @@ function Projects() {
 
           {/* Card 2 */}
           <div className="projects__card">
-            <img src={shnakeGif} alt="Project 2" className="projects__image" />
+            <img src={ryansCafe} alt="Project 2" className="projects__image" />
+            <div className="projects__info">
+              <h3>The Cozy Corner</h3>
+              <p>The Cozy Corner is a website designed to feel just like your favorite neighborhood coffee shop. It's a welcoming online spot where customers can check out a handpicked selection of delicious coffees, homemade pastries, and tasty snacks.</p>
+              <p><b>HTML, CSS, Python, Flask, MongolDB, Javascript</b></p>
+              <p><a href="https://github.com/RYeeAnn/Ryan-Cafe">Click here for github repo</a></p>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="projects__card">
+            <img src={shnakeGif} alt="Project 3" className="projects__image" />
             <div className="projects__info">
               <h3>Shnake</h3>
               <p>A simple snake game inspired by classic games that was played as a kid. Created and coded using Javascript and React.js.</p>
@@ -44,9 +56,9 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 3 */}
+          {/* Card 4 */}
           <div className="projects__card">
-            <img src={simonSays} alt="Project 3" className="projects__image" />
+            <img src={simonSays} alt="Project 4" className="projects__image" />
             <div className="projects__info">
               <h3>Simon Says</h3>
               <p>A simple and classic game to test your short-term memory skills.</p>
@@ -55,9 +67,9 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 4 */}
+          {/* Card 5 */}
           <div className="projects__card">
-            <img src={brainflix} alt="Project 4" className="projects__image" />
+            <img src={brainflix} alt="Project 5" className="projects__image" />
             <div className="projects__info">
               <h3>BrainFlix</h3>
               <p>BrainFlix is a full-stack, fully responsive project built to mimic youtube during my enrollment in BrainStation's intensive web developement bootcamp.</p>
@@ -67,9 +79,9 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 5 */}
+          {/* Card 6 */}
           <div className="projects__card">
-            <img src={bandsite} alt="Project 5" className="projects__image" />
+            <img src={bandsite} alt="Project 6" className="projects__image" />
             <div className="projects__info">
               <h3>BandSite</h3>
               <p>BandSite is a fully responsive project built to mimic a fanpage for a mock band, built during my enrollment in BrainStation's intensive web development bootcamp.</p>
@@ -78,9 +90,9 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 6 */}
+          {/* Card 7 */}
           <div className="projects__card">
-            <img src={instock} alt="Project 6" className="projects__image" />
+            <img src={instock} alt="Project 7" className="projects__image" />
             <div className="projects__info">
               <h3>Instock</h3>
               <p>Instock is a full-stack, fully responsive collaborative project with a team of 3 developers built to mimic a warehouse and inventory tracker.</p>
@@ -90,7 +102,7 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 7 */}
+          {/* Card 8 */}
           <div className="projects__card">
             <img src alt="Project 7" className="projects__image" />
             <div className="projects__info">
