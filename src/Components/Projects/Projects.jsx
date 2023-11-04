@@ -37,7 +37,7 @@ function Projects() {
           <div className="projects__card">
             <img src={ryansCafe} alt="Project 2" className="projects__image" />
             <div className="projects__info">
-              <h3>The Cozy Corner</h3>
+              <a href="https://thecozycorner-0537f656a932.herokuapp.com/"><h3>The Cozy Corner</h3></a>
               <p>The Cozy Corner is a website designed to feel just like your favorite neighborhood coffee shop. It's a welcoming online spot where customers can check out a handpicked selection of delicious coffees, homemade pastries, and tasty snacks.</p>
               <p><b>HTML, CSS, Python, Flask, MongolDB, Javascript</b></p>
               <p><a href="https://github.com/RYeeAnn/Ryan-Cafe">Click here for github repo</a></p>
