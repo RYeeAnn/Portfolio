@@ -8,7 +8,7 @@ import bandsite from '../../assets/bandsite.png';
 import instock from '../../assets/instock.png';
 import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
-import ryansCafe from '../../assets/ryans-cafe.png';
+import theCozyCorner from '../../assets/thecozycorner.png';
 
 function Projects() {
   return (
@@ -35,7 +35,7 @@ function Projects() {
 
           {/* Card 2 */}
           <div className="projects__card">
-            <img src={ryansCafe} alt="Project 2" className="projects__image" />
+            <img src={theCozyCorner} alt="Project 2" className="projects__image" />
             <div className="projects__info">
               <a href="https://thecozycorner-0537f656a932.herokuapp.com/"><h3>The Cozy Corner</h3></a>
               <p>The Cozy Corner is a website designed to feel just like your favorite neighborhood coffee shop. It's a welcoming online spot where customers can check out a handpicked selection of delicious coffees, homemade pastries, and tasty snacks.</p>
