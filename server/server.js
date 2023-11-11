@@ -6,8 +6,9 @@ require('dotenv').config(); // Make sure to call the function
 
 // Middleware to parse JSON bodies
 app.use(cors({
-    origin: 'http://localhost:3000', // Your front-end origin
+    origin: ['http://localhost:3000', 'https://ryanyee.netlify.app'],
 }));
+
 app.use(express.json());
 
 const mongoURI = process.env.MONGO_URI;
