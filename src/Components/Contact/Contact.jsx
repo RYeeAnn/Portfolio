@@ -22,9 +22,11 @@ function Contact() {
 
 const mongoURI = process.env.MONGO_URI
 
+const serverURL = 'https://ryanyee-portfolio.herokuapp.com/submit_contact';
+
 const handleSubmit = (event) => {
   event.preventDefault();
-  axios.post('mongoURI', formData)
+  axios.post(serverURL, formData)
     .then(response => {
         // Handle success
         console.log(response.data);
