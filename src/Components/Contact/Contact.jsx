@@ -20,8 +20,6 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 };
 
-const mongoURI = process.env.MONGO_URI
-
 const serverURL = 'https://ryanyee-portfolio.herokuapp.com/submit_contact';
 
 const handleSubmit = (event) => {
