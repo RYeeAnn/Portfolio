@@ -20,9 +20,11 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 };
 
+const mongoURI = process.env.MONGO_URI
+
 const handleSubmit = (event) => {
   event.preventDefault();
-  axios.post('http://localhost:3001/submit_contact', formData)
+  axios.post('mongoURI', formData)
     .then(response => {
         // Handle success
         console.log(response.data);
