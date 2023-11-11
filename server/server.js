@@ -2,12 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose'); // Corrected this line
 const app = express();
 const cors = require('cors');
-require('dotenv').config(); // Make sure to call the function
+
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  }  
 
 // Middleware to parse JSON bodies
-app.use(cors({
-    origin: ['http://localhost:3000', 'https://ryanyee.netlify.app'],
-}));
+app.use(cors());
 
 app.use(express.json());
 
