@@ -10,7 +10,7 @@ import github from '../../assets/github.png';
 
 function About() {
 
-    const resumeLink = "https://drive.google.com/file/d/1CtmPbwbyjfLjBsamgp3wf3IVKWODAVje/view?usp=sharing";
+    const resumeLink = "https://drive.google.com/file/d/1KOkLk90cvv8M5gIq4w8BX9xJD8Xe1AJ3/view?usp=sharing";
     const linkedinLink = "https://www.linkedin.com/in/ryeean/";
     const githubLink = "https://github.com/RYeeAnn";
 
