@@ -30,7 +30,7 @@ const handleSubmit = (event) => {
         console.log(response.data);
         setFlashMessage("Your message has been sent successfully!");
         setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
-        
+
         // Reset form data to initial state
         setFormData({ name: '', email: '', message: '' });
     })
@@ -53,7 +53,7 @@ const handleSubmit = (event) => {
       <div className="contact__container">
         <div className="contact__card" id="contact">
           <h2 className='contact__title'>Want to talk?</h2>
-          <p>Did you see anything that was of interest to you? Feel free to connect with me and lets chat!</p>
+          <p>Did you see anything that was of interest to you? Feel free to connect with me and let's chat!</p>
           <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 

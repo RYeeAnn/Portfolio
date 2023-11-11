@@ -105,7 +105,6 @@ function Projects() {
 
           {/* Card 8 */}
           <div className="projects__card">
-            <img src alt="Project 7" className="projects__image" />
             <div className="projects__info">
               <h3>More projects in progress . . .</h3>
             </div>
