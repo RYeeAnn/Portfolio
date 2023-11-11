@@ -20,7 +20,7 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 };
 
-const serverURL = 'https://ryanyee-portfolio-f1df33c2739f.herokuapp.com/';
+const serverURL = 'https://ryanyee-portfolio-f1df33c2739f.herokuapp.com/submit_contact';
 
 const handleSubmit = (event) => {
   event.preventDefault();
