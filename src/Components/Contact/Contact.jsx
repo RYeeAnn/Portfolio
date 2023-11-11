@@ -30,6 +30,9 @@ const handleSubmit = (event) => {
         console.log(response.data);
         setFlashMessage("Your message has been sent successfully!");
         setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
+        
+        // Reset form data to initial state
+        setFormData({ name: '', email: '', message: '' });
     })
     .catch(error => {
         // Handle error
