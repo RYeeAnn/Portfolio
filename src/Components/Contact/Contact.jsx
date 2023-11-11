@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import './Contact.scss';
 import name from '../../assets/name.png';
 import email from '../../assets/email.png';
@@ -8,6 +9,34 @@ import github from '../../assets/github.png';
 
 function Contact() {
 
+  const [flashMessage, setFlashMessage] = useState('');
+  const [formData, setFormData] = useState({ 
+    name: '', 
+    email: '', 
+    message: '' 
+  });
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  axios.post('http://localhost:3001/submit_contact', formData)
+    .then(response => {
+        // Handle success
+        console.log(response.data);
+        setFlashMessage("Your message has been sent successfully!");
+        setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
+    })
+    .catch(error => {
+        // Handle error
+        console.error("Error:", error);
+        setFlashMessage("Failed to send message.");
+        setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
+    });
+};
+
     const emailLink = 'mailto:RYeeAn16@gmail.com';
     const phoneLink = 'tel:+16047283585';
     const linkedinLink = 'https://www.linkedin.com/in/ryeean';
@@ -15,10 +44,44 @@ function Contact() {
 
   return (
     <div className="contact">
+
       <div className="contact__container">
         <div className="contact__card" id="contact">
           <h2 className='contact__title'>Want to talk?</h2>
           <p>Did you see anything that was of interest to you? Feel free to connect with me and lets chat!</p>
+          <form onSubmit={handleSubmit}>
+                <input 
+                    type="text" 
+                    name="name" 
+                    value={formData.name} 
+                    onChange={handleInputChange} 
+                    placeholder="Your Name" 
+                    required
+                />
+                <input 
+                    type="email" 
+                    name="email" 
+                    value={formData.email} 
+                    onChange={handleInputChange} 
+                    placeholder="Your Email"
+                    required 
+                />
+                <textarea 
+                    name="message" 
+                    value={formData.message} 
+                    onChange={handleInputChange} 
+                    placeholder="Your Message"
+                    required
+                />
+                <button type="submit">Send</button>
+            </form>
+
+            {flashMessage && (
+      <div className={`flash-message ${flashMessage ? 'show' : ''}`}>
+        {flashMessage}
+      </div>
+    )}
+
           <div className="contact__info">
             <p><img src={name} alt="Name" />Ryan Yee</p>
             <p><img src={email} alt="Email" /><a href={emailLink}>ryeean16@gmail.com</a></p>

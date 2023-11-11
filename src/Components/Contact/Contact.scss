@@ -101,3 +101,27 @@
     text-decoration: underline; /* Add underline on hover for the LinkedIn link */
   }
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.flash-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745; /* Green for success */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+  display: none;
+}
+
+.flash-message.show {
+  display: block;
+}
+
