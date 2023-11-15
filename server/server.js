@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose'); // Corrected this line
+const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 const axios = require('axios');
