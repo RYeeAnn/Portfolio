@@ -14,11 +14,11 @@ app.use(express.json());
 
 const mongoURI = process.env.MONGO_URI;
 const port = process.env.PORT || 5001;
-const contactForm = process.env.DATA_API_KEY;
-const contactFormEndPoint = process.env.DATA_API_ENDPOINT;
-const contactSource = process.env.DATA_SOURCE;
-const contactDatabase = process.env.DATABASE_NAME;
-const contactCollection = process.env.COLLECTION_NAME;
+const dataKey = process.env.DATA_API_KEY;
+const dataEndpoint = process.env.DATA_API_ENDPOINT;
+const dataSource = process.env.DATA_SOURCE;
+const databaseName = process.env.DATABASE_NAME;
+const dataCollection = process.env.COLLECTION_NAME;
 
 // Connect to MongoDB
 mongoose.connect(mongoURI)
@@ -38,15 +38,15 @@ app.post('/submit_contact', (req, res) => {
     const { name, email, message } = req.body;
 
 
-    axios.post(`${contactFormEndPoint}/action/insertOne`, {
-        dataSource: contactSource,
-        database: contactDatabase,
-        collection: contactCollection,
+    axios.post(`${dataEndpoint}/action/insertOne`, {
+        dataSource: dataSource,
+        database: databaseName,
+        collection: dataCollection,
         document: { name, email, message }
     }, {
         headers: {
             "Content-Type": "application/json",
-            "api-key": contactForm
+            "api-key": dataKey
         }
     })
     .then(response => {
