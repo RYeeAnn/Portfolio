@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose'); // Corrected this line
 const app = express();
 const cors = require('cors');
+const axios = require('axios');
 
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
