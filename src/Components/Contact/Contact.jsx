@@ -37,7 +37,7 @@ const handleSubmit = (event) => {
     .catch(error => {
         // Handle error
         console.error("Error:", error);
-        setFlashMessage("Your message has been sent successfully!");
+        setFlashMessage("Failed to send message.");
         setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
     });
 };

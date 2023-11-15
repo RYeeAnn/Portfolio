@@ -21,17 +21,17 @@ const databaseName = process.env.DATABASE_NAME;
 const dataCollection = process.env.COLLECTION_NAME;
 
 // Connect to MongoDB
-mongoose.connect(mongoURI)
-  .then(() => console.log("MongoDB connected successfully"))
-  .catch(err => console.error("MongoDB connection error:", err));
+// mongoose.connect(mongoURI)
+//   .then(() => console.log("MongoDB connected successfully"))
+//   .catch(err => console.error("MongoDB connection error:", err));
 
-const contactSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    message: String
-});
+// const contactSchema = new mongoose.Schema({
+//     name: String,
+//     email: String,
+//     message: String
+// });
 
-const Contact = mongoose.model('Contact', contactSchema);
+// const Contact = mongoose.model('Contact', contactSchema);
 
 // POST endpoint for form submission
 app.post('/submit_contact', (req, res) => {
