@@ -13,7 +13,7 @@ import node from '../../assets/node.png';
 import express from '../../assets/express.png';
 import mysql from '../../assets/mysql.png';
 import aws from '../../assets/aws.png';
-import mongoldb from '../../assets/mongodb.png';
+import mongodb from '../../assets/mongodb.png';
 import git from '../../assets/git.png';
 import star from '../../assets/star.png';
 
@@ -73,8 +73,8 @@ function Skills() {
             <p>AWS</p>
           </div>
           <div className="skills__item">
-            <img src={mongoldb} alt="mongoldb" />
-            <p>MongolDB</p>
+            <img src={mongodb} alt="mongodb" />
+            <p>MongoDB</p>
           </div>
           <div className="skills__item">
             <img src={git} alt="git" />

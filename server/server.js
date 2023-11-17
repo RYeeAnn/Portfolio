@@ -50,7 +50,7 @@ app.post('/submit_contact', (req, res) => {
         }
     })
     .then(response => {
-        if (response.status === 200) {
+        if (response.status === 201) {
             res.send('Form data received and saved.');
         } else {
             res.status(500).send('Error saving data.');
