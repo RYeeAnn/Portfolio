@@ -9,6 +9,7 @@ import instock from '../../assets/instock.png';
 import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
 import theCozyCorner from '../../assets/thecozycorner.png';
+import awsProject from '../../assets/awsproject.png';
 
 function Projects() {
   return (
@@ -38,16 +39,28 @@ function Projects() {
             <img src={theCozyCorner} alt="Project 2" className="projects__image" />
             <div className="projects__info">
               <a href="https://thecozycorner-0537f656a932.herokuapp.com/"><h3>The Cozy Corner</h3></a>
-              <p>Still in progress . . .</p>
+              <p><b>Still in progress . . .</b></p>
               <p>The Cozy Corner is a website designed to feel just like your favorite neighborhood coffee shop. It's a welcoming online spot where customers can check out a handpicked selection of delicious coffees, homemade pastries, and tasty snacks.</p>
-              <p><b>HTML, CSS, Python, Flask, MongolDB, Javascript</b></p>
+              <p><b>HTML, CSS, Python, Flask, MongolDB, JavaScript</b></p>
               <p><a href="https://github.com/RYeeAnn/Ryan-Cafe">Click here for github repo</a></p>
             </div>
           </div>
 
           {/* Card 3 */}
           <div className="projects__card">
-            <img src={shnakeGif} alt="Project 3" className="projects__image" />
+            <img src={awsProject} alt="Project 3" className="projects__image" />
+            <div className="projects__info">
+              <h3>RyanTalks</h3>
+              <p><b>Still in progress . . .</b></p>
+              <p>Enhancing the learning experience with AWS services integration for authentication and data handling. It features a user-friendly interface with secure sign-in capabilities and an engaging chat environment that echoes messages back to the sender for interaction testing.</p>
+              <p><b>AWS, JavaScript, React</b></p>
+              <p><a href="https://github.com/RYeeAnn/Ryan-Talks">Click here for github repo</a></p>
+            </div>
+          </div>
+
+          {/* Card 4 */}
+          <div className="projects__card">
+            <img src={shnakeGif} alt="Project 4" className="projects__image" />
             <div className="projects__info">
               <h3>Shnake</h3>
               <p>A simple snake game inspired by classic games that was played as a kid. Created and coded using Javascript and React.js.</p>
@@ -57,9 +70,9 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 4 */}
+          {/* Card 5 */}
           <div className="projects__card">
-            <img src={simonSays} alt="Project 4" className="projects__image" />
+            <img src={simonSays} alt="Project 5" className="projects__image" />
             <div className="projects__info">
               <h3>Simon Says</h3>
               <p>A simple and classic game to test your short-term memory skills.</p>
@@ -68,9 +81,9 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 5 */}
+          {/* Card 6 */}
           <div className="projects__card">
-            <img src={brainflix} alt="Project 5" className="projects__image" />
+            <img src={brainflix} alt="Project 6" className="projects__image" />
             <div className="projects__info">
               <h3>BrainFlix</h3>
               <p>BrainFlix is a full-stack, fully responsive project built to mimic youtube during my enrollment in BrainStation's intensive web developement bootcamp.</p>
@@ -80,9 +93,9 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 6 */}
+          {/* Card 7 */}
           <div className="projects__card">
-            <img src={bandsite} alt="Project 6" className="projects__image" />
+            <img src={bandsite} alt="Project 7" className="projects__image" />
             <div className="projects__info">
               <h3>BandSite</h3>
               <p>BandSite is a fully responsive project built to mimic a fanpage for a mock band, built during my enrollment in BrainStation's intensive web development bootcamp.</p>
@@ -91,9 +104,9 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 7 */}
+          {/* Card 8 */}
           <div className="projects__card">
-            <img src={instock} alt="Project 7" className="projects__image" />
+            <img src={instock} alt="Project 8" className="projects__image" />
             <div className="projects__info">
               <h3>Instock</h3>
               <p>Instock is a full-stack, fully responsive collaborative project with a team of 3 developers built to mimic a warehouse and inventory tracker.</p>
@@ -101,15 +114,7 @@ function Projects() {
               <p><a href="https://github.com/RYeeAnn/brainstation-instock">Click here for the front-end repo</a></p>
               <p><a href="https://github.com/RYeeAnn/brainstation-instock-server">Click here for the back-end repo</a></p>
             </div>
-          </div>
-
-          {/* Card 8 */}
-          <div className="projects__card">
-            <div className="projects__info">
-              <h3>More projects in progress . . .</h3>
-            </div>
-          </div>
-          
+          </div>  
         </div>
       </div>
     </div>
