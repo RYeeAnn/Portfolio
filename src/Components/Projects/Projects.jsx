@@ -9,7 +9,7 @@ import instock from '../../assets/instock.png';
 import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
 import theCozyCorner from '../../assets/thecozycorner.png';
-import awsProject from '../../assets/awsproject.png';
+import awsProject from '../../assets/RyanTalks.gif';
 
 function Projects() {
   return (
