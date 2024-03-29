@@ -86,7 +86,7 @@ function Projects() {
             <img src={brainflix} alt="Project 6" className="projects__image" />
             <div className="projects__info">
               <h3>BrainFlix</h3>
-              <p>BrainFlix is a full-stack, fully responsive project built to mimic youtube during my enrollment in BrainStation's intensive web developement bootcamp.</p>
+              <p>BrainFlix is a full-stack, fully responsive project built to mimic youtube.</p>
               <p><b>React, Express, Sass, JSON</b></p>
               <p><a href="https://github.com/RYeeAnn/brainstation-BrainFlix">Click here for the front-end repo</a></p>
               <p><a href="https://github.com/RYeeAnn/brainstation-BrainFlix-api">Click here for the back-end repo</a></p>
@@ -98,7 +98,7 @@ function Projects() {
             <img src={bandsite} alt="Project 7" className="projects__image" />
             <div className="projects__info">
               <h3>BandSite</h3>
-              <p>BandSite is a fully responsive project built to mimic a fanpage for a mock band, built during my enrollment in BrainStation's intensive web development bootcamp.</p>
+              <p>BandSite is a fully responsive project built to mimic a fanpage for a mock band.</p>
               <p><b>HTML, CSS, Vanilla JavaScript</b></p>
               <p><a href="https://github.com/RYeeAnn/brainstation-bandsite">Click here for github repo</a></p>
             </div>
