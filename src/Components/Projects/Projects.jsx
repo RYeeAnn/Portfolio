@@ -10,6 +10,7 @@ import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
 import theCozyCorner from '../../assets/thecozycorner.png';
 import awsProject from '../../assets/RyanTalks.gif';
+import myPR from '../../assets/MyPR.png';
 
 function Projects() {
   return (
@@ -36,10 +37,20 @@ function Projects() {
 
           {/* Card 2 */}
           <div className="projects__card">
-            <img src={theCozyCorner} alt="Project 2" className="projects__image" />
+            <img src={myPR} alt="Project 2" className="projects__image" />
             <div className="projects__info">
-              <a href="https://thecozycorner-0537f656a932.herokuapp.com/"><h3>The Cozy Corner</h3></a>
-              <p><b>Still in progress . . .</b></p>
+              <h3>MyPR</h3>
+              <p>Sign into your account and start logging in your personal records from your workouts.</p>
+              <p><b>React, JavaScript, PostgreSQL, Node.js</b></p>
+              <p><a href="https://github.com/RYeeAnn/MyPR">Click here for github repo</a></p>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="projects__card">
+            <img src={theCozyCorner} alt="Project 3" className="projects__image" />
+            <div className="projects__info">
+              <h3>The Cozy Corner</h3>
               <p>The Cozy Corner is a website designed to feel just like your favorite neighborhood coffee shop. It's a welcoming online spot where customers can check out a handpicked selection of delicious coffees, homemade pastries, and tasty snacks.</p>
               <p><b>HTML, CSS, Python, Flask, MongolDB, JavaScript</b></p>
               <p><a href="https://github.com/RYeeAnn/Ryan-Cafe">Click here for github repo</a></p>
@@ -47,16 +58,15 @@ function Projects() {
           </div>
 
           {/* Card 3 */}
-          <div className="projects__card">
+          {/* <div className="projects__card">
             <img src={awsProject} alt="Project 3" className="projects__image" />
             <div className="projects__info">
               <h3>RyanTalks</h3>
-              <p><b>Still in progress . . .</b></p>
               <p>Enhancing the learning experience with AWS services integration for authentication and data handling. It features a user-friendly interface with secure sign-in capabilities and an engaging chat environment that echoes messages back to the sender for interaction testing.</p>
               <p><b>AWS, JavaScript, React</b></p>
               <p><a href="https://github.com/RYeeAnn/Ryan-Talks">Click here for github repo</a></p>
             </div>
-          </div>
+          </div> */}
 
           {/* Card 4 */}
           <div className="projects__card">
@@ -94,7 +104,7 @@ function Projects() {
           </div>
 
           {/* Card 7 */}
-          <div className="projects__card">
+          {/* <div className="projects__card">
             <img src={bandsite} alt="Project 7" className="projects__image" />
             <div className="projects__info">
               <h3>BandSite</h3>
@@ -102,11 +112,11 @@ function Projects() {
               <p><b>HTML, CSS, Vanilla JavaScript</b></p>
               <p><a href="https://github.com/RYeeAnn/brainstation-bandsite">Click here for github repo</a></p>
             </div>
-          </div>
+          </div> */}
 
-          {/* Card 8 */}
+          {/* Card 7 */}
           <div className="projects__card">
-            <img src={instock} alt="Project 8" className="projects__image" />
+            <img src={instock} alt="Project 7" className="projects__image" />
             <div className="projects__info">
               <h3>Instock</h3>
               <p>Instock is a full-stack, fully responsive collaborative project with a team of 3 developers built to mimic a warehouse and inventory tracker.</p>
