@@ -38,7 +38,7 @@ function Projects() {
             <img src={myPR} alt="Project 2" className="projects__image" />
             <div className="projects__info">
               <h3>MyPR</h3>
-              <p>Sign into your account and start logging in your personal records from your workouts.</p>
+              <p>MyPR is a fitness application aimed at assisting users in tracking their workouts and personal records (PRs). With personalized user profiles, workout logging, the capability to export logs to Excel, and interactive calendar functionality to enhance task management. The application provides a seamless experience for users to effectively monitor their fitness progress alongside managing their daily routines and schedules.</p>
               <p><b>React, JavaScript, PostgreSQL, Node.js</b></p>
               <p><a href="https://github.com/RYeeAnn/MyPR">Click here for github repo</a></p>
             </div>

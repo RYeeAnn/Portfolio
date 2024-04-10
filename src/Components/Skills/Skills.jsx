@@ -11,6 +11,7 @@ import flask from '../../assets/flask.png';
 import react from '../../assets/react.png';
 import node from '../../assets/node.png';
 import express from '../../assets/express.png';
+import postgresql from '../../assets/postgresql.png';
 import mysql from '../../assets/mysql.png';
 import aws from '../../assets/aws.png';
 import mongodb from '../../assets/mongodb.png';
@@ -63,6 +64,10 @@ function Skills() {
           <div className="skills__item">
             <img src={express} alt="express" />
             <p>Express.js</p>
+          </div>
+          <div className="skills__item">
+            <img src={postgresql} alt="postgresql" />
+            <p>PostgreSQL <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
           </div>
           <div className="skills__item">
             <img src={mysql} alt="mysql" />
