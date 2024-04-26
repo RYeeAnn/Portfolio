@@ -50,7 +50,7 @@ function Projects() {
             <div className="projects__info">
               <h3>The Cozy Corner</h3>
               <p>The Cozy Corner is a website designed to feel just like your favorite neighborhood coffee shop. It's a welcoming online spot where customers can check out a handpicked selection of delicious coffees, homemade pastries, and tasty snacks.</p>
-              <p><b>HTML, CSS, Python, Flask, MongolDB, JavaScript</b></p>
+              <p><b>HTML, CSS, Python, Flask, MongoDB, JavaScript</b></p>
               <p><a href="https://github.com/RYeeAnn/Ryan-Cafe">Click here for github repo</a></p>
             </div>
           </div>
