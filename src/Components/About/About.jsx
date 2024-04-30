@@ -13,7 +13,6 @@ function About() {
     const resumeLink = "https://drive.google.com/file/d/1r-vgtWmQ_h54j1dAc5oaVumnE2Apbhag/view?usp=sharing";
     const linkedinLink = "https://www.linkedin.com/in/ryeean/";
     const githubLink = "https://github.com/RYeeAnn";
-    
 
     return (
         <div className="about" id="about">
