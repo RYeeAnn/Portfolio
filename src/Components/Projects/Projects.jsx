@@ -9,6 +9,7 @@ import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
 import theCozyCorner from '../../assets/thecozycorner.png';
 import myPR from '../../assets/MyPR.png';
+import ApplyD from '../../assets/ApplyD.png';
 
 function Projects() {
   return (
@@ -18,6 +19,28 @@ function Projects() {
         <div className="projects__card-container">
 
           {/* Card 1 */}
+          <div className="projects__card">
+            <img src={ApplyD} alt="Project 3" className="projects__image" />
+            <div className="projects__info">
+              <h3>ApplyD</h3>
+              <p>Realizing I hadn't been keeping track of the jobs I've applied to, I decided to create this application specifically for managing the companies to which I've applied. Users must log in to access the dashboard, where they can seamlessly log their job applications. They'll input essential details like the company name, position applied for, and the current application status. Once logged in, users can view real-time data visualized in a bar graph using Chart.js, offering them a comprehensive overview of their application history.</p>
+              <p><b>React, TypeScript, PostgreSQL, Node.js, Auth0</b></p>
+              <p><a href="https://github.com/RYeeAnn/applyd">Click here for github repo</a></p>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="projects__card">
+            <img src={myPR} alt="Project 2" className="projects__image" />
+            <div className="projects__info">
+              <h3>MyPR</h3>
+              <p>A fitness application aimed at assisting users in tracking their workouts and personal records (PRs). With personalized user profiles, workout logging, the capability to export logs to Excel, and interactive calendar functionality to enhance task management. The application provides a seamless experience for users to effectively monitor their fitness progress alongside managing their daily routines and schedules.</p>
+              <p><b>React, JavaScript, PostgreSQL, Node.js, Auth0</b></p>
+              <p><a href="https://github.com/RYeeAnn/MyPR">Click here for github repo</a></p>
+            </div>
+          </div>
+
+          {/* Card 3 */}
           <div className="projects__card">
           <video controls className="projects__image" poster={cruisin}>
             <source src={cruisinVideo} type="video/mp4" />
@@ -30,28 +53,6 @@ function Projects() {
               <p><b>React, Express, Sass, MySQL</b></p>
               <p><a href="https://github.com/RYeeAnn/brainstation-capstone">Click here for front-end repo</a></p>
               <p><a href="https://github.com/RYeeAnn/brainstation-capstone-server">Click here for back-end repo</a></p>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="projects__card">
-            <img src={myPR} alt="Project 2" className="projects__image" />
-            <div className="projects__info">
-              <h3>MyPR</h3>
-              <p>MyPR is a fitness application aimed at assisting users in tracking their workouts and personal records (PRs). With personalized user profiles, workout logging, the capability to export logs to Excel, and interactive calendar functionality to enhance task management. The application provides a seamless experience for users to effectively monitor their fitness progress alongside managing their daily routines and schedules.</p>
-              <p><b>React, JavaScript, PostgreSQL, Node.js</b></p>
-              <p><a href="https://github.com/RYeeAnn/MyPR">Click here for github repo</a></p>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="projects__card">
-            <img src={theCozyCorner} alt="Project 3" className="projects__image" />
-            <div className="projects__info">
-              <h3>The Cozy Corner</h3>
-              <p>The Cozy Corner is a website designed to feel just like your favorite neighborhood coffee shop. It's a welcoming online spot where customers can check out a handpicked selection of delicious coffees, homemade pastries, and tasty snacks.</p>
-              <p><b>HTML, CSS, Python, Flask, MongoDB, JavaScript</b></p>
-              <p><a href="https://github.com/RYeeAnn/Ryan-Cafe">Click here for github repo</a></p>
             </div>
           </div>
 
