@@ -7,7 +7,6 @@ import brainflix from '../../assets/brainflix.png';
 import instock from '../../assets/instock.png';
 import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
-import theCozyCorner from '../../assets/thecozycorner.png';
 import myPR from '../../assets/MyPR.png';
 import ApplyD from '../../assets/ApplyD.png';
 
