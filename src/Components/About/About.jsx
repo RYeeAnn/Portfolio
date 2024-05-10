@@ -9,6 +9,7 @@ import linkedin from '../../assets/linkedin.png';
 import github from '../../assets/github.png';
 
 function About() {
+    
 
     const resumeLink = "https://drive.google.com/file/d/1r-vgtWmQ_h54j1dAc5oaVumnE2Apbhag/view?usp=sharing";
     const linkedinLink = "https://www.linkedin.com/in/ryeean/";
