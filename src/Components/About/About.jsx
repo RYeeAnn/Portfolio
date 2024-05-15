@@ -27,13 +27,13 @@ function About() {
                                     <p><img src={location} alt="Location" className="about__icons" />Vancouver, BC</p>
                                     <p><img src={title} alt="Title" className="about__icons" />Software Developer</p>
                                     <a href={resumeLink}>
-                                    <p><img src={resume} alt="Resume" className="about__icons" />Resume</p>
+                                    <p><img src={resume} alt="Resume" className="about__icons" /><b>Resume</b><i>Click me!</i></p>
                                     </a>
                                     <a href={linkedinLink}>
-                                    <p><img src={linkedin} alt="Linkedin" className="about__icons" />Linkedin</p>
+                                    <p><img src={linkedin} alt="Linkedin" className="about__icons" /><b>Linkedin</b><i>And me!</i></p>
                                     </a>
                                     <a href={githubLink}>
-                                        <p><img src={github} alt="Github" className="about__icons" />Github</p>
+                                        <p><img src={github} alt="Github" className="about__icons" /><b>Github</b><i>Me too!</i></p>
                                     </a>
                                 </div>
                             </div>
