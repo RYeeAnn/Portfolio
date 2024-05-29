@@ -27,19 +27,20 @@ function Skills() {
           {/* Add your grid items here */}
           <div className="skills__item">
             <img src={html} alt="html" />
-            <p>HTML <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
+            {/* <img className="skills__proficiency-star" src={star} alt="proficiency" /> Add next to language if wanting star */}
+            <p>HTML</p>
           </div>
           <div className="skills__item">
             <img src={css} alt="css" />
-            <p>CSS <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
+            <p>CSS</p>
           </div>
           <div className="skills__item">
             <img src={sass} alt="sass" />
-            <p>SASS <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
+            <p>SASS</p>
           </div>
           <div className="skills__item">
             <img src={javascript} alt="javascript" />
-            <p>JavaScript <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
+            <p>JavaScript</p>
           </div>
           <div className="skills__item">
             <img src={typescript} alt="typescript" />
@@ -55,7 +56,7 @@ function Skills() {
           </div>
           <div className="skills__item">
             <img src={react} alt="react" />
-            <p>React <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
+            <p>React</p>
           </div>
           <div className="skills__item">
             <img src={node} alt="node" />
@@ -67,11 +68,11 @@ function Skills() {
           </div>
           <div className="skills__item">
             <img src={postgresql} alt="postgresql" />
-            <p>PostgreSQL <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
+            <p>PostgreSQL</p>
           </div>
           <div className="skills__item">
             <img src={mysql} alt="mysql" />
-            <p>MySQL <img className="skills__proficiency-star" src={star} alt="proficiency" /></p>
+            <p>MySQL</p>
           </div>
           <div className="skills__item">
             <img src={aws} alt="aws" />

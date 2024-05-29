@@ -54,7 +54,7 @@ const handleSubmit = (event) => {
         <div className="contact__card" id="contact">
           <h2 className='contact__title'>Want to talk?</h2>
           <p>Did you see anything that was of interest to you? Feel free to connect with me and let's chat!</p>
-          <form onSubmit={handleSubmit}>
+          {/* <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
                     name="name" 
@@ -79,7 +79,7 @@ const handleSubmit = (event) => {
                     required
                 />
                 <button type="submit">Send</button>
-            </form>
+            </form> */}
 
             {flashMessage && (
       <div className={`flash-message ${flashMessage ? 'show' : ''}`}>
