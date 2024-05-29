@@ -16,7 +16,7 @@ import mysql from '../../assets/mysql.png';
 import aws from '../../assets/aws.png';
 import mongodb from '../../assets/mongodb.png';
 import git from '../../assets/git.png';
-import star from '../../assets/star.png';
+// import star from '../../assets/star.png';
 
 function Skills() {
   return (

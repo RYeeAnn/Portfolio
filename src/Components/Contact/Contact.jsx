@@ -16,31 +16,31 @@ function Contact() {
     message: '' 
   });
 
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-};
+//   const handleInputChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+// };
 
 const serverURL = 'https://ryanyee-portfolio-f1df33c2739f.herokuapp.com/submit_contact';
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  axios.post(serverURL, formData)
-    .then(response => {
-        // Handle success
-        console.log(response.data);
-        setFlashMessage("Your message has been sent successfully!");
-        setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
+// const handleSubmit = (event) => {
+//   event.preventDefault();
+//   axios.post(serverURL, formData)
+//     .then(response => {
+//         // Handle success
+//         console.log(response.data);
+//         setFlashMessage("Your message has been sent successfully!");
+//         setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
 
-        // Reset form data to initial state
-        setFormData({ name: '', email: '', message: '' });
-    })
-    .catch(error => {
-        // Handle error
-        console.error("Error:", error);
-        setFlashMessage("Failed to send message.");
-        setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
-    });
-};
+//         // Reset form data to initial state
+//         setFormData({ name: '', email: '', message: '' });
+//     })
+//     .catch(error => {
+//         // Handle error
+//         console.error("Error:", error);
+//         setFlashMessage("Failed to send message.");
+//         setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
+//     });
+// };
 
     const emailLink = 'mailto:RYeeAn16@gmail.com';
     const phoneLink = 'tel:+16047283585';
