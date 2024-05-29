@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './Contact.scss';
 import name from '../../assets/name.png';
 import email from '../../assets/email.png';
@@ -9,18 +9,18 @@ import github from '../../assets/github.png';
 
 function Contact() {
 
-  const [flashMessage, setFlashMessage] = useState('');
-  const [formData, setFormData] = useState({ 
-    name: '', 
-    email: '', 
-    message: '' 
-  });
+  // const [flashMessage, setFlashMessage] = useState('');
+  // const [formData, setFormData] = useState({ 
+  //   name: '', 
+  //   email: '', 
+  //   message: '' 
+  // });
 
 //   const handleInputChange = (e) => {
 //     setFormData({ ...formData, [e.target.name]: e.target.value });
 // };
 
-const serverURL = 'https://ryanyee-portfolio-f1df33c2739f.herokuapp.com/submit_contact';
+// const serverURL = 'https://ryanyee-portfolio-f1df33c2739f.herokuapp.com/submit_contact';
 
 // const handleSubmit = (event) => {
 //   event.preventDefault();
