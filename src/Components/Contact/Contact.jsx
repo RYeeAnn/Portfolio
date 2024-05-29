@@ -81,11 +81,11 @@ function Contact() {
                 <button type="submit">Send</button>
             </form> */}
 
-            {flashMessage && (
+            {/* {flashMessage && (
       <div className={`flash-message ${flashMessage ? 'show' : ''}`}>
         {flashMessage}
       </div>
-    )}
+    )} */}
 
           <div className="contact__info">
             <p><img src={name} alt="Name" />Ryan Yee</p>
