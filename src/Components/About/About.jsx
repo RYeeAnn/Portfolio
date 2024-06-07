@@ -30,10 +30,10 @@ function About() {
                                     <p><img src={resume} alt="Resume" className="about__icons" /><b>Resume</b><i>Click me!</i></p>
                                     </a>
                                     <a href={linkedinLink}>
-                                    <p><img src={linkedin} alt="Linkedin" className="about__icons" /><b>Linkedin</b><i>And me!</i></p>
+                                    <p><img src={linkedin} alt="Linkedin" className="about__icons" /><b>Linkedin</b></p>
                                     </a>
                                     <a href={githubLink}>
-                                        <p><img src={github} alt="Github" className="about__icons" /><b>Github</b><i>Me too!</i></p>
+                                        <p><img src={github} alt="Github" className="about__icons" /><b>Github</b></p>
                                     </a>
                                 </div>
                             </div>
