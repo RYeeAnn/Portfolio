@@ -9,6 +9,7 @@ import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
 import myPR from '../../assets/MyPR.png';
 import ApplyD from '../../assets/ApplyD.png';
+import DinoType from '../../assets/DynoType.png';
 
 function Projects() {
   return (
@@ -17,20 +18,18 @@ function Projects() {
         <h2 className="projects__title" id="projects">Projects</h2>
         <div className="projects__card-container">
 
-          {/* Card 1 */}
-          <div className="projects__card">
-            <img src={ApplyD} alt="Project 3" className="projects__image" />
+        <div className="projects__card">
+            <img src={DinoType} alt="Project" className="projects__image" />
             <div className="projects__info">
-              <h3>ApplyD</h3>
-              <p>Realizing I hadn't been keeping track of the jobs I've applied to, I decided to create this application specifically for managing the companies to which I've applied. Users must log in to access the dashboard, where they can seamlessly log their job applications. They'll input essential details like the company name, position applied for, and the current application status. Once logged in, users can view real-time data visualized in a bar graph using Chart.js, offering them a comprehensive overview of their application history.</p>
-              <p><b>React, TypeScript, PostgreSQL, Node.js, Auth0</b></p>
-              <p><a href="https://github.com/RYeeAnn/applyd">Click here for github repo</a></p>
+              <h3>DinoType</h3>
+              <p>Currently in the process of building a type racer game for fun!</p>
+              <p><b>Python, Pygame</b></p>
+              <p><a href="https://github.com/RYeeAnn/dinotype">Click here for github repo</a></p>
             </div>
           </div>
 
-          {/* Card 2 */}
           <div className="projects__card">
-            <img src={myPR} alt="Project 2" className="projects__image" />
+            <img src={myPR} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>MyPR</h3>
               <p>A fitness application aimed at assisting users in tracking their workouts and personal records (PRs). With personalized user profiles, workout logging, the capability to export logs to Excel, and interactive calendar functionality to enhance task management. The application provides a seamless experience for users to effectively monitor their fitness progress alongside managing their daily routines and schedules.</p>
@@ -39,7 +38,16 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 3 */}
+          <div className="projects__card">
+            <img src={ApplyD} alt="Project" className="projects__image" />
+            <div className="projects__info">
+              <h3>ApplyD</h3>
+              <p>Realizing I hadn't been keeping track of the jobs I've applied to, I decided to create this application specifically for managing the companies to which I've applied. Users must log in to access the dashboard, where they can seamlessly log their job applications. They'll input essential details like the company name, position applied for, and the current application status. Once logged in, users can view real-time data visualized in a bar graph using Chart.js, offering them a comprehensive overview of their application history.</p>
+              <p><b>React, TypeScript, PostgreSQL, Node.js, Auth0</b></p>
+              <p><a href="https://github.com/RYeeAnn/applyd">Click here for github repo</a></p>
+            </div>
+          </div>
+
           <div className="projects__card">
           <video controls className="projects__image" poster={cruisin}>
             <source src={cruisinVideo} type="video/mp4" />
@@ -55,9 +63,8 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 3 */}
           {/* <div className="projects__card">
-            <img src={awsProject} alt="Project 3" className="projects__image" />
+            <img src={awsProject} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>RyanTalks</h3>
               <p>Enhancing the learning experience with AWS services integration for authentication and data handling. It features a user-friendly interface with secure sign-in capabilities and an engaging chat environment that echoes messages back to the sender for interaction testing.</p>
@@ -66,9 +73,8 @@ function Projects() {
             </div>
           </div> */}
 
-          {/* Card 4 */}
           <div className="projects__card">
-            <img src={shnakeGif} alt="Project 4" className="projects__image" />
+            <img src={shnakeGif} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>Shnake</h3>
               <p>A simple snake game inspired by classic games that was played as a kid. Created and coded using Javascript and React.js.</p>
@@ -78,9 +84,8 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 5 */}
           <div className="projects__card">
-            <img src={simonSays} alt="Project 5" className="projects__image" />
+            <img src={simonSays} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>Simon Says</h3>
               <p>A simple and classic game to test your short-term memory skills.</p>
@@ -89,9 +94,8 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 6 */}
           <div className="projects__card">
-            <img src={brainflix} alt="Project 6" className="projects__image" />
+            <img src={brainflix} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>BrainFlix</h3>
               <p>BrainFlix is a full-stack, fully responsive project built to mimic youtube.</p>
@@ -101,9 +105,8 @@ function Projects() {
             </div>
           </div>
 
-          {/* Card 7 */}
           {/* <div className="projects__card">
-            <img src={bandsite} alt="Project 7" className="projects__image" />
+            <img src={bandsite} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>BandSite</h3>
               <p>BandSite is a fully responsive project built to mimic a fanpage for a mock band.</p>
@@ -112,9 +115,8 @@ function Projects() {
             </div>
           </div> */}
 
-          {/* Card 7 */}
           <div className="projects__card">
-            <img src={instock} alt="Project 7" className="projects__image" />
+            <img src={instock} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>Instock</h3>
               <p>Instock is a full-stack, fully responsive collaborative project with a team of 3 developers built to mimic a warehouse and inventory tracker.</p>
