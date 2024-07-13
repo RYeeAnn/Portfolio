@@ -10,6 +10,7 @@ import simonSays from '../../assets/simon-says.gif';
 import myPR from '../../assets/MyPR.png';
 import ApplyD from '../../assets/ApplyD.png';
 import DinoType from '../../assets/DynoType.png';
+import CruisinV2 from '../../assets/cruisinv2.png'
 
 function Projects() {
   return (
@@ -17,6 +18,16 @@ function Projects() {
       <div className="projects__container">
         <h2 className="projects__title" id="projects">Projects</h2>
         <div className="projects__card-container">
+
+        <div className="projects__card">
+            <img src={CruisinV2} alt="Project" className="projects__image" />
+            <div className="projects__info">
+              <h3>CruisinV2</h3>
+              <p>An enhanced version of my original Cruisin project. This web application offers solution for managing car maintenance questions with full CRUD functionality and authentication. Additionally, it provides an interactive interface displaying warning lights allowing users to view detailed information about its meaning and significance.</p>
+              <p><b>C#, .NET Core, SQLite, HTML/CSS</b></p>
+              <p><a href="https://github.com/RYeeAnn/CruisinV2">Click here for github repo</a></p>
+            </div>
+          </div>
 
         <div className="projects__card">
             <img src={DinoType} alt="Project" className="projects__image" />
