@@ -25,6 +25,17 @@
       }
     }
 
+    &__blog a {
+      text-decoration: none;
+      color: green;
+      transition: color 0.3s ease, transform 0.3s ease;
+    
+      &:hover {
+        color: #0073e6;
+        transform: scale(1.05);
+      }
+    }
+
   @include tablet {
     display: flex;
     flex-direction: row;

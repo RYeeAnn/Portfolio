@@ -112,4 +112,20 @@
             margin-right: 32px;
         }
     }
+
+    &__blog {
+        font-size: 1.5rem;
+        text-align: center;
+        color: #333;
+        transition: color 0.3s ease, transform 0.3s ease;
+      
+        &:hover {
+          color: #0073e6;
+          transform: scale(1.05);
+        }
+      
+        b {
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+    }
 }

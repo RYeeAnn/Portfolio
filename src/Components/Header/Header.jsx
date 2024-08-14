@@ -88,6 +88,11 @@ function Header() {
         >
           Contact
         </ScrollLink>
+        <div className="header__blog">
+          <a href="blog">
+            <b>Blog</b>
+          </a>
+        </div>
       </div>
     </div>
   );
