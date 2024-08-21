@@ -9,7 +9,8 @@ const blogPosts = {
       "This opportunity was found through one of my Linkedin connection where he brought up that he was a team lead for Atria and offered me to join! I happily accepted and was onboarded to the team.",
       "A choice was given to me whether I wanted to get straight into coding or start with the planning phase. My thought process was, well since i've already been coding quite a bit from side projects, it'd be nice to learn something new right? So the decision was fairly easy for me.",
       "In software development, it wasn't just coding. I realized there was much more than that. 'if you fail to plan, you plan to fail'. I read this quote while going through my onboarding documentation and wow that's such a great quote. With that being said, I gained valuable experience in creating ERDs and Technical Design Documents, which helped me establish a clear and structured path to bring the application's vision.",
-      "Shortly after getting approval of my ERD and TDD, I was able to pick up JIRA tickets and start coding! I developed and maintained features using Python/Django."
+      "Shortly after getting approval of my ERD and TDD, I was able to pick up JIRA tickets and start coding! I developed and maintained features using Python/Django, focusing on creating and optimizing endpoints, developing DAO methods, implementing service layers, etc. My tasks include writing unit tests to ensure code quality, handling database migrations, and troubleshooting issues in the backend. Additionally, I collaborated with the team to refine existing features and integrate new ones, all while adhering to best practices and project timelines.",
+      "The learning never stops :)"
     ],
     date: "August 12, 2024",
   },
