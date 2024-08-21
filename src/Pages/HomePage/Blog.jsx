@@ -14,7 +14,7 @@ function Blog() {
             <section className="blog__featured">
                 <div className="blog__featured-post">
                     <div className="blog__featured-content">
-                        <h2>[Featured Post] My Current Internship, Atria Community</h2>
+                        <h2>[FEATURED POST] Current Internship, Atria Community</h2>
                         <p className="blog__date">August 12, 2024</p>
                         <p>My experiences and challenges while interning at Atria Community.</p>
                         <a href="/blog/featured-post" className="blog__read-more">Read more</a>
@@ -23,6 +23,18 @@ function Blog() {
             </section>
             <section className="blog__posts">
                 {/* New posts here */}
+                <div className="blog__post">
+                    <h3>Growing team and reviewing PRs at Atria</h3>
+                    <p className="blog__date">August 21, 2024</p>
+                    <p>As our team continues to grow, managing the project is becoming increasingly complex, especially with the rise in merge conflicts.</p>
+                    <a href="/blog/post-5" className="blog__read-more">Read more</a>
+                </div>
+                <div className="blog__post">
+                    <h3>How tough is it to find an entry-level software development opportunity?</h3>
+                    <p className="blog__date">August 15, 2024</p>
+                    <p>Most of the job postings out there are for Intermediate and Senior developers.</p>
+                    <a href="/blog/post-4" className="blog__read-more">Read more</a>
+                </div>
                 <div className="blog__post">
                     <h3>I can create games with Python?</h3>
                     <p className="blog__date">August 12, 2024</p>

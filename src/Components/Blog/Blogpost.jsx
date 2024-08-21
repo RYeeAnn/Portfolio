@@ -43,6 +43,25 @@ const blogPosts = {
     ],
     date: "August 12, 2024",
   },
+  "post-4": {
+    title: "How tough is it to find an entry-level software development opportunity?",
+    content: [
+        "From my experience, it is tough finding an interview opportunity for entry-level positions, considering how bad the tech market is currently. I do think it's slowly ramping up though.",
+        "In the beginning I thought it wasn't going to be that much of a problem finding interviews but junior positions are overly saturated which makes it even difficult. I thought applying to a bunch of positions would be enough but NOPE.",
+        "I knew simply just applying for jobs wasn't enough and I figured I needed to do more. From my experience, networking is key. I've connected and met so many people that have been so helpful in my journey that made me stay motivated. Without those people, who knows, I could have given up by now. I received so much good advice and it keeps me going. They've also been very helpful in terms of updating me with new job postings, and even referring me to company's they're connected to. It gives me a better chance in landing an interview and I'm so appreciative of that.",
+        "From the time I started applying to jobs to writing this post, I've grown a lot. What I mean by that is, with all the advice I received, I'm incredibly satisfied with my resume, linkedin, portfolio, how I spend my time day to day, etc. It's going to only keep improving as well and I couldn't have done it without the help of my connections."
+    ],
+    date: "August 15, 2024",
+  },
+  "post-5": {
+    title: "Growing team and reviewing PRs at Atria",
+    content: [
+        "When I was first onboarded, there was a team of 2 active devs including myself. It was simple to manage the project as I only have one other dev to communicate with. I think we have 4-5 active devs now, things are getting a little more complicated. I even have some troubles reviewing PRs because to be quite honest, some of the PRs are so overly complicated that i'm not sure when i'm looking at and I just wait for the team lead to review it first before I give it an approval 😅",
+        "With the growth of our team, merge conflicts are unavoidable and that does give me a headache sometimes. I like it though, because it forces me to problem solve and get better at resolving these conflicts.",
+        "I initially had some trouble managing multiple branches and creating PRs, as I was directing them all to the main branch. I learned that I should be chaining them—pointing one branch to another, and ultimately merging everything into a primary branch that then goes to main. Because of this, I was hesitant to work on too many branches while my team lead was out of town, and I paused working on tickets. However, after going through that process, I now feel confident in managing multiple branches without any issues."
+    ],
+    date: "August 21, 2024",
+  },
 };
 
 function BlogPost() {
