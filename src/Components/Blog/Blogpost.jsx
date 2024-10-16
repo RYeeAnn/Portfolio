@@ -63,6 +63,16 @@ const blogPosts = {
     ],
     date: "August 21, 2024",
   },
+  "post-6": {
+    title: "New part-time job",
+    content: [
+        "It's been a while since my last update but since then, I've actually found myself a part-time job at Code Ninjas! Really excited about this because I can finally earn some pocket money while I continue my search for a full-time. This part-time is also perfect for me because it's still related to coding.",
+        "At Code Ninjas, my responsibility is to help and guide kids from ages 7-14 with block coding and javascript. As they level up, they go into learning C# and Unity.",
+        "In the beginning, I'd say my first and second day I was struggling only a little bit trying to get used to block coding but it's very easy to get a hang of. After getting some practice, I became more confident in guiding the students. I've been working there for a little over a month and I've gotten very comfortable now!",
+        "I'd say the hardest about this job is trying to calm the kids down... They have too much energy 😮‍💨"
+    ],
+    date: "October 16, 2024",
+  },
 };
 
 function BlogPost() {
