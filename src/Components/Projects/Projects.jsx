@@ -25,6 +25,7 @@ function Projects() {
               <h3>CruisinV2</h3>
               <p>An enhanced version of my original Cruisin project. This web application offers solution for managing car maintenance questions with full CRUD functionality and authentication. Additionally, it provides an interactive interface displaying warning lights allowing users to view detailed information about its meaning and significance.</p>
               <p><b>C#, .NET Core, SQLite, HTML/CSS</b></p>
+              <p><a href="https://cruisinv2-52ad45691897.herokuapp.com/">Click here to see the project!</a></p>
               <p><a href="https://github.com/RYeeAnn/CruisinV2">Click here for github repo</a></p>
             </div>
           </div>
