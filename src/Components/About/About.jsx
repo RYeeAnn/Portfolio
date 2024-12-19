@@ -41,10 +41,10 @@ function About() {
                                 <h2 className="about__title">About Me</h2>
                                 <div className="about__text">
                                     <p><b>Current work/projects : </b></p>
-                                    <p>Atria Community Internship</p>
-                                    <p>Code instructor @ CodeNinjas</p>
-                                    <p>Outlier AI : Code AI Training</p>
-                                    <p>CruisinV2 Personal project (C#, .NETCore)</p>
+                                    <p>Software engineering internship @ Atria Community</p>
+                                    <p>Part-time code instructor @ CodeNinjas</p>
+                                    <p>Code AI trainer @ Outlier AI</p>
+                                    <p>CruisinV2 personal project (C#, .NETCore)</p>
                                     {/* <p>Reminiscing back to the '90s brings memories of CD-based gaming consoles, dial-up internet, and the era of Windows 95. It was a time when technology was on the rise, poised to change the world forever. As a child, I was exposed to the wonders of dial-up internet, Game Boys, and flip phones. Needless to say, I was in love with technology. I spent countless hours in front of the computer, captivated by the screen and all it had to offer.</p> */}
                                     {/* <p>However, my fascination wasn't limited to technology alone; I had another passion—cars. Growing up, I was drawn to automobiles, and I chose a career path deeply intertwined with the world of cars. Just as cars were evolving, so was technology. The days of waiting for the internet to dial up were long gone, games had evolved significantly, and we transitioned from simple flip phones to smartphones that have become indispensable in our lives.</p> */}
                                     {/* <p>My journey began by dipping my toes into self-learning HTML and CSS. Eventually, I committed all my time and energy to a 12-week intensive software development bootcamp at BrainStation in the summer of 2023. Along the way, I've grown and evolved, but I'm fully aware that this is just the beginning. The learning will never stop, and I couldn't be more excited about it. My journey as a developer has only just begun, and I'm eager to see where it leads.</p>
