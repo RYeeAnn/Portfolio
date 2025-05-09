@@ -11,7 +11,7 @@ import github from '../../assets/github.png';
 function About() {
     
 
-    const resumeLink = "https://drive.google.com/file/d/1PTZkQPTzJpxWeNHoa-W8ezn3VbdpPR-V/view?usp=sharing";
+    const resumeLink = "https://drive.google.com/file/d/1lAz_DGyPbJ9lLPr3ukCODfzWjVn-QpI7/view?usp=sharing";
     const linkedinLink = "https://www.linkedin.com/in/ryeean/";
     const githubLink = "https://github.com/RYeeAnn";
 
