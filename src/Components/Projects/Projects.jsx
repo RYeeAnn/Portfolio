@@ -7,10 +7,9 @@ import brainflix from '../../assets/brainflix.png';
 import instock from '../../assets/instock.png';
 import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
-import myPR from '../../assets/MyPR.png';
-import ApplyD from '../../assets/ApplyD.png';
 import DinoType from '../../assets/DynoType.png';
 import CruisinV2 from '../../assets/cruisinv2.png'
+import Atria from '../../assets/Atria.png'
 
 function Projects() {
   return (
@@ -18,6 +17,16 @@ function Projects() {
       <div className="projects__container">
         <h2 className="projects__title" id="projects">Projects</h2>
         <div className="projects__card-container">
+
+        <div className="projects__card">
+            <img src={Atria} alt="Project" className="projects__image" />
+            <div className="projects__info">
+              <h3>Townhall</h3>
+              <p>A full-stack community platform built for volunteer collaboration, featuring user onboarding, post/comment creation, media uploads, and more. I led API development, frontend UI implementation from Figma, and helped architect the backend using Django with a layered structure.</p>
+              <p><b>Python, Django, React/Next.js, JavaScript, SQLite</b></p>
+              <p>MVP in the making...</p>
+            </div>
+          </div>
 
         <div className="projects__card">
             <img src={CruisinV2} alt="Project" className="projects__image" />
@@ -40,7 +49,7 @@ function Projects() {
             </div>
           </div>
 
-          <div className="projects__card">
+          {/* <div className="projects__card">
             <img src={myPR} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>MyPR</h3>
@@ -48,9 +57,9 @@ function Projects() {
               <p><b>React, JavaScript, PostgreSQL, Node.js, Auth0</b></p>
               <p><a href="https://github.com/RYeeAnn/MyPR">Click here for github repo</a></p>
             </div>
-          </div>
+          </div> */}
 
-          <div className="projects__card">
+          {/* <div className="projects__card">
             <img src={ApplyD} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>ApplyD</h3>
@@ -58,7 +67,7 @@ function Projects() {
               <p><b>React, TypeScript, PostgreSQL, Node.js, Auth0</b></p>
               <p><a href="https://github.com/RYeeAnn/applyd">Click here for github repo</a></p>
             </div>
-          </div>
+          </div> */}
 
           <div className="projects__card">
           <video controls className="projects__image" poster={cruisin}>

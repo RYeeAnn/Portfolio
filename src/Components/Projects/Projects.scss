@@ -3,6 +3,11 @@
 
 
 .projects {
+
+  &__image {
+    border: 1px solid gray;
+    border-radius: 16px;
+  }
   
     &__container {
     }

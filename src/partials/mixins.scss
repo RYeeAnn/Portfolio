@@ -12,6 +12,12 @@
     }
 }
 
+@mixin laptop {
+    @media screen and (min-width: $laptop-size) {
+        @content;
+    }
+}
+
 @mixin desktop {
     @media screen and (min-width: $desktop-size) {
         @content;
