@@ -24,6 +24,12 @@ function Blog() {
             <section className="blog__posts">
                 {/* New posts here */}
                 <div className="blog__post">
+                    <h3>Atria Community MVP</h3>
+                    <p className="blog__date">June 3, 2025</p>
+                    <p>Check out my recent work i've done for Atria!</p>
+                    <a href="/blog/post-7" className="blog__read-more">Read more</a>
+                </div>
+                <div className="blog__post">
                     <h3>New part-time job</h3>
                     <p className="blog__date">October 16, 2024</p>
                     <p>Found my self a part-time at Code Ninjas as a Code Instructor 👀</p>

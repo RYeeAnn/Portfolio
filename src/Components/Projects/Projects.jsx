@@ -23,8 +23,8 @@ function Projects() {
             <div className="projects__info">
               <h3>Townhall</h3>
               <p>A full-stack community platform built for volunteer collaboration, featuring user onboarding, post/comment creation, media uploads, and more. I led API development, frontend UI implementation from Figma, and helped architect the backend using Django with a layered structure.</p>
-              <p><b>Python, Django, React/Next.js, JavaScript, SQLite</b></p>
-              <p>MVP in the making...</p>
+              <p><b>Python, Django, Django Channels, React/Next.js, JavaScript, REST APIs, PostgreSQL/SQLite, Render, WebSockets, Redis, Netlify, Cloudinary</b></p>
+              <p><a href="https://atriacoop.netlify.app/">Deployed MVP</a></p>
             </div>
           </div>
 

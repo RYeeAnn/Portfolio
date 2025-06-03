@@ -10,7 +10,7 @@ import github from '../../assets/github.png';
 
 function About() {
 
-    const resumeLink = "https://drive.google.com/file/d/1lAz_DGyPbJ9lLPr3ukCODfzWjVn-QpI7/view?usp=sharing";
+    const resumeLink = "https://drive.google.com/file/d/1WmKGiLJ194f2dC2XvqkPaCvsA2UAlauE/view?usp=sharing";
     const linkedinLink = "https://www.linkedin.com/in/ryeean/";
     const githubLink = "https://github.com/RYeeAnn";
 
@@ -39,16 +39,19 @@ function About() {
                         <div className="about__experience">
                             <h2 className="about__title">Work Experience</h2>
                             <div className="about__text">
-                            <p><strong>Atria Community</strong> — <em>Software Developer (May 2024 – Present)</em></p>
-                            <p>Led full-stack development of a scalable volunteering platform using Django and Next.js. Built 15+ APIs, designed mobile-first UIs from Figma, and shipped key features like user onboarding, posts, comments, and media uploads.</p>
+                                <p><strong>Atria Community</strong> — <em>Software Developer (May 2024 – Present)</em></p>
+                                <p>
+                                Led full-stack development of <a href="https://atriacoop.netlify.app" target="_blank" rel="noopener noreferrer">Townhall</a>, a scalable volunteering platform connecting users to local community initiatives. 
+                                Built 15+ RESTful APIs with Django, developed mobile-first UIs from Figma with Next.js, and shipped core features including onboarding, posts, comments, media uploads, and real-time chat using WebSockets and Redis.
+                                </p>
 
-                            <p><strong>Code Ninjas</strong> — <em>Code Instructor (Sept 2024 – Present)</em></p>
-                            <p>Teach kids aged 7–14 the foundations of JavaScript, Unity, and game development through hands-on lessons in a high-energy, mentor-style environment.</p>
+                                <p><strong>Code Ninjas</strong> — <em>Code Instructor (Sept 2024 – Present)</em></p>
+                                <p>Teach kids aged 7–14 the foundations of JavaScript, Unity, and game development through hands-on lessons in a high-energy, mentor-style environment.</p>
 
-                            <p><strong>Sniff & Bark</strong> — <em>Web Developer (Feb 2024 – May 2024)</em></p>
-                            <p>Improved Shopify site performance by 50% and built tools for order automation, pricing logic, and GDPR compliance using JavaScript and XLSX exports.</p>
+                                <p><strong>Sniff & Bark</strong> — <em>Web Developer (Feb 2024 – May 2024)</em></p>
+                                <p>Improved Shopify site performance by 50% and built tools for order automation, pricing logic, and GDPR compliance using JavaScript and XLSX exports.</p>
                             </div>
-                        </div>    
+                        </div>  
                     </div>
                 </div>
             </div>

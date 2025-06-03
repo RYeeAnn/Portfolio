@@ -73,6 +73,16 @@ const blogPosts = {
     ],
     date: "October 16, 2024",
   },
+  "post-7": {
+    "title": "Atria Community MVP is Live!",
+    "content": [
+      "🚀 The Townhall platform I helped build for Atria Community is now live!",
+      "👉 Check it out: https://atriacoop.netlify.app/",
+      "Built with Django, Next.js, WebSockets, Redis, and more — this MVP includes real-time chat, user onboarding, and community engagement features."
+    ],
+    "date": "June 3, 2025"
+  }
+
 };
 
 function BlogPost() {

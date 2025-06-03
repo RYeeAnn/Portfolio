@@ -16,8 +16,9 @@ import mysql from '../../assets/mysql.png';
 import aws from '../../assets/aws.png';
 import mongodb from '../../assets/mongodb.png';
 import git from '../../assets/git.png';
-import csharp from '../../assets/csharp.png'
-import dotnetcore from '../../assets/dotnetcore.png'
+import csharp from '../../assets/csharp.png';
+import dotnetcore from '../../assets/dotnetcore.png';
+import django from '../../assets/django.png';
 // import star from '../../assets/star.png';
 
 function Skills() {
@@ -51,6 +52,10 @@ function Skills() {
           <div className="skills__item">
             <img src={python} alt="python" />
             <p>Python</p>
+          </div>
+          <div className="skills__item">
+            <img src={django} alt="django" />
+            <p>Django</p>
           </div>
           <div className="skills__item">
             <img src={flask} alt="flask" />
