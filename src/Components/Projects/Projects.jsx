@@ -3,8 +3,8 @@ import React from 'react';
 import './Projects.scss';
 import cruisin from '../../assets/cruisin.png';
 import cruisinVideo from '../../assets/cruisinVideo.mp4'
-import brainflix from '../../assets/brainflix.png';
-import instock from '../../assets/instock.png';
+// import brainflix from '../../assets/brainflix.png';
+// import instock from '../../assets/instock.png';
 import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
