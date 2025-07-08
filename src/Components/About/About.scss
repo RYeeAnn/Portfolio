@@ -2,131 +2,105 @@
 @use "../../partials/variables.scss" as *;
 
 .about {
+  padding: 2rem;
 
-    &__container {
-        font-size: 14px;
-        text-align: center;
-        border: 2px solid transparent;
-        margin: 64px 0px 64px 0px;
-        overflow: hidden;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        background-color: white;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
-        @include tablet {
-            align-items: center;
-            font-size: 16px;
-            margin: 64px 16px 64px 16px;
-        }
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 
-        @include desktop {
-            margin: 64px 115px 64px 115px;
-        }
+  &__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  &__profile-pic {
+    width: 180px;
+    height: 260px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  &__info-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 6px 0;
+    font-size: 15px;
+
+    img {
+      width: 18px;
+      height: 18px;
     }
 
-    &__image {
-        width: 200px;
-        height: 350px;
-        margin: 16px;
-        border-radius: 50px;
-    }
+    a {
+      color: #007bff;
+      text-decoration: none;
 
-    &__information {
-        @include tablet {
-            display: flex;
-        }
-    }
-
-    &__paragraphs {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        p {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s, color 0.2s;
-
-            &:hover {
-                transform: scale(1.05);
-                color: rgb(35, 172, 240);
-            }
-
-            &:active {
-                transform: scale(0.95);
-            }
-        }
-
-        @include tablet {
-            padding-top: 16px;
-            width: 200px;
-            align-items: start;
-        }
-    }
-
-    &__icons {
-        width: 20px;
-    }
-
-    &__list {
-        list-style: none;
-        font-size: 12px;
-    }
-
-    &__title {
-        text-align: center;
-        padding-top: 32px;
+      &:hover {
         text-decoration: underline;
-        text-decoration-color: rgb(35, 172, 218);
-        text-underline-offset: 8px;
-        letter-spacing: 2px;
+      }
+    }
+  }
 
-        @include tablet {
-            padding-top: 0;
-        }
+  &__right {
+    flex: 2;
+    padding: 0 1rem;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    border-left: 6px solid #00aaff;
+    padding-left: 12px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  &__job-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
     }
 
-    &__text p {
-        line-height: 1.2rem;
-        margin-bottom: 12px;
+    .job-title {
+      font-weight: 600;
+      font-size: 1.1rem;
     }
 
-    &__inside-container {
-        @include tablet {
-            display: flex;
-            gap: 2rem;
-        }
+    .job-dates {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 8px;
     }
 
-    &__experience {
-        font-family: 'Roboto', sans-serif;
-        text-align: start;
-        margin-left: 16px;
-        margin-right: 16px;
-
-        @include tablet {
-            margin-right: 32px;
-        }
+    p {
+      margin: 0.3rem 0;
+      line-height: 1.5rem;
     }
 
-    &__blog {
-        font-size: 1.5rem;
-        text-align: center;
-        color: #333;
-        transition: color 0.3s ease, transform 0.3s ease;
-
-        &:hover {
-            color: #0073e6;
-            transform: scale(1.05);
-        }
-
-        b {
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-        }
+    a {
+      color: #00aaff;
+      text-decoration: underline;
     }
+  }
 }

@@ -24,7 +24,7 @@ function Projects() {
               <h3>Townhall</h3>
               <p>A full-stack community platform built for volunteer collaboration, featuring user onboarding, post/comment creation, media uploads, and more. I led API development, frontend UI implementation from Figma, and helped architect the backend using Django with a layered structure.</p>
               <p><b>Python, Django, Django Channels, React/Next.js, JavaScript, REST APIs, PostgreSQL/SQLite, Render, WebSockets, Redis, Netlify, Cloudinary</b></p>
-              <p><a href="https://atriacoop.netlify.app/">Deployed MVP</a></p>
+              <p><a href="https://atriacoop.netlify.app/">Website</a></p>
             </div>
           </div>
 
@@ -115,7 +115,7 @@ function Projects() {
             </div>
           </div>
 
-          <div className="projects__card">
+          {/* <div className="projects__card">
             <img src={brainflix} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>BrainFlix</h3>
@@ -124,7 +124,7 @@ function Projects() {
               <p><a href="https://github.com/RYeeAnn/brainstation-BrainFlix">Click here for the front-end repo</a></p>
               <p><a href="https://github.com/RYeeAnn/brainstation-BrainFlix-api">Click here for the back-end repo</a></p>
             </div>
-          </div>
+          </div> */}
 
           {/* <div className="projects__card">
             <img src={bandsite} alt="Project" className="projects__image" />
@@ -136,7 +136,7 @@ function Projects() {
             </div>
           </div> */}
 
-          <div className="projects__card">
+          {/* <div className="projects__card">
             <img src={instock} alt="Project" className="projects__image" />
             <div className="projects__info">
               <h3>Instock</h3>
@@ -145,7 +145,7 @@ function Projects() {
               <p><a href="https://github.com/RYeeAnn/brainstation-instock">Click here for the front-end repo</a></p>
               <p><a href="https://github.com/RYeeAnn/brainstation-instock-server">Click here for the back-end repo</a></p>
             </div>
-          </div>  
+          </div>   */}
         </div>
       </div>
     </div>
