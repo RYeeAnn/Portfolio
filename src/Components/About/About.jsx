@@ -9,7 +9,7 @@ import linkedin from '../../assets/linkedin.png';
 import github from '../../assets/github.png';
 
 function About() {
-    const resumeLink = "https://drive.google.com/file/d/1WmKGiLJ194f2dC2XvqkPaCvsA2UAlauE/view?usp=sharing";
+    const resumeLink = "https://drive.google.com/file/d/1SBqvBvS_H9eLMScSFnNsdtIoQGz8JRaB/view?usp=sharing";
     const linkedinLink = "https://www.linkedin.com/in/ryeean/";
     const githubLink = "https://github.com/RYeeAnn";
 
@@ -69,7 +69,7 @@ function About() {
                         <p className="job-title">Sniff & Bark — Web Developer</p>
                         <p className="job-dates">Feb 2024 – May 2024</p>
                         <p>
-                            Improved Shopify site performance by 50% and built tools for order automation, pricing logic, and GDPR compliance using JavaScript and XLSX exports.
+                            Built custom features and internal tools for a Shopify-based e-commerce store, including solutions for order automation, dynamic pricing, and GDPR compliance, using JavaScript and XLSX integrations.
                         </p>
                     </div>
                 </div>

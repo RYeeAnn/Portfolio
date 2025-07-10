@@ -8,7 +8,7 @@ import cruisinVideo from '../../assets/cruisinVideo.mp4'
 import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
-import CruisinV2 from '../../assets/cruisinv2.png'
+import Speedie from '../../assets/speedie.png'
 import Atria from '../../assets/Atria.png'
 
 function Projects() {
@@ -29,13 +29,12 @@ function Projects() {
           </div>
 
         <div className="projects__card">
-            <img src={CruisinV2} alt="Project" className="projects__image" />
+            <img src={Speedie} alt="Project" className="projects__image" />
             <div className="projects__info">
-              <h3>CruisinV2</h3>
-              <p>An enhanced version of my original Cruisin project. This web application offers solution for managing car maintenance questions with full CRUD functionality and authentication. Additionally, it provides an interactive interface displaying warning lights allowing users to view detailed information about its meaning and significance.</p>
-              <p><b>C#, .NET Core, SQLite, HTML/CSS</b></p>
-              <p><a href="https://cruisinv2-52ad45691897.herokuapp.com/">Click here to see the project!</a></p>
-              <p><a href="https://github.com/RYeeAnn/CruisinV2">Click here for github repo</a></p>
+              <h3>Speedie</h3>
+              <p>Speedie is an app designed to help everyday drivers understand their car better. It features an interactive dashboard that explains vehicle warning lights with urgency levels, repair advice, and educational videos. Speedie also includes a playful radial menu that lays the foundation for future tools like a service scheduler, AI mechanic assistant, and mileage tracker.</p>
+              <p><b>React, TypeScript, Tailwind</b></p>
+              <p><a href="https://speedie.vercel.app/">Website</a></p>
             </div>
           </div>
 
