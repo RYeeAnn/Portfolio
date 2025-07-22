@@ -89,7 +89,7 @@ function Contact() {
 
           <div className="contact__info">
             <p><img src={name} alt="Name" /><a href="/">Ryan Yee</a></p>
-            <p><a href='/blog'>Blog</a></p>
+            {/* <p><a href='/blog'>Blog</a></p> */}
             <p><img src={email} alt="Email" /><a href={emailLink}>ryeean16@gmail.com</a></p>
             <p><img src={phone} alt="Phone" /><a href={phoneLink}>(604) 728-3585</a></p>
             <p><img src={linkedin} alt="Linkedin" /><a href={linkedinLink}>Linkedin</a></p>

@@ -3,7 +3,7 @@ import './Hero.scss';
 import TypingAnimation from '../TypingAnimation/TypingAnimation';
 
 function Hero() {
-  const jobTitles = ['I am a Software Developer based in Vancouver, BC.',];
+  const animation = ['A coffee enthusiast.', 'A car enthusiast.', 'A volleyball enjoyer.'];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,8 +19,11 @@ function Hero() {
     <div className="hero">
       <div className="hero__content">
         <div className="hero__title">
+          <div className="hero__title-static">
+            Hey there! I'm <span className="hero__name">Ryan Yee</span>
+          </div>
           <div className="hero__title-inner">
-            <TypingAnimation texts={['Hello and welcome to my portfolio!', ...jobTitles]} />
+            <TypingAnimation texts={['A software developer.', ...animation]} />
           </div>
         </div>
       </div>

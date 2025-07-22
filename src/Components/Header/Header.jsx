@@ -59,7 +59,7 @@ function Header() {
           offset={-150}
           className={activeSection === 'about' ? 'clickable-link active' : 'clickable-link'}
         >
-          Work Experience
+          Experience
         </ScrollLink>
         <ScrollLink
           to="skills"
@@ -88,11 +88,11 @@ function Header() {
         >
           Contact
         </ScrollLink>
-        <div className="header__blog">
+        {/* <div className="header__blog">
           <a href="blog">
             <b>Blog</b>
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );
