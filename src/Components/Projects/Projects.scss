@@ -1,30 +1,33 @@
 @use "../../partials/mixins.scss" as *;
 @use "../../partials/variables.scss" as *;
 
-
 .projects {
+  background-color: var(--section-bg);
+  padding: 3rem 1rem;
 
   &__image {
-    border: 1px solid gray;
+    border: 1px solid var(--border-color);
     border-radius: 16px;
   }
   
-    &__container {
-    }
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   
-    &__title {
-      text-align: center;
-      margin: 50px;
-      padding-top: 2rem;
-      text-decoration: underline;
-      text-decoration-color: rgb(35, 172, 218);
-      text-underline-offset: 8px;
-      letter-spacing: 4px;
-    }
+  &__title {
+    text-align: center;
+    margin: 50px;
+    padding-top: 2rem;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-underline-offset: 8px;
+    letter-spacing: 4px;
+    color: var(--text-color);
+  }
   
-    &__card-container {
-
-      @include tablet {
+  &__card-container {
+    @include tablet {
       display: flex;
       justify-content: space-around;
       gap: 20px;
@@ -32,94 +35,96 @@
     }
   }
   
-    &__card {
-      background-color: white;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 2rem;
-      margin-left: 16px;
-      margin-right: 16px;
-      transition: transform 0.2s ease-in-out;
+  &__card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 2rem;
+    margin-left: 16px;
+    margin-right: 16px;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 2px 8px var(--shadow-color);
 
-      @include tablet {
-        width: calc(33.33% - 10px);
-      }
-
-      &:hover {
-        transform: scale(1.05);
-      }
-  
-      img.projects__image {
-        max-width: 100%;
-        height: auto;
-      }
-
-      video.projects__image {
-        max-width: 100%;
-        height: auto;
-      }
-  
-      &__info {
-        margin-top: 10px;
-  
-        h3 {
-          font-size: 18px;
-          margin: 10px 0;
-        }
-  
-        p {
-          font-size: 14px;
-        }
-      }
+    @include tablet {
+      width: calc(33.33% - 10px);
     }
 
-    &__info a {
-      text-decoration: none;
-      color: rgb(35, 172, 218);
-      position: relative;
-      transition: color 0.3s ease;
-    
-      &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background: rgb(124, 124, 210);
-        transform: scaleX(0);
-        transform-origin: 0 0;
-        transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    img.projects__image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    video.projects__image {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    &__info {
+      margin-top: 10px;
+  
+      h3 {
+        font-size: 18px;
+        margin: 10px 0;
+        color: var(--text-color);
       }
-    
-      &:hover {
-        color: rgb(131, 131, 229);
-      }
-    
-      &:hover::before {
-        transform: scaleX(1);
+  
+      p {
+        font-size: 14px;
+        color: var(--text-color);
       }
     }
-    
   }
 
-  .projects__tech-pill {
-    display: inline-block;
-    background: #81E6D9;
-    color: #222;
-    font-weight: 500;
-    font-size: 0.98rem;
-    padding: 0.22em 0.8em;
-    border-radius: 0;
-    margin: 0.12em 0.25em 0.12em 0;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-    letter-spacing: 0.01em;
-    transition: background 0.2s, color 0.2s;
+  &__info a {
+    text-decoration: none;
+    color: var(--accent-color);
+    position: relative;
+    transition: color 0.3s ease;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: var(--accent-color);
+      transform: scaleX(0);
+      transform-origin: 0 0;
+      transition: transform 0.3s ease;
+    }
+  
+    &:hover {
+      color: var(--accent-color);
+    }
+  
+    &:hover::before {
+      transform: scaleX(1);
+    }
   }
-  .projects__tech-pill:hover {
-    background: #4fd1c5;
-    color: #1a202c;
-  }
+}
+
+.projects__tech-pill {
+  display: inline-block;
+  background: var(--tech-pill-bg);
+  color: var(--tech-pill-text);
+  font-weight: 500;
+  font-size: 0.98rem;
+  padding: 0.22em 0.8em;
+  border-radius: 0;
+  margin: 0.12em 0.25em 0.12em 0;
+  box-shadow: 0 1px 4px var(--shadow-color);
+  letter-spacing: 0.01em;
+  transition: background 0.2s, color 0.2s;
+}
+.projects__tech-pill:hover {
+  background: #4fd1c5;
+  color: #1a202c;
+}
   
   
   

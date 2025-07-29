@@ -48,10 +48,10 @@ function Contact() {
     const githubLink = 'https://github.com/ryeeann';
 
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
 
       <div className="contact__container">
-        <div className="contact__card" id="contact">
+        <div className="contact__card">
           <h2 className='contact__title'>Want to talk?</h2>
           <p>Did you see anything that was of interest to you? Feel free to connect with me and let's chat :)</p>
           {/* <form onSubmit={handleSubmit}>
