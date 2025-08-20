@@ -11,7 +11,7 @@ function Header() {
   useEffect(() => {
     const handleScroll = () => {
       // Determine which section is currently in view based on scroll position
-      const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'projects', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element && isElementInViewport(element)) {
@@ -87,16 +87,7 @@ function Header() {
           >
             About
           </ScrollLink>
-          <ScrollLink
-            to="skills"
-            smooth={true}
-            duration={500}
-            offset={-80}
-            className={activeSection === 'skills' ? 'header__link active' : 'header__link'}
-            onClick={handleNavClick}
-          >
-            Skills
-          </ScrollLink>
+
           <ScrollLink
             to="projects"
             smooth={true}
@@ -154,16 +145,7 @@ function Header() {
           >
             About
           </ScrollLink>
-          <ScrollLink
-            to="skills"
-            smooth={true}
-            duration={500}
-            offset={-80}
-            className={activeSection === 'skills' ? 'header__mobile-link active' : 'header__mobile-link'}
-            onClick={handleNavClick}
-          >
-            Skills
-          </ScrollLink>
+
           <ScrollLink
             to="projects"
             smooth={true}
