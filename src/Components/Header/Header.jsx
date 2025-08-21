@@ -1,12 +1,14 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
 import './Header.scss';
 import { ThemeContext } from '../../App';
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const [activeSection, setActiveSection] = useState('hero');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,48 +16,40 @@ function Header() {
       const sections = ['hero', 'about', 'projects', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
-        if (element && isElementInViewport(element)) {
-          setActiveSection(section);
-          break;
-        }
+        if (element && isElementInViewport(element)) { setActiveSection(section); break; }
       }
-  
+
       // Check if scroll position is at the top, and if so, manually set activeSection to "hero"
-      if (window.scrollY === 0) {
-        setActiveSection('hero');
-      }
+      if (window.scrollY === 0) { setActiveSection('hero'); }
     };
-  
-    // Attach scroll event listener
-    window.addEventListener('scroll', handleScroll);
-  
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+
+    if (location.pathname === '/') {
+      window.addEventListener('scroll', handleScroll);
+    }
+    return () => { window.removeEventListener('scroll', handleScroll); };
+  }, [location.pathname]);
 
   // Function to check if an element is in the viewport
   const isElementInViewport = (element) => {
     const rect = element.getBoundingClientRect();
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    
-    // Check if element is partially visible in the viewport
-    return (
-      rect.top <= windowHeight * 0.3 && // Element top is in the upper 30% of viewport
-      rect.bottom >= windowHeight * 0.3  // Element bottom is below the upper 30% of viewport
-    );
+    return (rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.3);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => { setIsMenuOpen(!isMenuOpen); };
+  const closeMenu = () => { setIsMenuOpen(false); };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  const handleNavClick = () => {
+  const handleNavigateSection = (section) => {
+    const offsets = { about: -150, projects: -80, contact: 0, hero: -200 };
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: section, offset: offsets[section] || 0 } });
+    } else {
+      const el = document.getElementById(section);
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY + (offsets[section] || 0);
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
     closeMenu();
   };
 
@@ -63,51 +57,38 @@ function Header() {
     <header className="header">
       <nav className="header__nav">
         <div className="header__logo">
-          <ScrollLink
-            to="hero"
-            smooth={true}
-            duration={500}
-            offset={-200}
+          <RouterLink
+            to="/"
             className={activeSection === 'hero' ? 'header__link active' : 'header__link'}
-            onClick={handleNavClick}
+            onClick={closeMenu}
           >
             Ryan Yee
-          </ScrollLink>
+          </RouterLink>
         </div>
-        
+
         {/* Desktop Navigation */}
         <div className="header__links desktop-nav">
-          <ScrollLink
-            to="about"
-            smooth={true}
-            duration={500}
-            offset={-150}
+          <button
+            type="button"
             className={activeSection === 'about' ? 'header__link active' : 'header__link'}
-            onClick={handleNavClick}
+            onClick={() => handleNavigateSection('about')}
           >
             About
-          </ScrollLink>
-
-          <ScrollLink
-            to="projects"
-            smooth={true}
-            duration={500}
-            offset={-80}
+          </button>
+          <button
+            type="button"
             className={activeSection === 'projects' ? 'header__link active' : 'header__link'}
-            onClick={handleNavClick}
+            onClick={() => handleNavigateSection('projects')}
           >
             Projects
-          </ScrollLink>
-          <ScrollLink
-            to="contact"
-            smooth={true}
-            duration={500}
-            offset={0}
+          </button>
+          <button
+            type="button"
             className={activeSection === 'contact' ? 'header__link active' : 'header__link'}
-            onClick={handleNavClick}
+            onClick={() => handleNavigateSection('contact')}
           >
             Contact
-          </ScrollLink>
+          </button>
         </div>
 
         <div className="header__controls">
@@ -118,7 +99,7 @@ function Header() {
           >
             {isDarkMode ? '☀️' : '🌙'}
           </button>
-          
+
           {/* Mobile Burger Menu Button */}
           <button 
             className={`header__burger ${isMenuOpen ? 'open' : ''}`}
@@ -135,37 +116,27 @@ function Header() {
       {/* Mobile Menu Overlay */}
       <div className={`header__mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <div className="header__mobile-links">
-          <ScrollLink
-            to="about"
-            smooth={true}
-            duration={500}
-            offset={-150}
+          <button
+            type="button"
             className={activeSection === 'about' ? 'header__mobile-link active' : 'header__mobile-link'}
-            onClick={handleNavClick}
+            onClick={() => handleNavigateSection('about')}
           >
             About
-          </ScrollLink>
-
-          <ScrollLink
-            to="projects"
-            smooth={true}
-            duration={500}
-            offset={-80}
+          </button>
+          <button
+            type="button"
             className={activeSection === 'projects' ? 'header__mobile-link active' : 'header__mobile-link'}
-            onClick={handleNavClick}
+            onClick={() => handleNavigateSection('projects')}
           >
             Projects
-          </ScrollLink>
-          <ScrollLink
-            to="contact"
-            smooth={true}
-            duration={500}
-            offset={0}
+          </button>
+          <button
+            type="button"
             className={activeSection === 'contact' ? 'header__mobile-link active' : 'header__mobile-link'}
-            onClick={handleNavClick}
+            onClick={() => handleNavigateSection('contact')}
           >
             Contact
-          </ScrollLink>
+          </button>
         </div>
       </div>
     </header>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.scss';
 import Header from './Components/Header/Header';
 import Hero from './Components/Hero/Hero';
@@ -11,6 +11,24 @@ import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 
 export const ThemeContext = createContext();
+
+function ScrollHandler() {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === '/' && location.state && location.state.scrollTo) {
+      const { scrollTo, offset = 0 } = location.state;
+      // Give the DOM a tick to render
+      setTimeout(() => {
+        const el = document.getElementById(scrollTo);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY + offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 0);
+    }
+  }, [location]);
+  return null;
+}
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -30,6 +48,7 @@ function App() {
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
       <Router>
+        <ScrollHandler />
         <div className="App">
           <Header />
           <Routes>
