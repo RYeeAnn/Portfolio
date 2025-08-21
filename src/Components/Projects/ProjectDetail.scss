@@ -186,41 +186,21 @@
     }
   }
 
-  &__challenges {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+  &__story {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    border-left: 4px solid var(--accent-color);
   }
 
-  &__challenges-column {
-    h3 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--text-color);
-      margin-bottom: 1rem;
-      color: var(--accent-color);
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      color: var(--text-color);
-      line-height: 1.6;
-      margin-bottom: 0.75rem;
-      padding-left: 1.5rem;
-      position: relative;
-
-      &::before {
-        content: '•';
-        color: var(--accent-color);
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-      }
-    }
+  &__story-text {
+    color: var(--text-color);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    opacity: 0.95;
+    white-space: pre-line;
+    margin: 0;
+    text-align: justify;
   }
 
   &__gallery {
@@ -292,10 +272,7 @@
       justify-content: center;
     }
 
-    &__challenges {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
+
 
     &__section {
       padding: 1.5rem;

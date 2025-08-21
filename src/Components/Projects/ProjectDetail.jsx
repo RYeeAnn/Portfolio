@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProjectDetail.scss';
 import cruisin from '../../assets/cruisin.png';
-import cruisinVideo from '../../assets/cruisinVideo.mp4';
 import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
@@ -28,8 +27,17 @@ Key features include:
 • Responsive design for all devices`,
     techStack: ['Python', 'Django', 'Django Channels', 'React/Next.js', 'JavaScript', 'REST APIs', 'PostgreSQL/SQLite', 'Render', 'WebSockets', 'Redis', 'Netlify', 'Cloudinary'],
     liveUrl: 'https://atriacoop.netlify.app/',
-    githubUrl: 'https://github.com/RYeeAnn/townhall',
+    githubUrl: null,
     images: [Atria],
+    story: `Building Townhall was an exciting journey that pushed me to think about community engagement in entirely new ways. The biggest challenge was creating a platform that felt alive and responsive - users needed to see updates in real-time without constantly refreshing the page.
+
+I dove deep into WebSocket technology, learning Django Channels and implementing Redis as a backend to handle real-time communication. The moment I got the first real-time notification working, I knew we were onto something special.
+
+Another major hurdle was designing a database architecture that could scale. I spent countless hours planning the data relationships, implementing proper indexing, and creating a layered architecture that separated concerns cleanly. This wasn't just about making it work - it was about making it work well for years to come.
+
+The most rewarding challenge was creating an interface that non-technical users could navigate intuitively. I conducted user research, created multiple design iterations, and tested everything thoroughly. Seeing volunteers easily navigate the platform for the first time made all the late nights worth it.
+
+This project taught me that great software isn't just about clean code - it's about understanding your users, planning for scale, and creating experiences that bring people together.`,
     challenges: [
       'Implementing real-time features with WebSockets',
       'Designing a scalable database architecture',
@@ -61,6 +69,15 @@ Key features include:
     liveUrl: 'https://speedie.vercel.app/',
     githubUrl: 'https://github.com/RYeeAnn/speedie',
     images: [Speedie],
+    story: `Speedie was born from a simple frustration - watching friends panic when their dashboard lit up with warning lights they didn't understand. I wanted to create something that would turn that moment of confusion into confidence.
+
+The biggest challenge was taking complex automotive information and making it digestible for everyday drivers. I spent hours researching warning lights, talking to mechanics, and understanding what information drivers actually need in those stressful moments. The solution was progressive disclosure - showing the most critical information first, then allowing users to dive deeper if they want to learn more.
+
+Designing the component architecture was another interesting puzzle. I wanted the app to be easily expandable for future features like service scheduling and AI assistance. Using TypeScript gave me the confidence to refactor and expand without breaking existing functionality.
+
+Accessibility was non-negotiable for me. This app needed to work for everyone, whether they were using screen readers, navigating with keyboards, or had visual impairments. I tested with accessibility tools, implemented proper ARIA labels, and ensured the color contrast met WCAG guidelines.
+
+What I love most about Speedie is how it transforms a moment of automotive anxiety into empowerment. It's not just about fixing cars - it's about giving people the knowledge to make informed decisions about their safety.`,
     challenges: [
       'Creating an intuitive interface for complex automotive information',
       'Designing a scalable component architecture',
@@ -278,26 +295,25 @@ function ProjectDetail() {
           </div>
         </div>
 
-        {/* Challenges & Solutions */}
+        {/* Project Story */}
         <div className="project-detail__section">
-          <h2 className="project-detail__section-title">Challenges & Solutions</h2>
-          <div className="project-detail__challenges">
-            <div className="project-detail__challenges-column">
-              <h3>Challenges</h3>
-              <ul>
-                {project.challenges.map((challenge, index) => (
-                  <li key={index}>{challenge}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="project-detail__challenges-column">
-              <h3>Solutions</h3>
-              <ul>
-                {project.solutions.map((solution, index) => (
-                  <li key={index}>{solution}</li>
-                ))}
-              </ul>
-            </div>
+          <h2 className="project-detail__section-title">The Journey</h2>
+          <div className="project-detail__story">
+            <p className="project-detail__story-text">
+              {project.story || `Building ${project.title} presented several interesting challenges that pushed my skills and creativity. ${project.challenges.map((challenge, index) => 
+                index === 0 ? `The first major hurdle was ${challenge.toLowerCase()}. ` :
+                index === project.challenges.length - 1 ? `Finally, I had to tackle ${challenge.toLowerCase()}. ` :
+                `Then came ${challenge.toLowerCase()}. `
+              ).join('')}
+              
+              ${project.solutions.map((solution, index) => 
+                index === 0 ? `To overcome these challenges, I ${solution.toLowerCase()}. ` :
+                index === project.solutions.length - 1 ? `Ultimately, I ${solution.toLowerCase()}, which proved to be the right approach.` :
+                `I also ${solution.toLowerCase()}. `
+              ).join('')}
+              
+              This project taught me valuable lessons about ${project.lessons || 'problem-solving, technical implementation, and user experience design'}, and I'm proud of how it all came together.`}
+            </p>
           </div>
         </div>
 
