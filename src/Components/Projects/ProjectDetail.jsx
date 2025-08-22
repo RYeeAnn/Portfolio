@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProjectDetail.scss';
 import cruisin from '../../assets/cruisin.png';
@@ -7,6 +7,18 @@ import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
 import Speedie from '../../assets/speedie.png';
 import Atria from '../../assets/Atria.png';
+// New screenshots
+import Atria1 from '../../assets/Atria1.png';
+import Atria2 from '../../assets/Atria2.png';
+import Atria3 from '../../assets/Atria3.png';
+import Atria4 from '../../assets/Atria4.png';
+import Atria5 from '../../assets/Atria5.png';
+import Atria6 from '../../assets/Atria6.png';
+import Atria7 from '../../assets/Atria7.png';
+import Speedie2 from '../../assets/Speedie2.png';
+import Speedie3 from '../../assets/Speedie3.png';
+import Speedie4 from '../../assets/Speedie4.png';
+import Speedie5 from '../../assets/Speedie5.png';
 
 // Project data with optional enhanced details
 const projectData = {
@@ -23,7 +35,7 @@ Key features include:\n• User onboarding and profile management\n• Real-time
 		techStack: ['Python', 'Django', 'Django Channels', 'React/Next.js', 'JavaScript', 'REST APIs', 'PostgreSQL/SQLite', 'Render', 'WebSockets', 'Redis', 'Netlify', 'Cloudinary'],
 		liveUrl: 'https://atriacoop.netlify.app/',
 		githubUrl: null,
-		images: [Atria],
+		images: [Atria, Atria1, Atria2, Atria3, Atria4, Atria5, Atria6, Atria7],
 		story: `Building Townhall was an exciting journey that pushed me to think about community engagement in entirely new ways. The biggest challenge was creating a platform that felt alive and responsive - users needed to see updates in real-time without constantly refreshing the page.
 
 I dove deep into WebSocket technology, learning Django Channels and implementing Redis as a backend to handle real-time communication. The moment I got the first real-time notification working, I knew we were onto something special.
@@ -66,7 +78,7 @@ I designed and developed the entire application with a focus on user experience 
 		techStack: ['React', 'TypeScript', 'Tailwind CSS'],
 		liveUrl: 'https://speedie.vercel.app/',
 		githubUrl: 'https://github.com/RYeeAnn/speedie',
-		images: [Speedie],
+		images: [Speedie, Speedie2, Speedie3, Speedie4, Speedie5],
 		story: `Speedie was born from a simple frustration - watching friends panic when their dashboard lit up with warning lights they didn't understand. I wanted to create something that would turn that moment of confusion into confidence.
 
 The biggest challenge was taking complex automotive information and making it digestible for everyday drivers. I spent hours researching warning lights, talking to mechanics, and understanding what information drivers actually need in those stressful moments. The solution was progressive disclosure - showing the most critical information first, then allowing users to dive deeper if they want to learn more.
@@ -149,12 +161,28 @@ What I love most about Speedie is how it transforms a moment of automotive anxie
 
 function ProjectDetail() {
 	const { projectId } = useParams();
-	const project = projectData[projectId];
+	const [project, setProject] = useState(null);
+	const [selectedImage, setSelectedImage] = useState(null);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	// Scroll to top when project changes
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [projectId]);
+
+	useEffect(() => {
+		setProject(projectData[projectId]);
+	}, [projectId]);
+
+	const openImageModal = (image) => {
+		setSelectedImage(image);
+		setIsModalOpen(true);
+	};
+
+	const closeImageModal = () => {
+		setIsModalOpen(false);
+		setSelectedImage(null);
+	};
 
 	if (!project) {
 		return (
@@ -314,7 +342,19 @@ function ProjectDetail() {
 								<h2 className="project-detail__section-title">Gallery</h2>
 								<div className="project-detail__gallery">
 									{project.images.map((image, index) => (
-										<div key={index} className="project-detail__gallery-item">
+										<div 
+											key={index} 
+											className="project-detail__gallery-item"
+											onClick={() => openImageModal(image)}
+											role="button"
+											tabIndex={0}
+											onKeyDown={(e) => {
+												if (e.key === 'Enter' || e.key === ' ') {
+													e.preventDefault();
+													openImageModal(image);
+												}
+											}}
+										>
 											<img src={image} alt={`${project.title} screenshot ${index + 1}`} />
 										</div>
 									))}
@@ -332,6 +372,26 @@ function ProjectDetail() {
 					</main>
 				</div>
 			</div>
+
+			{/* Image Modal */}
+			{isModalOpen && selectedImage && (
+				<div className="project-detail__modal-overlay" onClick={closeImageModal}>
+					<div className="project-detail__modal-content" onClick={(e) => e.stopPropagation()}>
+						<button 
+							className="project-detail__modal-close"
+							onClick={closeImageModal}
+							aria-label="Close modal"
+						>
+							×
+						</button>
+						<img 
+							src={selectedImage} 
+							alt="Full size project screenshot" 
+							className="project-detail__modal-image"
+						/>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }
