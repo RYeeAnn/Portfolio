@@ -4,6 +4,7 @@ import './App.scss';
 import Header from './Components/Header/Header';
 import Hero from './Components/Hero/Hero';
 import About from './Components/About/About';
+import AboutPage from './Components/About/AboutPage';
 import Skills from './Components/Skills/Skills';
 import Projects from './Components/Projects/Projects';
 import ProjectDetail from './Components/Projects/ProjectDetail';
@@ -61,6 +62,7 @@ function App() {
                 <Contact />
               </>
             } />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/project/:projectId" element={<ProjectDetail />} />
           </Routes>
           <Footer />

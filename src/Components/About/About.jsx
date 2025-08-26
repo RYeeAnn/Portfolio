@@ -95,7 +95,7 @@ function About() {
 
                 {/* Experience Section - Right Side */}
                 <div className="about__experience">
-                    <h2 className="about__section-title">Experience</h2>
+                    <h2 className="about__section-title">Professional Experience</h2>
                     
                     <div className="experience__timeline">
                         {experiences.map((experience) => (

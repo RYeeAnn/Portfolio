@@ -13,7 +13,7 @@ function Header() {
   useEffect(() => {
     const handleScroll = () => {
       // Determine which section is currently in view based on scroll position
-      const sections = ['hero', 'about', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element && isElementInViewport(element)) { setActiveSection(section); break; }
@@ -40,7 +40,7 @@ function Header() {
   const closeMenu = () => { setIsMenuOpen(false); };
 
   const handleNavigateSection = (section) => {
-    const offsets = { about: -150, projects: -80, contact: 0, hero: -200 };
+    const offsets = { about: -150, skills: -80, projects: -80, contact: 0, hero: -200 };
     if (location.pathname !== '/') {
       navigate('/', { state: { scrollTo: section, offset: offsets[section] || 0 } });
     } else {
@@ -68,12 +68,26 @@ function Header() {
 
         {/* Desktop Navigation */}
         <div className="header__links desktop-nav">
+          <RouterLink
+            to="/about"
+            className="header__link"
+            onClick={closeMenu}
+          >
+            About
+          </RouterLink>
           <button
             type="button"
             className={activeSection === 'about' ? 'header__link active' : 'header__link'}
             onClick={() => handleNavigateSection('about')}
           >
-            About
+            Experience
+          </button>
+          <button
+            type="button"
+            className={activeSection === 'skills' ? 'header__link active' : 'header__link'}
+            onClick={() => handleNavigateSection('skills')}
+          >
+            Skills
           </button>
           <button
             type="button"
@@ -116,12 +130,26 @@ function Header() {
       {/* Mobile Menu Overlay */}
       <div className={`header__mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <div className="header__mobile-links">
+          <RouterLink
+            to="/about"
+            className="header__mobile-link"
+            onClick={closeMenu}
+          >
+            About
+          </RouterLink>
           <button
             type="button"
             className={activeSection === 'about' ? 'header__mobile-link active' : 'header__mobile-link'}
             onClick={() => handleNavigateSection('about')}
           >
-            About
+            Experience
+          </button>
+          <button
+            type="button"
+            className={activeSection === 'skills' ? 'header__mobile-link active' : 'header__link'}
+            onClick={() => handleNavigateSection('skills')}
+          >
+            Skills
           </button>
           <button
             type="button"
