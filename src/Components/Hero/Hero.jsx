@@ -27,13 +27,6 @@ function Hero() {
           </div>
         </div>
         
-        <div className="hero__subtitle">
-          <p className="hero__value-prop">
-            I build scalable solutions that connect communities and solve real-world problems. 
-            Passionate about creating intuitive user experiences and robust backend systems.
-          </p>
-        </div>
-
         <div className="hero__cta">
           <a href="#projects" className="hero__cta-button">
             View My Work
