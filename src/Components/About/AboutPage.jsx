@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './AboutPage.scss';
 
 function AboutPage() {
+    useEffect(() => {
+        // Always scroll to top when About page loads
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="about-page">
             <div className="about-page__container">

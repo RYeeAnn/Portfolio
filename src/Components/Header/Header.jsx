@@ -12,6 +12,12 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
+      // If we're on the About page, don't change active section
+      if (location.pathname === '/about') {
+        setActiveSection('about-page');
+        return;
+      }
+
       // Determine which section is currently in view based on scroll position
       const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
       for (const section of sections) {
@@ -25,7 +31,10 @@ function Header() {
 
     if (location.pathname === '/') {
       window.addEventListener('scroll', handleScroll);
+    } else if (location.pathname === '/about') {
+      setActiveSection('about-page');
     }
+    
     return () => { window.removeEventListener('scroll', handleScroll); };
   }, [location.pathname]);
 
@@ -60,7 +69,13 @@ function Header() {
           <RouterLink
             to="/"
             className={activeSection === 'hero' ? 'header__link active' : 'header__link'}
-            onClick={closeMenu}
+            onClick={() => {
+              closeMenu();
+              // If we're already on the home page, scroll to top
+              if (location.pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
           >
             Ryan Yee
           </RouterLink>
@@ -70,7 +85,7 @@ function Header() {
         <div className="header__links desktop-nav">
           <RouterLink
             to="/about"
-            className="header__link"
+            className={activeSection === 'about-page' ? 'header__link active' : 'header__link'}
             onClick={closeMenu}
           >
             About
@@ -132,7 +147,7 @@ function Header() {
         <div className="header__mobile-links">
           <RouterLink
             to="/about"
-            className="header__mobile-link"
+            className={activeSection === 'about-page' ? 'header__mobile-link active' : 'header__mobile-link'}
             onClick={closeMenu}
           >
             About
@@ -146,7 +161,7 @@ function Header() {
           </button>
           <button
             type="button"
-            className={activeSection === 'skills' ? 'header__mobile-link active' : 'header__link'}
+            className={activeSection === 'skills' ? 'header__mobile-link active' : 'header__mobile-link'}
             onClick={() => handleNavigateSection('skills')}
           >
             Skills
