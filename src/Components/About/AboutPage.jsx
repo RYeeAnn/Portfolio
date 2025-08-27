@@ -29,6 +29,10 @@ function AboutPage() {
                         <p>
                             In my spare time, you'll find me checking out new coffee shops around the city, working on my car, playing games or playing volleyball.
                         </p>
+
+                        <p>
+                            I hand-coded this portfolio using HTML, CSS, and JavaScript to showcase my journey as a software developer.
+                        </p>
                         
                         <p className="about-page__location">
                             Based in Vancouver, BC
