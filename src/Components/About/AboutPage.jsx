@@ -18,54 +18,37 @@ function AboutPage() {
 
                 <div className="about-page__content">
                     <div className="about-page__story">
-                        <p>
-                            Hey there! I'm Ryan, a software developer based in Vancouver, BC. My path into tech wasn't exactly the typical route. I studied Electrical Engineering at UBC and worked in the automotive industry before jumping into software. That switch happened after I did a 12-week bootcamp at BrainStation, and that's what got me started on this path.
-                        </p>
+                        <div className="about-page__story-section">
+                            <h2 className="about-page__story-heading">My Journey</h2>
+                            <p>
+                                Hey there! I'm Ryan, a software developer based in Vancouver, BC. My path into tech wasn't exactly the typical route. I studied Electrical Engineering at UBC and worked in the automotive industry before jumping into software. That switch happened after I did a 12-week bootcamp at BrainStation, and that's what got me started on this path.
+                            </p>
+                        </div>
                         
-                        <p>
-                            Since then I've built stuff like a community platform for volunteers, tools that help drivers understand their cars better, and some fun learning games. What I really love is creating things that people actually find useful and enjoy using.
-                        </p>
+                        <div className="about-page__story-section">
+                            <h2 className="about-page__story-heading">What I Build</h2>
+                            <p>
+                                Since then I've built stuff like a community platform for volunteers, tools that help drivers understand their cars better, and some fun learning games. What I really love is creating things that people actually find useful and enjoy using.
+                            </p>
+                        </div>
                         
-                        <p>
-                            In my spare time, you'll find me checking out new coffee shops around the city, working on my car, playing games or playing volleyball.
-                        </p>
+                        <div className="about-page__story-section">
+                            <h2 className="about-page__story-heading">Beyond Code</h2>
+                            <p>
+                                In my spare time, you'll find me checking out new coffee shops around the city, working on my car, playing games, playing badminton, or playing volleyball.
+                            </p>
+                        </div>
 
-                        <p>
-                            I hand-coded this portfolio using HTML, CSS, and JavaScript to showcase my journey as a software developer.
-                        </p>
+                        <div className="about-page__story-section">
+                            <h2 className="about-page__story-heading">This Portfolio</h2>
+                            <p>
+                                I hand-coded this portfolio using HTML, CSS, and JavaScript to showcase my journey as a software developer.
+                            </p>
+                        </div>
                         
-                        <p className="about-page__location">
+                        <div className="about-page__location">
+                            <span className="about-page__location-icon">📍</span>
                             Based in Vancouver, BC
-                        </p>
-                    </div>
-
-                    <div className="about-page__mission">
-                        <h3 className="about-page__mission-title">What I Care About</h3>
-                        
-                        <div className="about-page__values">
-                            <div className="about-page__value-item">
-                                <div className="about-page__value-icon">🎯</div>
-                                <div className="about-page__value-content">
-                                    <h4>Solving Real Problems</h4>
-                                    <p>I love figuring out how to make things work better and actually help people in their daily lives.</p>
-                                </div>
-                            </div>
-                            
-                            <div className="about-page__value-item">
-                                <div className="about-page__value-icon">🤝</div>
-                                <div className="about-page__value-content">
-                                    <h4>Building Community</h4>
-                                    <p>Creating tools and platforms that bring people together and make it easier to work as a team.</p>
-                                </div>
-                            </div>
-                            
-                            <div className="about-page__value-item">
-                                <div className="about-page__value-icon">👤</div>
-                                <div className="about-page__value-content">
-                                    <h4>User-First Design</h4>
-                                    <p>Making sure the stuff I build is actually easy and enjoyable for people to use.</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-// import axios from 'axios';
 import './Contact.scss';
 import name from '../../assets/name.png';
 import email from '../../assets/email.png';
@@ -8,92 +7,101 @@ import linkedin from '../../assets/linkedin.png';
 import github from '../../assets/github.png';
 
 function Contact() {
-
-  // const [flashMessage, setFlashMessage] = useState('');
-  // const [formData, setFormData] = useState({ 
-  //   name: '', 
-  //   email: '', 
-  //   message: '' 
-  // });
-
-//   const handleInputChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-// };
-
-// const serverURL = 'https://ryanyee-portfolio-f1df33c2739f.herokuapp.com/submit_contact';
-
-// const handleSubmit = (event) => {
-//   event.preventDefault();
-//   axios.post(serverURL, formData)
-//     .then(response => {
-//         // Handle success
-//         console.log(response.data);
-//         setFlashMessage("Your message has been sent successfully!");
-//         setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
-
-//         // Reset form data to initial state
-//         setFormData({ name: '', email: '', message: '' });
-//     })
-//     .catch(error => {
-//         // Handle error
-//         console.error("Error:", error);
-//         setFlashMessage("Failed to send message.");
-//         setTimeout(() => setFlashMessage(''), 3000); // Hide after 3 seconds
-//     });
-// };
-
-    const emailLink = 'mailto:RYeeAn16@gmail.com';
-    const phoneLink = 'tel:+16047283585';
-    const linkedinLink = 'https://www.linkedin.com/in/ryeean';
-    const githubLink = 'https://github.com/ryeeann';
+  const contactInfo = [
+    {
+      icon: name,
+      label: 'Name',
+      value: 'Ryan Yee',
+      link: '/',
+      isInternal: true
+    },
+    {
+      icon: email,
+      label: 'Email',
+      value: 'ryeean16@gmail.com',
+      link: 'mailto:RYeeAn16@gmail.com',
+      isInternal: false
+    },
+    {
+      icon: phone,
+      label: 'Phone',
+      value: '(604) 728-3585',
+      link: 'tel:+16047283585',
+      isInternal: false
+    },
+    {
+      icon: linkedin,
+      label: 'LinkedIn',
+      value: 'linkedin.com/in/ryeean',
+      link: 'https://www.linkedin.com/in/ryeean',
+      isInternal: false
+    },
+    {
+      icon: github,
+      label: 'GitHub',
+      value: 'github.com/ryeeann',
+      link: 'https://github.com/ryeeann',
+      isInternal: false
+    }
+  ];
 
   return (
     <div className="contact" id="contact">
-
       <div className="contact__container">
-        <div className="contact__card">
-          <h2 className='contact__title'>Want to talk?</h2>
-          <p>Did you see anything that was of interest to you? Feel free to connect with me and let's chat :)</p>
-          {/* <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    name="name" 
-                    value={formData.name} 
-                    onChange={handleInputChange} 
-                    placeholder="Your Name" 
-                    required
-                />
-                <input 
-                    type="email" 
-                    name="email" 
-                    value={formData.email} 
-                    onChange={handleInputChange} 
-                    placeholder="Your Email"
-                    required 
-                />
-                <textarea 
-                    name="message" 
-                    value={formData.message} 
-                    onChange={handleInputChange} 
-                    placeholder="Your Message"
-                    required
-                />
-                <button type="submit">Send</button>
-            </form> */}
+        <div className="contact__header">
+          <h2 className="contact__title">Let's Connect</h2>
+          <p className="contact__subtitle">
+            Ready to discuss opportunities or just chat about tech?
+          </p>
+        </div>
 
-            {/* {flashMessage && (
-      <div className={`flash-message ${flashMessage ? 'show' : ''}`}>
-        {flashMessage}
-      </div>
-    )} */}
+        <div className="contact__content">
+          <div className="contact__card">
+            <div className="contact__card-header">
+              <h3 className="contact__card-title">Get in Touch</h3>
+              <p className="contact__card-description">
+                Have a project in mind or want to say hello? I'd love to hear from you.
+              </p>
+            </div>
 
-          <div className="contact__info">
-            <p><img src={name} alt="Name" /><a href="/">Ryan Yee</a></p>
-            {/* <p><a href='/blog'>Blog</a></p> */}
-            <p><img src={email} alt="Email" /><a href={emailLink}>ryeean16@gmail.com</a></p>
-            <p><img src={phone} alt="Phone" /><a href={phoneLink}>(604) 728-3585</a></p>
-            <p><img src={linkedin} alt="Linkedin" /><a href={linkedinLink}>Linkedin</a></p>
-            <p><img src={github} alt="Github" /><a href={githubLink}>Github</a></p>
+            <div className="contact__info">
+              {contactInfo.map((info, index) => (
+                <div key={index} className="contact__info-item">
+                  <div className="contact__info-icon">
+                    <img src={info.icon} alt={info.label} />
+                  </div>
+                  <div className="contact__info-content">
+                    <span className="contact__info-label">{info.label}</span>
+                    {info.isInternal ? (
+                      <a href={info.link} className="contact__info-link">
+                        {info.value}
+                      </a>
+                    ) : (
+                      <a 
+                        href={info.link} 
+                        className="contact__info-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {info.value}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="contact__cta">
+              <a 
+                href="mailto:ryeean16@gmail.com" 
+                className="contact__cta-button"
+              >
+                Send me an email
+              </a>
+              <p className="contact__cta-note">
+                I typically respond within 24 hours
+              </p>
+            </div>
           </div>
         </div>
       </div>

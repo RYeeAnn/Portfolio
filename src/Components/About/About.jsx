@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './About.scss';
-import ryan from '../../assets/ryan.jpg';
 import location from '../../assets/location.png';
 import resume from '../../assets/resume.png';
 import linkedin from '../../assets/linkedin.png';
@@ -64,10 +63,6 @@ function About() {
             <div className="about__container">
                 {/* Profile Section - Left Side */}
                 <div className="about__profile">
-                    <div className="about__profile-image">
-                        <img src={ryan} alt="Ryan Yee" />
-                    </div>
-                    
                     <div className="about__profile-info">
                         <h1 className="about__name">Ryan Yee</h1>
                         <h2 className="about__title">Software Developer</h2>
