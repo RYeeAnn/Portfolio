@@ -30,7 +30,7 @@ function Hero() {
           
           <p className="hero__description">
             I build digital experiences that solve real problems and bring people together. 
-            Based in Vancouver, BC, crafting code with purpose.
+            Based in Vancouver, BC.
           </p>
           
           <div className="hero__cta">

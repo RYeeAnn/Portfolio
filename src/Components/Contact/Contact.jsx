@@ -49,9 +49,9 @@ function Contact() {
     <div className="contact" id="contact">
       <div className="contact__container">
         <div className="contact__header">
-          <h2 className="contact__title">Let's Connect</h2>
+          <h2 className="contact__title">Let's Connect!</h2>
           <p className="contact__subtitle">
-            Ready to discuss opportunities or just chat about tech?
+            Would love to meet new people :)
           </p>
         </div>
 
@@ -60,7 +60,7 @@ function Contact() {
             <div className="contact__card-header">
               <h3 className="contact__card-title">Get in Touch</h3>
               <p className="contact__card-description">
-                Have a project in mind or want to say hello? I'd love to hear from you.
+                Have a project in mind or want to say hello? I'd love to hear from you!
               </p>
             </div>
 
