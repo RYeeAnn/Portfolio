@@ -5,10 +5,7 @@ import ryan from '../../assets/ryan.jpg';
 
 function Hero() {
   const animation = [
-    'A coffee enthusiast.',
-    'A car enthusiast.', 
-    'A volleyball enjoyer.',
-    'A problem solver.'
+    'Based in Vancouver, BC.',
   ];
 
   useEffect(() => {
@@ -30,7 +27,6 @@ function Hero() {
           
           <p className="hero__description">
             I build digital experiences that solve real problems and bring people together. 
-            Based in Vancouver, BC.
           </p>
           
           <div className="hero__cta">
