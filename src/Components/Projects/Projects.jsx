@@ -26,8 +26,8 @@ function Projects() {
         </div>
 
         <div className="projects__grid">
-          {/* Featured Project - Atria */}
-          <Link to="/project/townhall" className="projects__project projects__project--featured projects__project--linkable">
+          {/* Townhall Project */}
+          <Link to="/project/townhall" className="projects__project projects__project--linkable">
             <div className="projects__project-image">
               <img src={Atria} alt="Atria Townhall Platform" />
             </div>

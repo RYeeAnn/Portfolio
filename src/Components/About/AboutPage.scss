@@ -2,257 +2,137 @@
 @use "../../partials/variables.scss" as *;
 
 .about-page {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  background-color: var(--bg-color);
   min-height: 100vh;
-  padding: 2rem 1rem;
-  position: relative;
-  
-  // Modern background pattern
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  @media (min-width: 768px) {
-    padding: 3rem 2rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 4rem 3rem;
-  }
+  padding: 4rem 1rem;
 
   &__container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
   }
 
-  &__header {
+  &__content {
     text-align: center;
-    margin-bottom: 3rem;
-    
-    @media (min-width: 768px) {
-      margin-bottom: 4rem;
-    }
-  }
-
-  &__back-link {
-    display: inline-flex;
-    align-items: center;
-    color: #3b82f6;
-    text-decoration: none;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-    font-size: 0.875rem;
-    
-    @media (min-width: 768px) {
-      font-size: 1rem;
-    }
-
-    &:hover {
-      color: #2563eb;
-      transform: translateX(-4px);
-    }
   }
 
   &__title {
     font-size: 2.5rem;
-    color: #1e293b;
-    margin: 0;
-    font-weight: 700;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 4rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &__main {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__image {
+    flex-shrink: 0;
+    width: 300px;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 4px solid var(--border-color);
     
-    @media (min-width: 768px) {
-      font-size: 3.5rem;
-    }
-    
-    @media (min-width: 1024px) {
-      font-size: 4rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
   }
 
-  &__content {
-    display: flex;
-    flex-direction: column;
+  &__text {
+    flex: 1;
+    padding-top: 2rem;
   }
 
   &__story {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+    margin-bottom: 3rem;
     
-    @media (min-width: 768px) {
-      gap: 3rem;
-    }
-  }
-
-  &__story-section {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease forwards;
-    
-    @for $i from 1 through 4 {
-      &:nth-child(#{$i}) {
-        animation-delay: #{0.2 + ($i * 0.1)}s;
+    p {
+      font-size: 1.1rem;
+      color: var(--text-color);
+      opacity: 0.8;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      
+      &:last-child {
+        margin-bottom: 0;
       }
-    }
-  }
-
-  &__story-heading {
-    font-size: 1.5rem;
-    color: #3b82f6;
-    margin: 0 0 1rem 0;
-    font-weight: 600;
-    position: relative;
-    
-    @media (min-width: 768px) {
-      font-size: 1.75rem;
-      margin-bottom: 1.25rem;
-    }
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -0.5rem;
-      left: 0;
-      width: 3rem;
-      height: 2px;
-      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-      border-radius: 1px;
-    }
-  }
-
-  &__story-section p {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: #475569;
-    margin: 0;
-    text-align: left;
-    
-    @media (min-width: 768px) {
-      font-size: 1.25rem;
-      line-height: 1.8;
     }
   }
 
   &__location {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.125rem;
-    color: #64748b;
-    font-weight: 500;
-    margin-top: 1rem;
-    padding: 1rem 1.5rem;
-    background: rgba(59, 130, 246, 0.05);
-    border-radius: 0.75rem;
-    border: 1px solid rgba(59, 130, 246, 0.1);
-    align-self: flex-start;
+    font-style: italic;
     
-    @media (min-width: 768px) {
-      font-size: 1.25rem;
-      padding: 1.25rem 2rem;
-    }
-  }
-
-  &__location-icon {
-    font-size: 1.25rem;
-    
-    @media (min-width: 768px) {
-      font-size: 1.5rem;
+    span {
+      font-size: 1rem;
+      color: var(--text-color);
+      opacity: 0.7;
+      font-weight: 400;
     }
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Dark theme adjustments
-[data-theme="dark"] {
+// Responsive Design
+@media (max-width: 768px) {
   .about-page {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-    
-    &::before {
-      background-image: 
-        radial-gradient(circle at 25% 25%, rgba(96, 165, 250, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(167, 139, 250, 0.05) 0%, transparent 50%);
-    }
-    
-    &__title {
-      color: #f1f5f9;
-    }
-    
-    &__story-heading {
-      color: #60a5fa;
-      
-      &::after {
-        background: linear-gradient(90deg, #60a5fa, #a78bfa);
-      }
-    }
-    
-    &__story-section p {
-      color: #cbd5e1;
-    }
-    
-    &__location {
-      background: rgba(96, 165, 250, 0.1);
-      border-color: rgba(96, 165, 250, 0.2);
-      color: #94a3b8;
-    }
-  }
-}
-
-// Responsive adjustments
-@media (max-width: 767px) {
-  .about-page {
-    padding: 1.5rem 1rem;
-    
-    &__container {
-      max-width: 100%;
-    }
+    padding: 2rem 1rem;
 
     &__title {
       font-size: 2rem;
+      margin-bottom: 3rem;
     }
-    
-    &__story {
+
+    &__main {
+      flex-direction: column;
+      align-items: center;
       gap: 2rem;
+      text-align: center;
     }
-    
-    &__story-heading {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
+
+    &__image {
+      width: 250px;
+      height: 320px;
     }
-    
-    &__story-section p {
-      font-size: 1rem;
-      line-height: 1.6;
+
+    &__text {
+      padding-top: 0;
     }
-    
-    &__location {
-      font-size: 1rem;
-      padding: 0.875rem 1.25rem;
+
+    &__story {
+      margin-bottom: 2rem;
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding: 1.5rem 1rem;
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__image {
+      width: 200px;
+      height: 260px;
+    }
+
+    &__story p {
+      font-size: 0.95rem;
     }
   }
 } 

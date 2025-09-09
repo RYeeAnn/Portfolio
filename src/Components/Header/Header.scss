@@ -2,12 +2,13 @@
 @use "../../partials/variables.scss" as *;
 
 .header {
-  background-color: var(--card-bg);
-  box-shadow: 0 2px 8px var(--shadow-color);
+  background-color: var(--bg-color);
+  box-shadow: 0 1px 3px var(--shadow-color);
   position: sticky;
   top: 0;
   z-index: 1000;
   padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
 
   &__nav {
     max-width: 1200px;
@@ -22,10 +23,11 @@
     .header__link {
       color: var(--text-color);
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      font-family: 'Handlee', cursive, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
       cursor: pointer;
+      transition: color 0.2s ease;
       
       &:hover {
         color: var(--accent-color);
@@ -37,21 +39,29 @@
     }
   }
 
+  &__right-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
   &__links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     
     .header__link {
       color: var(--text-color);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s ease;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
       cursor: pointer;
       background: none;
       border: none;
       padding: 0;
       font: inherit;
       line-height: inherit;
+      position: relative;
       
       &:hover {
         color: var(--accent-color);
@@ -59,7 +69,17 @@
       
       &.active {
         color: var(--accent-color);
-        font-weight: 600;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color: var(--accent-color);
+          border-radius: 1px;
+        }
       }
     }
   }
@@ -71,22 +91,21 @@
   }
 
   &__theme-toggle {
-    background: none;
-    border: 2px solid var(--border-color);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    background-color: var(--card-bg);
+    transition: all 0.2s ease;
     
     &:hover {
       border-color: var(--accent-color);
-      transform: scale(1.1);
+      background-color: var(--border-color);
     }
   }
 
@@ -94,8 +113,8 @@
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -104,9 +123,9 @@
 
     span {
       width: 100%;
-      height: 3px;
+      height: 2px;
       background-color: var(--text-color);
-      border-radius: 2px;
+      border-radius: 1px;
       transition: all 0.3s ease;
       transform-origin: center;
     }
@@ -114,13 +133,13 @@
     &.open {
       span {
         &:first-child {
-          transform: rotate(45deg) translate(6px, 6px);
+          transform: rotate(45deg) translate(5px, 5px);
         }
         &:nth-child(2) {
           opacity: 0;
         }
         &:last-child {
-          transform: rotate(-45deg) translate(6px, -6px);
+          transform: rotate(-45deg) translate(5px, -5px);
         }
       }
     }
@@ -132,7 +151,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: var(--card-bg);
+    background-color: var(--bg-color);
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
@@ -155,9 +174,9 @@
   &__mobile-link {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
     cursor: pointer;
     background: none;
     border: none;
@@ -170,7 +189,6 @@
     
     &.active {
       color: var(--accent-color);
-      font-weight: 600;
     }
   }
 }
@@ -191,34 +209,3 @@
   }
 }
 
-.clickable-link {
-  cursor: pointer;
-  text-decoration: none;
-  color: #333;
-  position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background: blue;
-    transition: width 0.3s ease, background-color 0.3s ease;
-  }
-
-  &:hover {
-    color: rgb(35, 172, 218);
-  }
-
-  &:hover:before {
-    width: 100%;
-    background-color: rgb(35, 172, 218);
-  }
-}
-
-
-.clickable-link.active {
-  border-bottom: 2px solid rgb(35, 172, 218);
-}

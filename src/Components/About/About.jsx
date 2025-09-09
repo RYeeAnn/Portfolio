@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import './About.scss';
-import location from '../../assets/location.png';
-import resume from '../../assets/resume.png';
-import linkedin from '../../assets/linkedin.png';
-import github from '../../assets/github.png';
 import atriaLogo from '../../assets/atriaLogo.jpeg';
 import codeninjasLogo from '../../assets/codeninjasLogo.jpeg';
 import sniffandbarkLogo from '../../assets/sniffandbarkLogo.jpeg';
@@ -22,7 +18,7 @@ function About() {
         setSelectedExperience(null);
     };
 
-    // Experience data
+    // Experience data with full details for modal
     const experiences = [
         {
             id: 0,
@@ -30,8 +26,9 @@ function About() {
             company: 'Atria Community',
             dates: 'May 2024 – Present',
             logo: atriaLogo,
-            description: 'Led full-stack development of Townhall, a scalable volunteering platform connecting users to local community initiatives. Built 15+ RESTful APIs with Django, developed mobile-first UIs from Figma with Next.js, and shipped core features including onboarding, posts, comments, media uploads, and real-time chat using WebSockets and Redis.',
-            techStack: ['Python', 'Django', 'React', 'Next.js', 'JavaScript', 'PostgreSQL', 'Redis', 'REST APIs', 'Websockets', 'Cloudinary'],
+            description: 'Full-stack development of community platform with Django, React, and PostgreSQL',
+            fullDescription: 'Led full-stack development of Townhall, a scalable volunteering platform connecting users to local community initiatives. Built 15+ RESTful APIs with Django, developed mobile-first UIs from Figma with Next.js, and shipped core features including onboarding, posts, comments, media uploads, and real-time chat using WebSockets and Redis.',
+            techStack: ['Python', 'Django', 'React', 'Next.js', 'JavaScript', 'PostgreSQL', 'Redis', 'REST APIs', 'WebSockets', 'Cloudinary'],
             link: 'https://atriacoop.netlify.app'
         },
         {
@@ -40,7 +37,8 @@ function About() {
             company: 'Code Ninjas',
             dates: 'Sept 2024 – Present',
             logo: codeninjasLogo,
-            description: 'Teach kids aged 7–14 the foundations of JavaScript, Unity, and game development through hands-on lessons in a high-energy, mentor-style environment.',
+            description: 'Teaching JavaScript and Unity to kids aged 7-14',
+            fullDescription: 'Teach kids aged 7–14 the foundations of JavaScript, Unity, and game development through hands-on lessons in a high-energy, mentor-style environment.',
             techStack: ['JavaScript', 'Unity']
         },
         {
@@ -49,63 +47,38 @@ function About() {
             company: 'Sniff & Bark',
             dates: 'Feb 2024 – May 2024',
             logo: sniffandbarkLogo,
-            description: 'Built custom features and internal tools for a Shopify-based e-commerce store, including solutions for order automation, dynamic pricing, and GDPR compliance, using JavaScript and XLSX integrations.',
+            description: 'Built custom Shopify features and automation tools',
+            fullDescription: 'Built custom features and internal tools for a Shopify-based e-commerce store, including solutions for order automation, dynamic pricing, and GDPR compliance, using JavaScript and XLSX integrations.',
             techStack: ['JavaScript', 'Shopify', 'XLSX']
         }
     ];
 
-    const resumeLink = "https://drive.google.com/file/d/1SBqvBvS_H9eLMScSFnNsdtIoQGz8JRaB/view?usp=sharing";
-    const linkedinLink = "https://www.linkedin.com/in/ryeean/";
-    const githubLink = "https://github.com/RYeeAnn";
-
     return (
         <div className="about" id="about">
             <div className="about__container">
-                {/* Profile Section - Left Side */}
-                <div className="about__profile">
-                    <div className="about__profile-info">
-                        <h1 className="about__name">Ryan Yee</h1>
-                        <h2 className="about__title">Software Developer</h2>
-                        <p className="about__location">
-                            <img src={location} alt="Location" />
-                            Vancouver, BC
-                        </p>
-                        
-                        <div className="about__links">
-                            <a href={resumeLink} target="_blank" rel="noopener noreferrer" className="about__link">
-                                <img src={resume} alt="Resume" />
-                                Resume
-                            </a>
-                            <a href={linkedinLink} target="_blank" rel="noopener noreferrer" className="about__link">
-                                <img src={linkedin} alt="LinkedIn" />
-                                LinkedIn
-                            </a>
-                            <a href={githubLink} target="_blank" rel="noopener noreferrer" className="about__link">
-                                <img src={github} alt="GitHub" />
-                                GitHub
-                            </a>
-                        </div>
-                    </div>
+                <div className="about__header">
+                    <h2 className="about__title">Experience</h2>
+                    <p className="about__subtitle">Professional journey and key roles</p>
                 </div>
-
-                {/* Experience Section - Right Side */}
-                <div className="about__experience">
-                    <h2 className="about__section-title">Professional Experience</h2>
-                    
-                    <div className="experience__timeline">
+                
+                <div className="about__content">
+                    <div className="about__experience">
                         {experiences.map((experience) => (
                             <div key={experience.id} className="experience__item" onClick={() => handleExperienceClick(experience)}>
-                                <div className="experience__header">
-                                    <div className="experience__logo">
-                                        <img src={experience.logo} alt={experience.company} />
+                                <div className="experience__content">
+                                    <div className="experience__header">
+                                        <div className="experience__logo">
+                                            <img src={experience.logo} alt={experience.company} />
+                                        </div>
+                                        <div className="experience__details">
+                                            <h3 className="experience__role">{experience.role}</h3>
+                                            <span className="experience__dates">{experience.dates}</span>
+                                        </div>
                                     </div>
-                                    <div className="experience__details">
-                                        <h3 className="experience__role">{experience.role}</h3>
-                                        <p className="experience__company">{experience.company}</p>
-                                        <p className="experience__dates">{experience.dates}</p>
-                                    </div>
+                                    <p className="experience__company">{experience.company}</p>
+                                    <p className="experience__description">{experience.description}</p>
                                     <div className="experience__click-hint">
-                                        <span>Click to view details</span>
+                                        <span>Click to view more details</span>
                                     </div>
                                 </div>
                             </div>
@@ -137,12 +110,12 @@ function About() {
                             <p className="experience-modal__description">
                                 {selectedExperience.link ? (
                                     <>
-                                        {selectedExperience.description.split('Townhall')[0]}
+                                        {selectedExperience.fullDescription.split('Townhall')[0]}
                                         <a href={selectedExperience.link} target="_blank" rel="noopener noreferrer">Townhall</a>
-                                        {selectedExperience.description.split('Townhall')[1]}
+                                        {selectedExperience.fullDescription.split('Townhall')[1]}
                                     </>
                                 ) : (
-                                    selectedExperience.description
+                                    selectedExperience.fullDescription
                                 )}
                             </p>
                             

@@ -2,560 +2,458 @@
 @use '../../partials/variables' as *;
 
 .about {
-    padding: 80px 0;
-    background: var(--about-bg, #f8f9fa);
-    transition: background-color 0.3s ease;
+  background-color: var(--section-bg);
+  padding: 3rem 1rem;
+  
+  &__container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  &__title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+  
+  &__subtitle {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  &__experience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.experience {
+  &__item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    height: fit-content;
     
-    &__container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: grid;
-        grid-template-columns: 1fr 1.8fr;
-        gap: 80px;
-        align-items: start;
-        
-        @include mobile {
-            grid-template-columns: 1fr;
-            gap: 50px;
-            padding: 0 15px;
-        }
-        
-        @include tablet {
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-        }
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
+  }
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid var(--border-color);
     
-    // Profile Section
-    &__profile {
-        position: sticky;
-        top: 120px;
-        
-        @include mobile {
-            position: static;
-            text-align: center;
-            top: auto;
-        }
-        
-        &-image {
-            margin-bottom: 35px;
-            text-align: center;
-            
-            img {
-                width: 220px;
-                height: 220px;
-                border-radius: 50%;
-                object-fit: cover;
-                object-position: center top;
-                border: 5px solid var(--profile-border, #fff);
-                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-                
-                @include mobile {
-                    width: 160px;
-                    height: 160px;
-                }
-            }
-        }
-        
-        &-info {
-            .about__name {
-                font-size: 2.8rem;
-                font-weight: 700;
-                color: var(--text-primary, #2c3e50);
-                margin: 0 0 15px 0;
-                line-height: 1.1;
-                text-align: center;
-                
-                @include mobile {
-                    font-size: 2.2rem;
-                }
-            }
-            
-            .about__title {
-                font-size: 1.1rem;
-                font-weight: 600;
-                color: var(--text-secondary, #7f8c8d);
-                margin: 0 0 25px 0;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                text-align: center;
-            }
-            
-            .about__location {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 12px;
-                color: var(--text-secondary, #34495e);
-                font-size: 1rem;
-                margin: 0 0 35px 0;
-                
-                img {
-                    width: 18px;
-                    height: 18px;
-                    opacity: 0.8;
-                }
-            }
-        }
-        
-        .about__links {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            
-            .about__link {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 15px;
-                padding: 16px 24px;
-                background: var(--link-bg, #fff);
-                border-radius: 10px;
-                text-decoration: none;
-                color: var(--text-primary, #2c3e50);
-                font-weight: 500;
-                font-size: 1rem;
-                transition: all 0.3s ease;
-                box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-                border: 1px solid var(--link-border, #e9ecef);
-                
-                &:hover {
-                    transform: translateY(-3px);
-                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-                    background: var(--link-hover-bg, #f8f9fa);
-                }
-                
-                img {
-                    width: 20px;
-                    height: 20px;
-                    opacity: 0.8;
-                }
-                
-                @include mobile {
-                    padding: 14px 20px;
-                    font-size: 0.95rem;
-                }
-            }
-        }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    
-    // Experience Section
-    &__experience {
-        .about__section-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--text-primary, #2c3e50);
-            margin: 0 0 45px 0;
-            text-align: left;
-            
-            @include mobile {
-                font-size: 1.9rem;
-                margin-bottom: 35px;
-                text-align: center;
-            }
-        }
-        
-        .experience__timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            
-            @include mobile {
-                gap: 20px;
-            }
-        }
-        
-        .experience__item {
-            background: var(--card-bg, #fff);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-            border: 1px solid var(--card-border, #e9ecef);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            
-            &:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
-                background-color: var(--header-hover-bg, #f8f9fa);
-            }
-            
-            .experience__header {
-                display: flex;
-                align-items: center;
-                gap: 25px;
-                padding: 30px;
-                transition: background-color 0.3s ease;
-                
-                @include mobile {
-                    padding: 20px;
-                    gap: 15px;
-                    flex-wrap: wrap;
-                }
-                
-                .experience__logo {
-                    width: 70px;
-                    height: 70px;
-                    border-radius: 15px;
-                    overflow: hidden;
-                    flex-shrink: 0;
-                    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-                    
-                    @include mobile {
-                        width: 60px;
-                        height: 60px;
-                        border-radius: 12px;
-                    }
-                    
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                }
-                
-                .experience__details {
-                    flex: 1;
-                    min-width: 0;
-                    
-                    .experience__role {
-                        font-size: 1.4rem;
-                        font-weight: 600;
-                        color: var(--text-primary, #2c3e50);
-                        margin: 0 0 8px 0;
-                        
-                        @include mobile {
-                            font-size: 1.2rem;
-                            margin-bottom: 6px;
-                        }
-                    }
-                    
-                    .experience__company {
-                        font-size: 1.1rem;
-                        color: var(--text-secondary, #7f8c8d);
-                        margin: 0 0 6px 0;
-                        font-weight: 500;
-                        
-                        @include mobile {
-                            font-size: 1rem;
-                            margin-bottom: 4px;
-                        }
-                    }
-                    
-                    .experience__dates {
-                        font-size: 0.95rem;
-                        color: var(--text-tertiary, #95a5a6);
-                        margin: 0;
-                        
-                        @include mobile {
-                            font-size: 0.9rem;
-                        }
-                    }
-                }
-                
-                .experience__click-hint {
-                    color: var(--text-secondary, #7f8c8d);
-                    font-size: 0.9rem;
-                    opacity: 0.8;
-                    font-style: italic;
-                    
-                    @include mobile {
-                        font-size: 0.8rem;
-                        width: 100%;
-                        text-align: center;
-                        margin-top: 10px;
-                    }
-                }
-            }
-        }
-    }
+  }
+  
+  &__details {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  &__role {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.3;
+  }
+  
+  &__dates {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-top: 0.1rem;
+  }
+  
+  &__company {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 0;
+  }
+  
+  &__description {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  &__click-hint {
+    margin-top: 0.25rem;
+    color: var(--text-color);
+    opacity: 0.4;
+    font-size: 0.75rem;
+    font-style: italic;
+    text-align: right;
+    transition: opacity 0.2s ease;
+  }
+  
+  &__item:hover &__click-hint {
+    opacity: 0.7;
+  }
 }
 
 // Experience Modal Styles
 .experience-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: modalFadeIn 0.3s ease-out;
+  
+  &__content {
+    background: var(--card-bg);
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+    
+    @media (max-width: 768px) {
+      width: 95%;
+      max-height: 95vh;
+      border-radius: 15px;
+      margin: 10px;
+    }
+  }
+  
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--border-color);
+    border-radius: 50%;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
-    animation: modalFadeIn 0.3s ease-out;
+    font-size: 24px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    z-index: 10;
     
-    &__content {
-        background: var(--card-bg, #fff);
-        border-radius: 20px;
-        max-width: 600px;
-        width: 90%;
-        max-height: 90vh;
-        overflow-y: auto;
-        position: relative;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        animation: modalSlideIn 0.3s ease-out;
-        
-        @include mobile {
-            width: 95%;
-            max-height: 95vh;
-            border-radius: 15px;
-            margin: 10px;
-        }
+    &:hover {
+      background: var(--accent-color);
+      color: white;
+      transform: scale(1.1);
     }
     
-    &__close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        border: none;
-        background: var(--close-btn-bg, #f8f9fa);
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        color: var(--text-secondary, #7f8c8d);
-        transition: all 0.3s ease;
-        z-index: 10;
+    @media (max-width: 768px) {
+      top: 15px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
+    }
+  }
+  
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 40px 40px 30px;
+    border-bottom: 1px solid var(--border-color);
+    
+    @media (max-width: 768px) {
+      padding: 25px 20px 20px;
+      gap: 15px;
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .experience-modal__logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--border-color);
+      
+      @media (max-width: 768px) {
+        width: 70px;
+        height: 70px;
+        border-radius: 15px;
+      }
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    .experience-modal__info {
+      flex: 1;
+      
+      .experience-modal__role {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-color);
+        margin: 0 0 8px 0;
+        line-height: 1.2;
+        
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+          margin-bottom: 6px;
+        }
+      }
+      
+      .experience-modal__company {
+        font-size: 1.3rem;
+        color: var(--text-color);
+        opacity: 0.8;
+        margin: 0 0 6px 0;
+        font-weight: 600;
+        
+        @media (max-width: 768px) {
+          font-size: 1.1rem;
+          margin-bottom: 4px;
+        }
+      }
+      
+      .experience-modal__dates {
+        font-size: 1rem;
+        color: var(--text-color);
+        opacity: 0.6;
+        margin: 0;
+        font-weight: 500;
+        
+        @media (max-width: 768px) {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  
+  &__body {
+    padding: 30px 40px 40px;
+    
+    @media (max-width: 768px) {
+      padding: 20px 20px 25px;
+    }
+    
+    .experience-modal__description {
+      color: var(--text-color);
+      line-height: 1.8;
+      margin: 0 0 30px 0;
+      font-size: 1.05rem;
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+      
+      a {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 600;
         
         &:hover {
-            background: var(--close-btn-hover-bg, #e9ecef);
-            transform: scale(1.1);
+          text-decoration: underline;
         }
-        
-        @include mobile {
-            top: 15px;
-            right: 15px;
-            width: 35px;
-            height: 35px;
-            font-size: 20px;
-        }
+      }
     }
     
-    &__header {
+    .experience-modal__tech {
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin: 0 0 20px 0;
+        
+        @media (max-width: 768px) {
+          font-size: 1.1rem;
+          margin-bottom: 15px;
+        }
+      }
+      
+      .experience-modal__tech-tags {
         display: flex;
-        align-items: center;
-        gap: 25px;
-        padding: 40px 40px 30px;
-        border-bottom: 1px solid var(--content-border, #e9ecef);
+        flex-wrap: wrap;
+        gap: 12px;
         
-        @include mobile {
-            padding: 25px 20px 20px;
-            gap: 15px;
-            flex-direction: column;
-            text-align: center;
+        @media (max-width: 768px) {
+          gap: 8px;
         }
         
-        .experience-modal__logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 18px;
-            overflow: hidden;
-            flex-shrink: 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-            
-            @include mobile {
-                width: 70px;
-                height: 70px;
-                border-radius: 15px;
-            }
-            
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+        .tech-tag {
+          background: var(--border-color);
+          color: var(--text-color);
+          padding: 8px 16px;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+          }
+          
+          @media (max-width: 768px) {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border-radius: 15px;
+          }
         }
-        
-        .experience-modal__info {
-            flex: 1;
-            
-            .experience-modal__role {
-                font-size: 1.8rem;
-                font-weight: 700;
-                color: var(--text-primary, #2c3e50);
-                margin: 0 0 8px 0;
-                line-height: 1.2;
-                
-                @include mobile {
-                    font-size: 1.5rem;
-                    margin-bottom: 6px;
-                }
-            }
-            
-            .experience-modal__company {
-                font-size: 1.3rem;
-                color: var(--text-secondary, #7f8c8d);
-                margin: 0 0 6px 0;
-                font-weight: 600;
-                
-                @include mobile {
-                    font-size: 1.1rem;
-                    margin-bottom: 4px;
-                }
-            }
-            
-            .experience-modal__dates {
-                font-size: 1rem;
-                color: var(--text-tertiary, #95a5a6);
-                margin: 0;
-                font-weight: 500;
-                
-                @include mobile {
-                    font-size: 0.9rem;
-                }
-            }
-        }
+      }
     }
-    
-    &__body {
-        padding: 30px 40px 40px;
-        
-        @include mobile {
-            padding: 20px 20px 25px;
-        }
-        
-        .experience-modal__description {
-            color: var(--text-primary, #34495e);
-            line-height: 1.8;
-            margin: 0 0 30px 0;
-            font-size: 1.05rem;
-            
-            @include mobile {
-                font-size: 1rem;
-                line-height: 1.6;
-                margin-bottom: 25px;
-            }
-            
-            a {
-                color: var(--link-color, #3498db);
-                text-decoration: none;
-                font-weight: 600;
-                
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-        
-        .experience-modal__tech {
-            h4 {
-                font-size: 1.2rem;
-                font-weight: 600;
-                color: var(--text-primary, #2c3e50);
-                margin: 0 0 20px 0;
-                
-                @include mobile {
-                    font-size: 1.1rem;
-                    margin-bottom: 15px;
-                }
-            }
-            
-            .experience-modal__tech-tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 12px;
-                
-                @include mobile {
-                    gap: 8px;
-                }
-                
-                .tech-tag {
-                    background: var(--tech-bg, #e3f2fd);
-                    color: var(--tech-text, #1976d2);
-                    padding: 10px 18px;
-                    border-radius: 25px;
-                    font-size: 0.95rem;
-                    font-weight: 500;
-                    border: 1px solid var(--tech-border, #bbdefb);
-                    transition: all 0.3s ease;
-                    
-                    &:hover {
-                        transform: translateY(-2px);
-                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-                    }
-                    
-                    @include mobile {
-                        padding: 8px 14px;
-                        font-size: 0.9rem;
-                        border-radius: 20px;
-                    }
-                }
-            }
-        }
-    }
+  }
 }
 
 // Modal animations
 @keyframes modalFadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes modalSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-// Dark mode styles
-[data-theme="dark"] .about {
-    --about-bg: #1a1a1a;
-    --profile-border: #333;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --text-tertiary: #888;
-    --link-bg: #2a2a2a;
-    --link-border: #444;
-    --link-hover-bg: #333;
-    --card-bg: #2a2a2a;
-    --card-border: #444;
-    --header-hover-bg: #333;
-    --content-border: #444;
-    --link-color: #64b5f6;
-    --tech-bg: #1e3a5f;
-    --tech-text: #90caf9;
-    --tech-border: #2c5aa0;
-    --toggle-hover-bg: #333;
-    --close-btn-bg: #333;
-    --close-btn-hover-bg: #444;
+// Responsive Design
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+    
+    &__title {
+      font-size: 1.8rem;
+    }
+    
+    &__subtitle {
+      font-size: 0.9rem;
+    }
+    
+    &__content {
+      gap: 2rem;
+    }
+    
+    &__experience {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+  }
+  
+  .experience {
+    &__item {
+      padding: 1rem;
+    }
+    
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    
+    &__details {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      width: 100%;
+    }
+    
+    &__role {
+      font-size: 1.1rem;
+    }
+    
+    &__dates {
+      font-size: 0.8rem;
+      margin-top: 0;
+    }
+  }
 }
 
-// Light mode styles (default)
-[data-theme="light"] .about {
-    --about-bg: #f8f9fa;
-    --profile-border: #fff;
-    --text-primary: #2c3e50;
-    --text-secondary: #7f8c8d;
-    --text-tertiary: #95a5a6;
-    --link-bg: #fff;
-    --link-border: #e9ecef;
-    --link-hover-bg: #f8f9fa;
-    --card-bg: #fff;
-    --card-border: #e9ecef;
-    --header-hover-bg: #f8f9fa;
-    --content-border: #e9ecef;
-    --link-color: #3498db;
-    --tech-bg: #e3f2fd;
-    --tech-text: #1976d2;
-    --tech-border: #bbdefb;
-    --toggle-hover-bg: #f1f3f4;
-    --close-btn-bg: #f8f9fa;
-    --close-btn-hover-bg: #e9ecef;
+@media (max-width: 480px) {
+  .about {
+    padding: 1.5rem 1rem;
+    
+    &__title {
+      font-size: 1.6rem;
+    }
+  }
+  
+  .experience {
+    &__item {
+      padding: 1rem;
+    }
+  }
 }
+

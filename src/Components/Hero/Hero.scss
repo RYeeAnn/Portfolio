@@ -211,6 +211,41 @@
     }
   }
   
+  &__social {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    
+    @media (min-width: 1024px) {
+      justify-content: flex-start;
+    }
+  }
+  
+  &__social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: var(--border-color);
+      transform: translateY(-1px);
+    }
+    
+    svg {
+      opacity: 0.8;
+    }
+  }
+  
   &__visual {
     display: none;
     
@@ -363,7 +398,6 @@
     }
   }
 }
-
 // Dark theme adjustments
 [data-theme="dark"] {
   .hero {

@@ -1,35 +1,35 @@
 @use "./partials/typography.scss";
 
 :root {
-  // Light theme variables
-  --bg-color: #ffffff;
-  --text-color: #222222;
+  // Light theme variables - Clean minimal palette
+  --bg-color: #fafafa;
+  --text-color: #2d3748;
   --card-bg: #ffffff;
-  --accent-color: #81E6D9;
-  --border-color: #e0e0e0;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --hero-bg: #f0f0f0;
-  --timeline-line: #e0e0e0;
-  --tech-pill-bg: #81E6D9;
-  --tech-pill-text: #222222;
-  --link-color: #007bff;
+  --accent-color: #4a5568;
+  --border-color: #e2e8f0;
+  --shadow-color: rgba(0, 0, 0, 0.04);
+  --hero-bg: #f7fafc;
+  --timeline-line: #e2e8f0;
+  --tech-pill-bg: #edf2f7;
+  --tech-pill-text: #4a5568;
+  --link-color: #4a5568;
   --section-bg: #ffffff;
 }
 
 [data-theme="dark"] {
-  // Dark theme variables
-  --bg-color: #1a1a1a;
-  --text-color: #ffffff;
-  --card-bg: #2d2d2d;
-  --accent-color: #81E6D9;
-  --border-color: #404040;
-  --shadow-color: rgba(0, 0, 0, 0.3);
-  --hero-bg: #2a2a2a;
-  --timeline-line: #404040;
-  --tech-pill-bg: #81E6D9;
-  --tech-pill-text: #1a1a1a;
-  --link-color: #81E6D9;
-  --section-bg: #1a1a1a;
+  // Dark theme variables - Softer dark palette
+  --bg-color: #1a202c;
+  --text-color: #f7fafc;
+  --card-bg: #2d3748;
+  --accent-color: #81e6d9;
+  --border-color: #4a5568;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --hero-bg: #2d3748;
+  --timeline-line: #4a5568;
+  --tech-pill-bg: #4a5568;
+  --tech-pill-text: #f7fafc;
+  --link-color: #81e6d9;
+  --section-bg: #1a202c;
 }
 
 * {
