@@ -24,11 +24,11 @@
   }
   
   @media (min-width: 768px) {
-    padding: 3rem 0;
+    padding: 3rem 0 6rem 0;
   }
   
   @media (min-width: 1024px) {
-    padding: 4rem 0;
+    padding: 4rem 0 6rem 0;
   }
 
   @media (min-width: 1440px) {
@@ -265,7 +265,7 @@
   
   &__scroll-indicator {
     position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -280,7 +280,15 @@
       opacity: 1;
     }
     
+    @media (min-width: 640px) {
+      bottom: 1.5rem;
+    }
+    
     @media (min-width: 768px) {
+      bottom: 2rem;
+    }
+    
+    @media (min-width: 1024px) {
       bottom: 2.5rem;
     }
   }
@@ -323,7 +331,7 @@
 // Responsive adjustments
 @media (max-width: 767px) {
   .hero {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 5rem 0;
     
     &__container {
       padding: 0 1rem;
