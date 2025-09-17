@@ -31,14 +31,27 @@
 
   &__hero-image {
     width: 100%;
-    margin-bottom: 2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
     border-radius: 8px;
     overflow: hidden;
 
     img {
       width: 100%;
       height: auto;
+      max-height: 400px;
+      object-fit: contain;
       display: block;
+      background: var(--card-bg);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      display: block;
+      background: var(--card-bg);
     }
   }
 

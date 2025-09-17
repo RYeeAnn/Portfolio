@@ -3,12 +3,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.scss';
 import cruisin from '../../assets/cruisin.png';
-import cruisinVideo from '../../assets/cruisinVideo.mp4'
 import shnakeGif from '../../assets/shnake-gif.gif';
 import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
 import Speedie from '../../assets/speedie.png'
 import Atria from '../../assets/Atria.png'
+import ApplyingAssistant from '../../assets/ApplyingAssistant.gif'
 
 function renderTechStack(techString) {
   return techString.split(',').map(tech => (
@@ -26,6 +26,31 @@ function Projects() {
         </div>
 
         <div className="projects__grid">
+          {/* Applying Assistant Project */}
+          <Link to="/project/applying-assistant" className="projects__project projects__project--linkable">
+            <div className="projects__project-image projects__project-image--extension">
+              <img src={ApplyingAssistant} alt="Applying Assistant Chrome Extension" />
+            </div>
+            <div className="projects__project-content">
+              <div className="projects__project-header">
+                <h3 className="projects__project-title">Applying Assistant</h3>
+                <div className="projects__project-tags">
+                  <span className="projects__tag projects__tag--extension">Extension</span>
+                  <span className="projects__tag projects__tag--frontend">Frontend</span>
+                </div>
+              </div>
+              <p className="projects__project-description">
+                A Chrome extension that automates job application form filling with smart field detection and one-click professional templates. Reduces application time from 20+ minutes to 3-5 minutes.
+              </p>
+              <div className="projects__project-tech">
+                {renderTechStack("JavaScript, Chrome Extensions API, HTML, CSS")}
+              </div>
+              <div className="projects__project-links">
+                <span className="projects__link projects__link--secondary">View Details →</span>
+              </div>
+            </div>
+          </Link>
+
           {/* Townhall Project */}
           <Link to="/project/townhall" className="projects__project projects__project--linkable">
             <div className="projects__project-image">
@@ -81,10 +106,7 @@ function Projects() {
           {/* Cruisin Project */}
           <Link to="/project/cruisin" className="projects__project projects__project--linkable">
             <div className="projects__project-image">
-              <video controls poster={cruisin}>
-                <source src={cruisinVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+                <img src={cruisin} alt="cruisin" />
             </div>
             <div className="projects__project-content">
               <div className="projects__project-header">

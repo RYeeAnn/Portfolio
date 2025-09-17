@@ -67,6 +67,10 @@
     height: 200px;
     overflow: hidden;
     border-radius: 12px 12px 0 0;
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img, video {
       width: 100%;
@@ -74,6 +78,14 @@
       object-fit: cover;
       display: block;
       transition: transform 0.3s ease;
+    }
+
+    // Special handling for extension screenshots
+    &--extension {
+      img {
+        object-fit: contain;
+        padding: 1rem;
+      }
     }
 
     &:hover {
@@ -154,6 +166,11 @@
     &--classic {
       background: #ffebc8;
       color: #9c4221;
+    }
+
+    &--extension {
+      background: #f0f9ff;
+      color: #0c4a6e;
     }
   }
 

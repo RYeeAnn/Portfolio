@@ -19,9 +19,31 @@ import Speedie2 from '../../assets/Speedie2.png';
 import Speedie3 from '../../assets/Speedie3.png';
 import Speedie4 from '../../assets/Speedie4.png';
 import Speedie5 from '../../assets/Speedie5.png';
+import ApplyingAssistant2 from '../../assets/ApplyingAssistant2.png';
+import ApplyingAssistant3 from '../../assets/ApplyingAssistant3.png';
+import ApplyingAssistant4 from '../../assets/ApplyingAssistant4.png';
+import ApplyingAssistant5 from '../../assets/ApplyingAssistant5.png';
+import ApplyingAssistant6 from '../../assets/ApplyingAssistant6.png';
+import ApplyingAssistantVideo from '../../assets/ApplyingAssistantVideo.mov';
 
 // Simplified project data
 const projectData = {
+	'applying-assistant': {
+		title: 'Applying Assistant',
+		subtitle: 'Chrome Extension for Job Applications',
+		heroImage: ApplyingAssistantVideo,
+		description: 'A Chrome extension that automates job application form filling with smart field detection and one-click templates.',
+		detailedDescription: `As someone actively job searching, I was spending hours rewriting the same responses to common questions like "Where do you see yourself in 5 years?" and "What is your greatest strength/weakness?" I built this project to solve a personal problem of spending too much time answering repetitive questions in job applications.
+
+The Chrome extension automatically detects form fields on job application pages and provides one-click templates for common questions. It intelligently recognizes different field types and suggests relevant pre-written responses that I can customize on the fly. No more copying and pasting from a separate document or retyping the same answers over and over.
+
+Building this taught me a lot about the Chrome Extensions API, content script injection, and DOM manipulation. The biggest challenge was making the field detection work across different job sites with varying HTML structures. I had to create flexible selectors that could adapt to different form layouts while still being reliable enough to fill the right fields with the right content.`,
+		techStack: ['JavaScript', 'Chrome Extensions API', 'HTML', 'CSS'],
+		liveUrl: null,
+		githubUrl: 'https://github.com/RYeeAnn/ApplyingAssistant',
+		images: [ApplyingAssistant2, ApplyingAssistant3, ApplyingAssistant4, ApplyingAssistant5, ApplyingAssistant6],
+		tags: ['Browser Extension', 'Productivity Tool']
+	},
 	'townhall': {
 		title: 'Townhall',
 		subtitle: 'Full-Stack Community Platform',
@@ -155,7 +177,18 @@ function ProjectDetail() {
 				{/* Hero Section */}
 				<div className="project-detail__hero">
 					<div className="project-detail__hero-image">
-						<img src={project.heroImage} alt={project.title} />
+						{project.heroImage && project.heroImage.endsWith('.mov') ? (
+							<video 
+								src={project.heroImage} 
+								alt={project.title}
+								controls
+								autoPlay
+								muted
+								loop
+							/>
+						) : (
+							<img src={project.heroImage} alt={project.title} />
+						)}
 					</div>
 					
 					<div className="project-detail__hero-content">
@@ -203,11 +236,16 @@ function ProjectDetail() {
 				)}
 
 				{/* Gallery */}
-				{project.images && project.images.length > 1 && (
+				{project.images && project.images.length > 0 && (
+					(project.heroImage && project.heroImage.endsWith('.mov')) || project.images.length > 1
+				) && (
 					<div className="project-detail__gallery">
 						<h3>Gallery</h3>
 						<div className="project-detail__gallery-grid">
-							{project.images.slice(1).map((image, index) => (
+							{(project.heroImage && project.heroImage.endsWith('.mov') ? 
+								project.images : 
+								project.images.slice(1)
+							).map((image, index) => (
 								<div 
 									key={index} 
 									className="project-detail__gallery-item"
