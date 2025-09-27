@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.scss';
 import cruisin from '../../assets/cruisin.png';
-import shnakeGif from '../../assets/shnake-gif.gif';
+import shnakeGif from '../../assets/ShnakeGif.gif';
 import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
 import Speedie from '../../assets/speedie.png'

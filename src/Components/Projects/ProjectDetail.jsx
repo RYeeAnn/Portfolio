@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProjectDetail.scss';
 import cruisin from '../../assets/cruisin.png';
-import shnakeGif from '../../assets/shnake-gif.gif';
+import ShnakeGif from '../../assets/ShnakeGif.gif';
+import Shnake1 from '../../assets/Shnake1.png';
+import Shnake2 from '../../assets/Shnake2.png';
 import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
 import Speedie from '../../assets/speedie.png';
@@ -107,15 +109,15 @@ This project is helping me learn game development concepts including game loops,
 	'shnake': {
 		title: 'Shnake',
 		subtitle: 'Classic Snake Game',
-		heroImage: shnakeGif,
+		heroImage: ShnakeGif,
 		description: 'A classic snake game built with React to practice state management and game logic implementation.',
 		detailedDescription: `A classic snake game inspired by the games I played as a kid. Created and coded using JavaScript and React.js, this was my first ever "game" I have coded.
 
 The project helped me understand interactive state management, timing functions, collision detection, and how to handle user input in a real-time environment. It was a fun way to practice React while building something nostalgic and engaging.`,
 		techStack: ['JavaScript', 'React', 'Sass'],
-		liveUrl: null,
+		liveUrl: 'https://shnakey.netlify.app/',
 		githubUrl: 'https://github.com/RYeeAnn/Shnake',
-		images: [shnakeGif],
+		images: [ShnakeGif, Shnake1, Shnake2],
 		tags: ['Game Development']
 	},
 	'simon-says': {
