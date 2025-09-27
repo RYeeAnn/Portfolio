@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Projects.scss';
 import cruisin from '../../assets/cruisin.png';
 import shnakeGif from '../../assets/ShnakeGif.gif';
-import simonSays from '../../assets/simon-says.gif';
+// import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
 import Speedie from '../../assets/speedie.png'
 import Atria from '../../assets/Atria.png'
@@ -175,12 +175,13 @@ function Projects() {
               </div>
               <div className="projects__project-links">
                 <span className="projects__link projects__link--secondary">View Details →</span>
+                <a href="https://shnakey.netlify.app/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
               </div>
             </div>
           </Link>
 
           {/* Simon Says Project */}
-          <Link to="/project/simon-says" className="projects__project projects__project--linkable">
+          {/* <Link to="/project/simon-says" className="projects__project projects__project--linkable">
             <div className="projects__project-image">
               <img src={simonSays} alt="Simon Says Game" />
             </div>
@@ -202,7 +203,7 @@ function Projects() {
                 <span className="projects__link projects__link--secondary">View Details →</span>
               </div>
             </div>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
