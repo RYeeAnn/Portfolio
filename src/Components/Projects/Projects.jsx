@@ -34,10 +34,6 @@ function Projects() {
             <div className="projects__project-content">
               <div className="projects__project-header">
                 <h3 className="projects__project-title">Applying Assistant</h3>
-                <div className="projects__project-tags">
-                  <span className="projects__tag projects__tag--extension">Extension</span>
-                  <span className="projects__tag projects__tag--frontend">Frontend</span>
-                </div>
               </div>
               <p className="projects__project-description">
                 A Chrome extension that automates job application form filling with smart field detection and one-click professional templates. Reduces application time from 20+ minutes to 3-5 minutes.
@@ -61,10 +57,6 @@ function Projects() {
             <div className="projects__project-content">
               <div className="projects__project-header">
                 <h3 className="projects__project-title">Townhall</h3>
-                <div className="projects__project-tags">
-                  <span className="projects__tag projects__tag--fullstack">Full Stack</span>
-                  <span className="projects__tag projects__tag--ux">UX Research</span>
-                </div>
               </div>
               <p className="projects__project-description">
                 A full-stack community platform built for volunteer collaboration, featuring user onboarding, post/comment creation, media uploads, and more. I led API development, frontend UI implementation from Figma, and helped architect the backend using Django with a layered structure.
@@ -87,10 +79,6 @@ function Projects() {
             <div className="projects__project-content">
               <div className="projects__project-header">
                 <h3 className="projects__project-title">Speedie</h3>
-                <div className="projects__project-tags">
-                  <span className="projects__tag projects__tag--frontend">Frontend</span>
-                  <span className="projects__tag projects__tag--ux">UX Design</span>
-                </div>
               </div>
               <p className="projects__project-description">
                 Speedie is an app designed to help everyday drivers understand their car better. It features an interactive dashboard that explains vehicle warning lights with urgency levels, repair advice, and educational videos.
@@ -113,10 +101,6 @@ function Projects() {
             <div className="projects__project-content">
               <div className="projects__project-header">
                 <h3 className="projects__project-title">Cruisin'</h3>
-                <div className="projects__project-tags">
-                  <span className="projects__tag projects__tag--fullstack">Full Stack</span>
-                  <span className="projects__tag projects__tag--first">First Project</span>
-                </div>
               </div>
               <p className="projects__project-description">
                 My first full-stack project created with the purpose of helping drivers with their vehicle concerns. Deployed front-end using Netlify and back-end using Heroku.
@@ -139,10 +123,6 @@ function Projects() {
             <div className="projects__project-content">
               <div className="projects__project-header">
                 <h3 className="projects__project-title">DinoType</h3>
-                <div className="projects__project-tags">
-                  <span className="projects__tag projects__tag--game">Game Dev</span>
-                  <span className="projects__tag projects__tag--learning">Learning</span>
-                </div>
               </div>
               <p className="projects__project-description">
                 Currently in the process of building a type racer game for fun! A personal project to explore game development and Python programming.
@@ -164,10 +144,6 @@ function Projects() {
             <div className="projects__project-content">
               <div className="projects__project-header">
                 <h3 className="projects__project-title">Shnake</h3>
-                <div className="projects__project-tags">
-                  <span className="projects__tag projects__tag--game">Game Dev</span>
-                  <span className="projects__tag projects__tag--first">First Game</span>
-                </div>
               </div>
               <p className="projects__project-description">
                 A simple snake game inspired by classic games that was played as a kid. Created and coded using Javascript and React.js. My first ever "game" I have coded.
@@ -190,10 +166,6 @@ function Projects() {
             <div className="projects__project-content">
               <div className="projects__project-header">
                 <h3 className="projects__project-title">Simon Says</h3>
-                <div className="projects__project-tags">
-                  <span className="projects__tag projects__tag--game">Game Dev</span>
-                  <span className="projects__tag projects__tag--classic">Classic</span>
-                </div>
               </div>
               <p className="projects__project-description">
                 A simple and classic game to test your short-term memory skills. Built with React and JavaScript for interactive gameplay.
