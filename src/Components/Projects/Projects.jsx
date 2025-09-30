@@ -8,7 +8,7 @@ import shnakeGif from '../../assets/ShnakeGif.gif';
 import DinoType from '../../assets/DynoType.png';
 import Speedie from '../../assets/speedie.png'
 import Atria from '../../assets/Atria.png'
-import ApplyingAssistant from '../../assets/ApplyingAssistant.gif'
+import ApplyingAssistant from '../../assets/ApplyingAssistantLanding.png'
 
 function renderTechStack(techString) {
   return techString.split(',').map(tech => (
@@ -46,6 +46,8 @@ function Projects() {
                 {renderTechStack("JavaScript, Chrome Extensions API, HTML, CSS")}
               </div>
               <div className="projects__project-links">
+              <a href="https://applyingassistant.netlify.app/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
+                <a href="https://chromewebstore.google.com/detail/applying-assistant/jemddgjafimcndlkmbjkpimnedbmccee" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>Install Extension</a>
                 <span className="projects__link projects__link--secondary">View Details →</span>
               </div>
             </div>

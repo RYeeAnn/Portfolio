@@ -41,7 +41,8 @@ The Chrome extension automatically detects form fields on job application pages 
 
 Building this taught me a lot about the Chrome Extensions API, content script injection, and DOM manipulation. The biggest challenge was making the field detection work across different job sites with varying HTML structures. I had to create flexible selectors that could adapt to different form layouts while still being reliable enough to fill the right fields with the right content.`,
 		techStack: ['JavaScript', 'Chrome Extensions API', 'HTML', 'CSS'],
-		liveUrl: null,
+		liveUrl: `https://applyingassistant.netlify.app/`,
+		chromeStoreUrl: 'https://chromewebstore.google.com/detail/applying-assistant/jemddgjafimcndlkmbjkpimnedbmccee',
 		githubUrl: 'https://github.com/RYeeAnn/ApplyingAssistant',
 		images: [ApplyingAssistant2, ApplyingAssistant3, ApplyingAssistant4, ApplyingAssistant5, ApplyingAssistant6],
 		tags: ['Browser Extension', 'Productivity Tool']
@@ -206,6 +207,11 @@ function ProjectDetail() {
 							{project.liveUrl && (
 								<a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-detail__link project-detail__link--primary">
 									View Live
+								</a>
+							)}
+							{project.chromeStoreUrl && (
+								<a href={project.chromeStoreUrl} target="_blank" rel="noopener noreferrer" className="project-detail__link project-detail__link--primary">
+									Install Extension
 								</a>
 							)}
 							{project.githubUrl && (
