@@ -9,6 +9,7 @@ import DinoType from '../../assets/DynoType.png';
 import Speedie from '../../assets/speedie.png'
 import Atria from '../../assets/Atria.png'
 import ApplyingAssistant from '../../assets/ApplyingAssistantLanding.png'
+import RHS from '../../assets/RHS.png'
 
 function renderTechStack(techString) {
   return techString.split(',').map(tech => (
@@ -25,7 +26,29 @@ function Projects() {
           <p className="projects__subtitle">A showcase of my work in full-stack development, UX research, and creative problem-solving.</p>
         </div>
 
-        <div className="projects__grid">
+                <div className="projects__grid">
+          {/* Ruby's Hair Salon Project */}
+          <Link to="/project/ruby-hair-salon" className="projects__project projects__project--linkable">
+            <div className="projects__project-image">
+              <img src={RHS} alt="Ruby's Hair Salon" />
+            </div>
+            <div className="projects__project-content">
+              <div className="projects__project-header">
+                <h3 className="projects__project-title">Ruby's Hair Salon</h3>
+              </div>
+              <p className="projects__project-description">
+                A professional website built for my mother's private hair salon business. Features online booking, service showcase, and a modern interface to help transition from manual notebook scheduling to a professional digital presence.
+              </p>
+              <div className="projects__project-tech">
+                {renderTechStack("React, TypeScript, Tailwind CSS")}
+              </div>
+              <div className="projects__project-links">
+                <a href="http://rubys.vercel.app/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
+                <span className="projects__link projects__link--secondary">View Details →</span>
+              </div>
+            </div>
+          </Link>
+
           {/* Applying Assistant Project */}
           <Link to="/project/applying-assistant" className="projects__project projects__project--linkable">
             <div className="projects__project-image projects__project-image--extension">

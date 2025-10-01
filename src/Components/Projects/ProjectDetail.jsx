@@ -27,6 +27,7 @@ import ApplyingAssistant4 from '../../assets/ApplyingAssistant4.png';
 import ApplyingAssistant5 from '../../assets/ApplyingAssistant5.png';
 import ApplyingAssistant6 from '../../assets/ApplyingAssistant6.png';
 import ApplyingAssistantVideo from '../../assets/ApplyingAssistantVideo.mov';
+import RHS from '../../assets/RHS.png';
 
 // Simplified project data
 const projectData = {
@@ -134,6 +135,22 @@ This project helped me practice state management patterns, sequence handling, au
 		githubUrl: 'https://github.com/RYeeAnn/simon-says',
 		images: [simonSays],
 		tags: ['Game Development']
+	},
+	'ruby-hair-salon': {
+		title: "Ruby's Hair Salon",
+		subtitle: 'Freelance Project - Private Salon Website',
+		heroImage: RHS,
+		description: 'A professional website built for my mother\'s private hair salon business, providing clients with a modern booking platform and showcasing her services.',
+		detailedDescription: `My mother is a hairdresser and she's quite popular as her own boss. We renovated our basement to look like a professional salon where she serves clients by appointment. Previously, she managed all bookings manually in a notebook, requiring clients to call and have conversations to schedule appointments.
+
+I built this website to modernize her business and create a professional online presence. Instead of just giving out a phone number, she can now share this application with potential clients, allowing them to learn about her services and book appointments online. It provides a polished, professional baseline for referrals while maintaining the intimate, private nature of her salon.
+
+The website features an online booking system, service showcase, contact information, and a gallery of her work. This project was particularly meaningful as it directly solved a real-world problem for my family business and helped my mother streamline her client management process.`,
+		techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+		liveUrl: 'http://rubys.vercel.app/',
+		githubUrl: null,
+		images: [RHS],
+		tags: ['Freelance', 'Full Stack Development']
 	}
 };
 

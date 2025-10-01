@@ -40,7 +40,7 @@ function Hero() {
           
           <div className="hero__social">
             <a 
-              href="https://drive.google.com/file/d/1SBqvBvS_H9eLMScSFnNsdtIoQGz8JRaB/view?usp=sharing" 
+              href="https://drive.google.com/file/d/11w7jkjgk0GMLCsrx0JB9xhxbf8n8krnc/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hero__social-link"
