@@ -26,11 +26,7 @@ function AboutPage() {
                                 </p>
                                 
                                 <p>
-                                    Since then, I've built a diverse range of projects that solve real-world problems. I created a Chrome extension that automates job application form filling, saving hours for job seekers. I built a professional website for my mother's hair salon business, complete with online booking to modernize her client management. I developed a community platform for volunteers, car care apps to help drivers understand their vehicles, and even some fun games to explore different programming concepts.
-                                </p>
-                                
-                                <p>
-                                    What I really love is creating things that people actually find useful and enjoy using. Whether it's a productivity tool, a business website, or an educational game, I focus on building solutions that make a real difference in people's lives.
+                                    Since then I've built stuff like a community platform for volunteers, tools that help drivers understand their cars better, and some fun learning games. What I really love is creating things that people actually find useful and enjoy using.
                                 </p>
                                 
                                 <p>
@@ -53,4 +49,4 @@ function AboutPage() {
     );
 }
 
-export default AboutPage;
+export default AboutPage; 
