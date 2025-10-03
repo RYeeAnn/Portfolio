@@ -175,8 +175,8 @@ function Projects() {
                 {renderTechStack("JavaScript, React, Sass")}
               </div>
               <div className="projects__project-links">
-                <span className="projects__link projects__link--secondary">View Details →</span>
                 <a href="https://shnakey.netlify.app/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
+                <span className="projects__link projects__link--secondary">View Details →</span>
               </div>
             </div>
           </Link>
