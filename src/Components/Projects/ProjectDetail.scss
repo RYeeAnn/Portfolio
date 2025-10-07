@@ -343,6 +343,7 @@
 
     &__hero-inner {
       gap: 3rem;
+      padding: 0 1rem;
     }
 
     &__hero-image {
@@ -351,37 +352,61 @@
   }
 }
 
+@media (max-width: 900px) {
+  .project-detail {
+    &__hero {
+      padding: 1.2rem 0;
+    }
+
+    &__hero-inner {
+      gap: 2.5rem;
+      padding: 0 1.5rem;
+    }
+
+    &__title {
+      font-size: 2.2rem;
+    }
+
+    &__description {
+      font-size: 1rem;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .project-detail {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
 
     &__back-link {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     &__hero {
       flex-direction: column;
-      gap: 2rem;
-      margin-bottom: 3rem;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
       min-height: auto;
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem 0 2rem 0;
       margin-top: -2rem;
     }
 
     &__hero-inner {
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
       text-align: center;
+      padding: 0;
     }
 
     &__hero-content {
       max-width: none;
+      order: 2;
     }
 
     &__hero-image {
-      order: -1;
-      gap: 1.5rem;
+      order: 1;
+      gap: 1rem;
+      width: 100%;
     }
 
     &__hero-video {
@@ -389,26 +414,31 @@
     }
 
     &__title {
-      font-size: 2rem;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
     }
 
     &__description {
-      font-size: 1rem;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
     }
 
     &__links {
       justify-content: center;
+      gap: 0.8rem;
     }
 
     &__link {
-      width: 100%;
-      max-width: 200px;
+      width: auto;
+      min-width: 120px;
       text-align: center;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.85rem;
     }
 
     &__tech,
     &__gallery {
-      margin: 3rem 0;
+      margin: 2rem 0;
     }
 
     &__gallery-grid {
@@ -421,53 +451,58 @@
 @media (max-width: 600px) {
   .project-detail {
     &__hero {
-      padding: 1rem;
-      gap: 1.5rem;
+      padding: 2rem 0 2rem 0;
+      gap: 1.2rem;
     }
 
     &__hero-inner {
-      gap: 1.5rem;
+      gap: 1.2rem;
+      padding: 0;
     }
 
     &__title {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     &__description {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+    }
+
+    &__hero-image {
+      gap: 0.8rem;
     }
   }
 }
 
 @media (max-width: 480px) {
   .project-detail {
-    padding: 1rem;
+    padding: 0.8rem;
 
     &__title {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
 
     &__tags {
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     &__tag {
-      font-size: 0.75rem;
-      padding: 0.3rem 0.6rem;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
     }
 
     &__hero {
-      gap: 1rem;
-      padding: 1rem;
+      gap: 0.8rem;
+      padding: 2rem 0 2rem 0;
       margin-top: -2rem;
     }
 
     &__hero-inner {
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     &__hero-image {
-      gap: 1rem;
+      gap: 0.8rem;
 
       img {
         max-width: 100%;
@@ -479,12 +514,13 @@
     }
 
     &__description {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     &__link {
-      padding: 0.6rem 1rem;
-      font-size: 0.8rem;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.75rem;
+      min-width: 100px;
     }
   }
 }
@@ -494,20 +530,31 @@
     padding: 0.5rem;
 
     &__hero {
-      padding: 0.5rem;
+      padding: 2rem 0 2rem 0;
       margin-top: -1rem;
+      gap: 0.6rem;
+    }
+
+    &__hero-inner {
+      gap: 0.6rem;
     }
 
     &__title {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
 
     &__description {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
 
     &__hero-image {
-      gap: 0.8rem;
+      gap: 0.6rem;
+    }
+
+    &__link {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.7rem;
+      min-width: 80px;
     }
   }
 } 

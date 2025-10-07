@@ -202,11 +202,6 @@ function ProjectDetail() {
 				<div className="project-detail__hero">
 					<div className="project-detail__hero-inner">
 						<div className="project-detail__hero-content">
-							<div className="project-detail__tags">
-								{(project.tags || []).map((tag, index) => (
-									<span key={index} className="project-detail__tag">{tag}</span>
-								))}
-							</div>
 							<h1 className="project-detail__title">{project.title}</h1>
 							<p className="project-detail__description">{project.description}</p>
 							
