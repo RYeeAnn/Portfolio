@@ -9,7 +9,7 @@ import DinoType from '../../assets/DynoType.png';
 import Speedie from '../../assets/speedie.png'
 import Atria from '../../assets/Atria.png'
 import ApplyingAssistant from '../../assets/ApplyingAssistantLanding.png'
-import RHS from '../../assets/RHS.png'
+import RHSFigma from '../../assets/RHS-Figma.png'
 
 function renderTechStack(techString) {
   return techString.split(',').map(tech => (
@@ -30,7 +30,7 @@ function Projects() {
           {/* Ruby's Hair Salon Project */}
           <Link to="/project/ruby-hair-salon" className="projects__project projects__project--linkable">
             <div className="projects__project-image">
-              <img src={RHS} alt="Ruby's Hair Salon" />
+              <img src={RHSFigma} alt="Ruby's Hair Salon" />
             </div>
             <div className="projects__project-content">
               <div className="projects__project-header">
