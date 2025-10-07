@@ -6,10 +6,10 @@ import cruisin from '../../assets/cruisin.png';
 import shnakeGif from '../../assets/ShnakeGif.gif';
 // import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
-import Speedie from '../../assets/speedie.png'
-import Atria from '../../assets/Atria.png'
-import ApplyingAssistant from '../../assets/ApplyingAssistantLanding.png'
 import RHSFigma from '../../assets/RHS-Figma.png'
+import ApplyingAssistantFigma from '../../assets/ApplyingAssistant-Figma.png'
+import AtriaFigma from '../../assets/Atria-Figma.png'
+import SpeedieFigma from '../../assets/Speedie-Figma.png'
 
 function renderTechStack(techString) {
   return techString.split(',').map(tech => (
@@ -52,7 +52,7 @@ function Projects() {
           {/* Applying Assistant Project */}
           <Link to="/project/applying-assistant" className="projects__project projects__project--linkable">
             <div className="projects__project-image projects__project-image--extension">
-              <img src={ApplyingAssistant} alt="Applying Assistant Chrome Extension" />
+              <img src={ApplyingAssistantFigma} alt="Applying Assistant Chrome Extension" />
             </div>
             <div className="projects__project-content">
               <div className="projects__project-header">
@@ -75,7 +75,7 @@ function Projects() {
           {/* Townhall Project */}
           <Link to="/project/townhall" className="projects__project projects__project--linkable">
             <div className="projects__project-image">
-              <img src={Atria} alt="Atria Townhall Platform" />
+              <img src={AtriaFigma} alt="Atria Townhall Platform" />
             </div>
             <div className="projects__project-content">
               <div className="projects__project-header">
@@ -97,7 +97,7 @@ function Projects() {
           {/* Speedie Project */}
           <Link to="/project/speedie" className="projects__project projects__project--linkable">
             <div className="projects__project-image">
-              <img src={Speedie} alt="Speedie App" />
+              <img src={SpeedieFigma} alt="Speedie App" />
             </div>
             <div className="projects__project-content">
               <div className="projects__project-header">

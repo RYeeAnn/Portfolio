@@ -28,13 +28,17 @@ import ApplyingAssistant5 from '../../assets/ApplyingAssistant5.png';
 import ApplyingAssistant6 from '../../assets/ApplyingAssistant6.png';
 import ApplyingAssistantVideo from '../../assets/ApplyingAssistantVideo.mov';
 import RHS from '../../assets/RHS.png';
+import RHSFigma from '../../assets/RHS-Figma.png';
+import ApplyingAssistantFigma from '../../assets/ApplyingAssistant-Figma.png';
+import AtriaFigma from '../../assets/Atria-Figma.png';
+import SpeedieFigma from '../../assets/Speedie-Figma.png';
 
 // Simplified project data
 const projectData = {
 	'applying-assistant': {
 		title: 'Applying Assistant',
 		subtitle: 'Chrome Extension for Job Applications',
-		heroImage: ApplyingAssistantVideo,
+		heroImage: ApplyingAssistantFigma,
 		description: 'A Chrome extension that automates job application form filling with smart field detection and one-click templates.',
 		detailedDescription: `As someone actively job searching, I was spending hours rewriting the same responses to common questions like "Where do you see yourself in 5 years?" and "What is your greatest strength/weakness?" I built this project to solve a personal problem of spending too much time answering repetitive questions in job applications.
 
@@ -51,7 +55,7 @@ Building this taught me a lot about the Chrome Extensions API, content script in
 	'townhall': {
 		title: 'Townhall',
 		subtitle: 'Full-Stack Community Platform',
-		heroImage: Atria,
+		heroImage: AtriaFigma,
 		description: 'A full-stack community platform built for volunteer collaboration, featuring user onboarding, post/comment creation, media uploads, and real-time communication.',
 		detailedDescription: `Townhall is a comprehensive community platform designed to facilitate volunteer collaboration and community engagement. As the lead developer, I was responsible for architecting the entire system from the ground up.
 
@@ -67,7 +71,7 @@ Key features include user onboarding and profile management, real-time post and 
 	'speedie': {
 		title: 'Speedie',
 		subtitle: 'Car Care Companion App',
-		heroImage: Speedie,
+		heroImage: SpeedieFigma,
 		description: 'An app designed to help everyday drivers understand their car better with interactive dashboard that explains vehicle warning lights, urgency levels, and repair advice.',
 		detailedDescription: `Speedie is a comprehensive car care companion app that demystifies vehicle warning lights and provides actionable advice for drivers. The app features an interactive dashboard that explains vehicle warning lights with urgency levels, repair advice, and educational videos.
 
@@ -139,7 +143,7 @@ This project helped me practice state management patterns, sequence handling, au
 	'ruby-hair-salon': {
 		title: "Ruby's Hair Salon",
 		subtitle: 'Freelance Project - Private Salon Website',
-		heroImage: RHS,
+		heroImage: RHSFigma,
 		description: 'A professional website built for my mother\'s private hair salon business, providing clients with a modern booking platform and showcasing her services.',
 		detailedDescription: `My mother is a hairdresser and she's quite popular as her own boss. We renovated our basement to look like a professional salon where she serves clients by appointment. Previously, she managed all bookings manually in a notebook, requiring clients to call and have conversations to schedule appointments.
 
@@ -196,45 +200,48 @@ function ProjectDetail() {
 			<div className="project-detail__container">
 				{/* Hero Section */}
 				<div className="project-detail__hero">
-					<div className="project-detail__hero-image">
-						{project.heroImage && project.heroImage.endsWith('.mov') ? (
-							<video 
-								src={project.heroImage} 
-								alt={project.title}
-								controls
-								autoPlay
-								muted
-								loop
-							/>
-						) : (
-							<img src={project.heroImage} alt={project.title} />
-						)}
-					</div>
-					
-					<div className="project-detail__hero-content">
-						<div className="project-detail__tags">
-							{(project.tags || []).map((tag, index) => (
-								<span key={index} className="project-detail__tag">{tag}</span>
-							))}
+					<div className="project-detail__hero-inner">
+						<div className="project-detail__hero-content">
+							<div className="project-detail__tags">
+								{(project.tags || []).map((tag, index) => (
+									<span key={index} className="project-detail__tag">{tag}</span>
+								))}
+							</div>
+							<h1 className="project-detail__title">{project.title}</h1>
+							<p className="project-detail__description">{project.description}</p>
+							
+							<div className="project-detail__links">
+								{project.liveUrl && (
+									<a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-detail__link project-detail__link--primary">
+										View Live
+									</a>
+								)}
+								{project.chromeStoreUrl && (
+									<a href={project.chromeStoreUrl} target="_blank" rel="noopener noreferrer" className="project-detail__link project-detail__link--primary">
+										Install Extension
+									</a>
+								)}
+								{project.githubUrl && (
+									<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-detail__link project-detail__link--secondary">
+										View Code
+									</a>
+								)}
+							</div>
 						</div>
-						<h1 className="project-detail__title">{project.title}</h1>
-						<p className="project-detail__description">{project.description}</p>
 						
-						<div className="project-detail__links">
-							{project.liveUrl && (
-								<a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-detail__link project-detail__link--primary">
-									View Live
-								</a>
-							)}
-							{project.chromeStoreUrl && (
-								<a href={project.chromeStoreUrl} target="_blank" rel="noopener noreferrer" className="project-detail__link project-detail__link--primary">
-									Install Extension
-								</a>
-							)}
-							{project.githubUrl && (
-								<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-detail__link project-detail__link--secondary">
-									View Code
-								</a>
+						<div className="project-detail__hero-image">
+							<img src={project.heroImage} alt={project.title} />
+							{projectId === 'applying-assistant' && (
+								<div className="project-detail__hero-video">
+									<video 
+										src={ApplyingAssistantVideo} 
+										alt={`${project.title} demo`}
+										controls
+										autoPlay
+										muted
+										loop
+									/>
+								</div>
 							)}
 						</div>
 					</div>
@@ -261,16 +268,11 @@ function ProjectDetail() {
 				)}
 
 				{/* Gallery */}
-				{project.images && project.images.length > 0 && (
-					(project.heroImage && project.heroImage.endsWith('.mov')) || project.images.length > 1
-				) && (
+				{project.images && project.images.length > 1 && (
 					<div className="project-detail__gallery">
 						<h3>Gallery</h3>
 						<div className="project-detail__gallery-grid">
-							{(project.heroImage && project.heroImage.endsWith('.mov') ? 
-								project.images : 
-								project.images.slice(1)
-							).map((image, index) => (
+							{project.images.slice(1).map((image, index) => (
 								<div 
 									key={index} 
 									className="project-detail__gallery-item"
