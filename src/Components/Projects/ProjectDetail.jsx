@@ -151,7 +151,7 @@ I built this website to modernize her business and create a professional online 
 
 The website features an online booking system, service showcase, contact information, and a gallery of her work. This project was particularly meaningful as it directly solved a real-world problem for my family business and helped my mother streamline her client management process.`,
 		techStack: ['React', 'TypeScript', 'Tailwind CSS'],
-		liveUrl: 'http://rubys.vercel.app/',
+		liveUrl: 'https://www.rubyshairsalon.ca/',
 		githubUrl: null,
 		images: [RHS],
 		tags: ['Freelance', 'Full Stack Development']

@@ -43,7 +43,7 @@ function Projects() {
                 {renderTechStack("React, TypeScript, Tailwind CSS")}
               </div>
               <div className="projects__project-links">
-                <a href="http://rubys.vercel.app/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
+                <a href="https://www.rubyshairsalon.ca/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
                 <span className="projects__link projects__link--secondary">View Details →</span>
               </div>
             </div>
