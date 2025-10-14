@@ -50,9 +50,6 @@ function Contact() {
       <div className="contact__container">
         <div className="contact__header">
           <h2 className="contact__title">Let's Connect!</h2>
-          <p className="contact__subtitle">
-            Would love to meet new people :)
-          </p>
         </div>
 
         <div className="contact__content">

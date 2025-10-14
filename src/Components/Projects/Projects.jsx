@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.scss';
-import cruisin from '../../assets/cruisin.png';
 import shnakeGif from '../../assets/ShnakeGif.gif';
 // import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
@@ -116,28 +115,6 @@ function Projects() {
             </div>
           </Link>
 
-          {/* Cruisin Project */}
-          <Link to="/project/cruisin" className="projects__project projects__project--linkable">
-            <div className="projects__project-image">
-                <img src={cruisin} alt="cruisin" />
-            </div>
-            <div className="projects__project-content">
-              <div className="projects__project-header">
-                <h3 className="projects__project-title">Cruisin'</h3>
-              </div>
-              <p className="projects__project-description">
-                My first full-stack project created with the purpose of helping drivers with their vehicle concerns. Deployed front-end using Netlify and back-end using Heroku.
-              </p>
-              <div className="projects__project-tech">
-                {renderTechStack("React, Express, Sass, MySQL")}
-              </div>
-              <div className="projects__project-links">
-                <a href="https://cruisin.netlify.app/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
-                <span className="projects__link projects__link--secondary">View Details →</span>
-              </div>
-            </div>
-          </Link>
-
           {/* DinoType Project */}
           <Link to="/project/dinotype" className="projects__project projects__project--linkable">
             <div className="projects__project-image">
@@ -148,12 +125,13 @@ function Projects() {
                 <h3 className="projects__project-title">DinoType</h3>
               </div>
               <p className="projects__project-description">
-                Currently in the process of building a type racer game for fun! A personal project to explore game development and Python programming.
+                A type racer game built with Pygame and hosted on GitHub Pages using Pygbag. Players can test their typing speed in an interactive dinosaur-themed interface. Simply click the link to play directly in your browser!
               </p>
               <div className="projects__project-tech">
-                {renderTechStack("Python, Pygame")}
+                {renderTechStack("Python, Pygame, Pygbag")}
               </div>
               <div className="projects__project-links">
+                <a href="https://ryeeann.github.io/DinoType/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>Play Game</a>
                 <span className="projects__link projects__link--secondary">View Details →</span>
               </div>
             </div>

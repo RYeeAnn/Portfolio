@@ -1,12 +1,68 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Hero.scss';
 import TypingAnimation from '../TypingAnimation/TypingAnimation';
-import ryan from '../../assets/ryan.jpg';
+import ryan from '../../assets/ryan-cartoon.svg';
+import ryanPoked from '../../assets/ryan-cartoon1.svg';
 
 function Hero() {
   const animation = [
     'Based in Vancouver, BC.',
   ];
+
+  const [chatMessage, setChatMessage] = useState("Hey there! I'm Ryan 👋");
+  const [userInput, setUserInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isPoked, setIsPoked] = useState(false);
+  const [currentImage, setCurrentImage] = useState(ryan);
+
+  const sendMessage = async () => {
+    if (!userInput.trim() || isLoading) return;
+
+    setIsLoading(true);
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5001'}/api/chat`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: userInput }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setChatMessage(data.reply);
+        setUserInput("");
+      } else {
+        setChatMessage("Oops! Something went wrong. Try again!");
+      }
+    } catch (error) {
+      console.error('Chat error:', error);
+      setChatMessage("Sorry, I'm having trouble responding right now!");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  };
+
+  const handleImageClick = () => {
+    if (isPoked) return; // Prevent multiple rapid clicks
+    
+    setIsPoked(true);
+    setCurrentImage(ryanPoked);
+    setChatMessage("Please don't poke me");
+    
+    // Revert back after 2 seconds
+    setTimeout(() => {
+      setIsPoked(false);
+      setCurrentImage(ryan);
+      setChatMessage("Hey there! I'm Ryan 👋");
+    }, 2000);
+  };
 
   useEffect(() => {
     // Component mounted
@@ -17,17 +73,17 @@ function Hero() {
       <div className="hero__container">
         <div className="hero__content">
           <div className="hero__intro">
-            <span className="hero__greeting">Hey there! I'm</span>
+            {/* <span className="hero__greeting">Hey there! I'm</span> */}
             <h1 className="hero__name">Ryan Yee</h1>
           </div>
           
-          <div className="hero__title">
+          {/* <div className="hero__title">
             <TypingAnimation texts={['A software developer.', ...animation]} />
           </div>
           
           <p className="hero__description">
             I build digital experiences that solve real problems and bring people together. 
-          </p>
+          </p> */}
           
           <div className="hero__cta">
             <a href="#projects" className="hero__cta-button hero__cta-button--primary">
@@ -81,11 +137,44 @@ function Hero() {
         <div className="hero__visual">
           <div className="hero__image-container">
             <img 
-              src={ryan} 
+              src={currentImage} 
               alt="Ryan Yee - Software Developer" 
-              className="hero__image"
+              className={`hero__image ${isPoked ? 'hero__image--poked' : ''}`}
+              onClick={handleImageClick}
+              style={{ cursor: 'pointer' }}
             />
             <div className="hero__image-overlay"></div>
+            
+            {/* Speech Bubble */}
+            <div className="hero__speech-bubble">
+              <div className="hero__speech-content">
+                {chatMessage}
+                {isLoading && <span className="hero__typing-dots">...</span>}
+              </div>
+              <div className="hero__speech-tail"></div>
+            </div>
+          </div>
+          
+          {/* Chat Input Section - Below the cartoon image */}
+          <div className="hero__chat-section">
+            <div className="hero__chat-container">
+              <input
+                type="text"
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                onKeyPress={handleKeyPress}
+                placeholder="Ask me anything..."
+                className="hero__chat-input"
+                disabled={isLoading}
+              />
+              <button
+                onClick={sendMessage}
+                disabled={isLoading || !userInput.trim()}
+                className="hero__chat-button"
+              >
+                {isLoading ? '...' : 'Send'}
+              </button>
+            </div>
           </div>
         </div>
       </div>

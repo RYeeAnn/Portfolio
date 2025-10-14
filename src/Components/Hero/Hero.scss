@@ -64,6 +64,7 @@
     @media (min-width: 1024px) {
       text-align: left;
     }
+
   }
   
   &__intro {
@@ -287,6 +288,26 @@
     border: 4px solid rgba(255, 255, 255, 0.8);
   }
   
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+    
+    &:active {
+      transform: scale(0.95);
+    }
+    
+    &--poked {
+      animation: pokeAnimation 0.3s ease-in-out;
+    }
+  }
+
   &__image-overlay {
     position: absolute;
     top: 0;
@@ -296,6 +317,129 @@
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
     border-radius: 50%;
     pointer-events: none;
+  }
+
+  // Speech Bubble Styles
+  &__speech-bubble {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    background: white;
+    border-radius: 20px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    max-width: 200px;
+    z-index: 10;
+    animation: speechBubbleFloat 3s ease-in-out infinite;
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid white;
+    }
+  }
+
+  &__speech-content {
+    font-size: 0.9rem;
+    color: #1e293b;
+    font-weight: 500;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+
+  &__typing-dots {
+    animation: typingDots 1.5s infinite;
+    color: #3b82f6;
+  }
+
+  // Chat Input Section
+  &__chat-section {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    
+    @media (min-width: 1024px) {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      transform: none;
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__chat-container {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  &__chat-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    color: #1e293b;
+    border-radius: 20px;
+    
+    &::placeholder {
+      color: #64748b;
+    }
+    
+    &:focus {
+      background: rgba(59, 130, 246, 0.05);
+    }
+    
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &__chat-button {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 70px;
+    
+    &:hover:not(:disabled) {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+    
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
   }
   
   &__scroll-indicator {
@@ -363,6 +507,42 @@
   }
 }
 
+@keyframes speechBubbleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes typingDots {
+  0%, 60%, 100% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+@keyframes pokeAnimation {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(0.95) rotate(-1deg);
+  }
+  50% {
+    transform: scale(0.9) rotate(1deg);
+  }
+  75% {
+    transform: scale(0.95) rotate(-0.5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
 // Responsive adjustments
 @media (max-width: 767px) {
   .hero {
@@ -395,6 +575,35 @@
     &__cta-button {
       width: 100%;
       max-width: 280px;
+    }
+
+    &__speech-bubble {
+      max-width: 150px;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+    }
+
+    &__chat-section {
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 350px;
+    }
+
+    &__chat-container {
+      padding: 6px;
+    }
+
+    &__chat-input {
+      padding: 8px 12px;
+      font-size: 0.85rem;
+    }
+
+    &__chat-button {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      min-width: 60px;
     }
   }
 }
@@ -451,5 +660,44 @@
         border-top-color: #94a3b8;
       }
     }
+
+    &__speech-bubble {
+      background: #1e293b;
+      border-color: rgba(96, 165, 250, 0.2);
+      
+      &::before {
+        border-top-color: #1e293b;
+      }
+    }
+
+    &__speech-content {
+      color: #f1f5f9;
+    }
+
+    &__chat-container {
+      background: rgba(30, 41, 59, 0.95);
+      border-color: rgba(96, 165, 250, 0.2);
+    }
+
+    &__chat-input {
+      color: #f1f5f9;
+      
+      &::placeholder {
+        color: #94a3b8;
+      }
+      
+      &:focus {
+        background: rgba(96, 165, 250, 0.1);
+      }
+    }
+
+    &__chat-button {
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      
+      &:hover:not(:disabled) {
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+      }
+    }
   }
 }
+

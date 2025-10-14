@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProjectDetail.scss';
-import cruisin from '../../assets/cruisin.png';
 import ShnakeGif from '../../assets/ShnakeGif.gif';
 import Shnake1 from '../../assets/Shnake1.png';
 import Shnake2 from '../../assets/Shnake2.png';
@@ -84,30 +83,16 @@ The biggest challenge was taking complex automotive information and making it di
 		images: [Speedie, Speedie2, Speedie3, Speedie4, Speedie5],
 		tags: ['Front-End Development', 'UX Design']
 	},
-	'cruisin': {
-		title: "Cruisin'",
-		subtitle: 'Vehicle Assistance Platform',
-		heroImage: cruisin,
-		description: 'My first full-stack project created to help drivers with vehicle concerns. Built during my time at BrainStation with React, Express, and MySQL.',
-		detailedDescription: `Cruisin' was my first full-stack project, built during my time at BrainStation. The platform was designed to help drivers with their vehicle concerns by providing a comprehensive database of common issues and solutions.
-
-This project taught me the fundamentals of full-stack development, from database design and API creation to responsive frontend implementation. I learned how to structure a complete web application and deploy it using modern tools and platforms.`,
-		techStack: ['React', 'Express.js', 'Sass', 'MySQL'],
-		liveUrl: 'https://cruisin.netlify.app/',
-		githubUrl: 'https://github.com/RYeeAnn/brainstation-capstone',
-		images: [cruisin],
-		tags: ['Full Stack Development']
-	},
 	'dinotype': {
 		title: 'DinoType',
 		subtitle: 'Type Racing Game',
 		heroImage: DinoType,
-		description: 'A type racing game built with Python and Pygame. Currently in development to explore game development concepts.',
+		description: 'A type racer game built with Pygame and hosted on GitHub Pages using Pygbag. Players can test their typing speed in an interactive dinosaur-themed interface.',
 		detailedDescription: `DinoType is a personal project to explore game development and Python programming. The game challenges players to type quickly and accurately while avoiding obstacles and competing against time.
 
-This project is helping me learn game development concepts including game loops, collision detection, animation, and state management. It's also an opportunity to improve my Python skills and understand the pygame library.`,
-		techStack: ['Python', 'Pygame'],
-		liveUrl: null,
+Built with Pygame, the game was converted to run in web browsers using Pygbag, making it accessible to anyone with just a click—no installation required. This project helped me learn game development concepts including game loops, collision detection, animation, and state management, while also exploring how to deploy Python games to the web.`,
+		techStack: ['Python', 'Pygame', 'Pygbag'],
+		liveUrl: 'https://ryeeann.github.io/DinoType/',
 		githubUrl: 'https://github.com/RYeeAnn/dinotype',
 		images: [DinoType],
 		tags: ['Game Development']
