@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Hero.scss';
-import TypingAnimation from '../TypingAnimation/TypingAnimation';
 import ryan from '../../assets/ryan-cartoon.svg';
 import ryanPoked from '../../assets/ryan-cartoon1.svg';
 
 function Hero() {
-  const animation = [
-    'Based in Vancouver, BC.',
-  ];
 
   const [chatMessage, setChatMessage] = useState("Hey there! I'm Ryan 👋");
   const [userInput, setUserInput] = useState("");
@@ -73,17 +69,9 @@ function Hero() {
       <div className="hero__container">
         <div className="hero__content">
           <div className="hero__intro">
-            {/* <span className="hero__greeting">Hey there! I'm</span> */}
             <h1 className="hero__name">Ryan Yee</h1>
           </div>
           
-          {/* <div className="hero__title">
-            <TypingAnimation texts={['A software developer.', ...animation]} />
-          </div>
-          
-          <p className="hero__description">
-            I build digital experiences that solve real problems and bring people together. 
-          </p> */}
           
           <div className="hero__cta">
             <a href="#projects" className="hero__cta-button hero__cta-button--primary">
