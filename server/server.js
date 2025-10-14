@@ -477,6 +477,15 @@ setInterval(async () => {
     }
 }, 24 * 60 * 60 * 1000); // Run once per day
 
+// Health check endpoint
+app.get('/', (req, res) => {
+    res.status(200).json({ 
+        message: 'Ryan Yee Portfolio API is running!', 
+        status: 'healthy',
+        timestamp: new Date().toISOString()
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
     console.log(`🚀 Rate limiting enabled: 10 chat requests per 15min, 30 general requests per 15min`);
