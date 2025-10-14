@@ -54,9 +54,18 @@ const openai = new OpenAI({
 });
 
 // Connect to MongoDB
-mongoose.connect(mongoURI)
-    .then(() => console.log('✅ Connected to MongoDB'))
-    .catch((err) => console.error('❌ MongoDB connection error:', err));
+mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+    .then(() => {
+        console.log('✅ Connected to MongoDB');
+        console.log('📊 Database:', mongoose.connection.name);
+    })
+    .catch((err) => {
+        console.error('❌ MongoDB connection error:', err);
+        console.error('🔗 Connection string (without password):', mongoURI.replace(/\/\/.*@/, '//***:***@'));
+    });
 
 // Define Chat Log Schema
 const chatLogSchema = new mongoose.Schema({
@@ -311,9 +320,13 @@ RESPOND AS RYAN: Be conversational, friendly, and authentic. Keep responses conc
                 tokensUsed: tokensUsed
             });
             await chatLog.save();
-            console.log('💾 Chat log saved to MongoDB');
+            console.log('💾 Chat log saved to MongoDB successfully');
+            console.log('📝 Message:', message.substring(0, 50) + '...');
+            console.log('🤖 Reply:', reply.substring(0, 50) + '...');
+            console.log('🔢 Tokens used:', tokensUsed);
         } catch (dbError) {
-            console.error('Error saving chat log to MongoDB:', dbError);
+            console.error('❌ Error saving chat log to MongoDB:', dbError);
+            console.error('📊 MongoDB connection state:', mongoose.connection.readyState);
             // Continue even if DB save fails - user still gets response
         }
 
@@ -482,8 +495,45 @@ app.get('/', (req, res) => {
     res.status(200).json({ 
         message: 'Ryan Yee Portfolio API is running!', 
         status: 'healthy',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        mongodb: {
+            connected: mongoose.connection.readyState === 1,
+            state: mongoose.connection.readyState,
+            database: mongoose.connection.name
+        }
     });
+});
+
+// MongoDB test endpoint
+app.get('/api/test-db', async (req, res) => {
+    try {
+        // Test MongoDB connection by counting chat logs
+        const chatLogCount = await ChatLog.countDocuments();
+        const tokenUsageCount = await TokenUsage.countDocuments();
+        
+        res.status(200).json({
+            message: 'MongoDB connection test successful',
+            mongodb: {
+                connected: mongoose.connection.readyState === 1,
+                database: mongoose.connection.name,
+                collections: {
+                    chatLogs: chatLogCount,
+                    tokenUsage: tokenUsageCount
+                }
+            },
+            timestamp: new Date().toISOString()
+        });
+    } catch (error) {
+        console.error('MongoDB test error:', error);
+        res.status(500).json({
+            message: 'MongoDB connection test failed',
+            error: error.message,
+            mongodb: {
+                connected: mongoose.connection.readyState === 1,
+                state: mongoose.connection.readyState
+            }
+        });
+    }
 });
 
 app.listen(port, () => {
