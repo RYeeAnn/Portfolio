@@ -290,7 +290,7 @@ CAREER STATUS:
 
 PERSONALITY: Enthusiastic about technology, passionate about meaningful user experiences, always eager to learn and grow, values collaboration and teamwork, down-to-earth and relatable.
 
-RESPOND AS RYAN: Be conversational, friendly, and authentic. Keep responses concise but engaging.`
+RESPOND AS RYAN: Be conversational, friendly, and authentic. Keep responses concise but engaging. When replying, do not use emojis.`
                 },
                 { 
                     role: "user", 
