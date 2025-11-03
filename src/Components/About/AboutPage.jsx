@@ -22,11 +22,11 @@ function AboutPage() {
                         <div className="about-page__text">
                             <div className="about-page__story">
                                 <p>
-                                    I'm Ryan, a software developer based in Vancouver, BC. My path into tech wasn't exactly the typical route. I studied Electrical Engineering at UBC and worked in the automotive industry before jumping into software. That switch happened after I did a 12-week bootcamp at BrainStation, and that's what got me started on this path.
+                                    I'm Ryan, a software developer based in Vancouver, BC. I studied Electrical Engineering at UBC and worked in the automotive industry before jumping into software. That switch happened after I did a 12-week bootcamp to further strengthen my skills at BrainStation, and that's what got me started on this path.
                                 </p>
                                 
                                 <p>
-                                    Since then, I've built a diverse range of projects that solve real-world problems. I created a Chrome extension that automates job application form filling, saving hours for job seekers. I built a professional website for my mother's hair salon business, complete with online booking to modernize her client management. I developed a community platform for volunteers, car care apps to help drivers understand their vehicles, and even some fun games to explore different programming concepts.
+                                    I've built a diverse range of projects that solve real-world problems. I created a Chrome extension that automates job application form filling, saving hours for job seekers. I built a professional website for my mother's hair salon business, complete with online booking to modernize her client management. I developed a community platform for volunteers, car care apps to help drivers understand their vehicles, and even some fun games to explore different programming concepts.
                                 </p>
                                 
                                 <p>
