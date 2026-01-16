@@ -14,6 +14,9 @@ if (process.env.NODE_ENV !== 'production') {
 // Debug: Log prompt to verify it's loading correctly
 console.log('🤖 System prompt loaded. Current job mentioned:', systemPrompt.includes('Dynamic Needs Analysis') ? 'Dynamic Needs Analysis' : 'NOT FOUND');  
 
+// Trust proxy for Render/Heroku/etc (required for rate limiting behind reverse proxy)
+app.set('trust proxy', 1);
+
 // Middleware to parse JSON bodies
 app.use(cors());
 app.use(express.json());
@@ -58,10 +61,7 @@ const openai = new OpenAI({
 });
 
 // Connect to MongoDB
-mongoose.connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(mongoURI)
     .then(() => {
         console.log('✅ Connected to MongoDB');
         console.log('📊 Database:', mongoose.connection.name);
