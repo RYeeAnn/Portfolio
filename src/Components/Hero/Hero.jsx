@@ -28,6 +28,8 @@ function Hero() {
         const data = await response.json();
         setChatMessage(data.reply);
         setUserInput("");
+      } else if (response.status === 429) {
+        setChatMessage("Too many messages! Please wait a bit before trying again.");
       } else {
         setChatMessage("Oops! Something went wrong. Try again!");
       }
@@ -84,7 +86,7 @@ function Hero() {
           
           <div className="hero__social">
             <a 
-              href="https://drive.google.com/file/d/11w7jkjgk0GMLCsrx0JB9xhxbf8n8krnc/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1ciabuYpmWIZupG3qZkWc_lvtAqCJGdVA/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hero__social-link"

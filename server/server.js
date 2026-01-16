@@ -38,7 +38,7 @@ const speedLimiter = slowDown({
 // Chat-specific rate limiting
 const chatRateLimit = createRateLimit(
     15 * 60 * 1000, // 15 minutes
-    10, // Max 10 requests per 15 minutes per IP
+    process.env.NODE_ENV === 'production' ? 10 : 100, // 10 in prod, 100 in dev
     'Too many chat requests. Please wait 15 minutes before trying again.'
 );
 
@@ -125,8 +125,9 @@ const TokenUsage = mongoose.model('TokenUsage', tokenUsageSchema);
 // Helper function to check and update token usage
 async function checkTokenUsage(ipAddress) {
     const today = new Date().toISOString().split('T')[0];
-    const DAILY_TOKEN_LIMIT = 10000; // 10,000 tokens per day per IP
-    const DAILY_REQUEST_LIMIT = 50; // 50 requests per day per IP
+    const isDev = process.env.NODE_ENV !== 'production';
+    const DAILY_TOKEN_LIMIT = isDev ? 100000 : 10000; // Higher limit in dev
+    const DAILY_REQUEST_LIMIT = isDev ? 500 : 50; // Higher limit in dev
     
     let usage = await TokenUsage.findOne({ ipAddress, date: today });
     
