@@ -1,18 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './Hero.scss';
 import ryan from '../../assets/ryan-cartoon.svg';
 import ryanPoked from '../../assets/ryan-cartoon1.svg';
 
 function Hero() {
-
-  const [chatMessage, setChatMessage] = useState("Hey there! I'm Ryan 👋");
+  const [conversations, setConversations] = useState([]);
   const [userInput, setUserInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isPoked, setIsPoked] = useState(false);
   const [currentImage, setCurrentImage] = useState(ryan);
+  const [bubbleMessage, setBubbleMessage] = useState("Hey there! I'm Ryan 👋");
+  const chatThreadRef = useRef(null);
 
   const sendMessage = async () => {
     if (!userInput.trim() || isLoading) return;
+
+    const userMessage = userInput.trim();
+    setUserInput("");
+
+    // Add user message to conversation
+    setConversations(prev => [...prev, { type: 'user', message: userMessage }]);
+
+    // Update bubble to show thinking state
+    setBubbleMessage("Thinking...");
 
     setIsLoading(true);
     try {
@@ -21,27 +31,37 @@ function Hero() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: userInput }),
+        body: JSON.stringify({ message: userMessage }),
       });
 
       if (response.ok) {
         const data = await response.json();
-        setChatMessage(data.reply);
-        setUserInput("");
+        setConversations(prev => [...prev, { type: 'ai', message: data.reply }]);
+        setBubbleMessage("Ask me more!");
       } else if (response.status === 429) {
-        setChatMessage("Too many messages! Please wait a bit before trying again.");
+        setConversations(prev => [...prev, { type: 'ai', message: "Too many messages! Please wait a bit before trying again." }]);
+        setBubbleMessage("Slow down!");
       } else {
-        setChatMessage("Oops! Something went wrong. Try again!");
+        setConversations(prev => [...prev, { type: 'ai', message: "Oops! Something went wrong. Try again!" }]);
+        setBubbleMessage("Oops!");
       }
     } catch (error) {
       console.error('Chat error:', error);
-      setChatMessage("Sorry, I'm having trouble responding right now!");
+      setConversations(prev => [...prev, { type: 'ai', message: "Sorry, I'm having trouble responding right now!" }]);
+      setBubbleMessage("Error!");
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleKeyPress = (e) => {
+  // Auto-scroll to bottom of chat thread
+  useEffect(() => {
+    if (chatThreadRef.current) {
+      chatThreadRef.current.scrollTop = chatThreadRef.current.scrollHeight;
+    }
+  }, [conversations]);
+
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       sendMessage();
     }
@@ -49,22 +69,18 @@ function Hero() {
 
   const handleImageClick = () => {
     if (isPoked) return; // Prevent multiple rapid clicks
-    
+
     setIsPoked(true);
     setCurrentImage(ryanPoked);
-    setChatMessage("Please don't poke me");
-    
+    setBubbleMessage("Please don't poke me");
+
     // Revert back after 2 seconds
     setTimeout(() => {
       setIsPoked(false);
       setCurrentImage(ryan);
-      setChatMessage("Hey there! I'm Ryan 👋");
+      setBubbleMessage(conversations.length > 0 ? "Ask me more!" : "Hey there! I'm Ryan 👋");
     }, 2000);
   };
-
-  useEffect(() => {
-    // Component mounted
-  }, []);
 
   return (
     <div className="hero" id="hero">
@@ -125,34 +141,72 @@ function Hero() {
         </div>
         
         <div className="hero__visual">
-          <div className="hero__image-container">
-            <img 
-              src={currentImage} 
-              alt="Ryan Yee - Software Developer" 
-              className={`hero__image ${isPoked ? 'hero__image--poked' : ''}`}
-              onClick={handleImageClick}
-              style={{ cursor: 'pointer' }}
-            />
-            <div className="hero__image-overlay"></div>
-            
-            {/* Speech Bubble */}
-            <div className="hero__speech-bubble">
-              <div className="hero__speech-content">
-                {chatMessage}
-                {isLoading && <span className="hero__typing-dots">...</span>}
+          <div className={`hero__chat-wrapper ${conversations.length > 0 ? 'hero__chat-wrapper--active' : ''}`}>
+            <div className="hero__avatar-section">
+              <div className="hero__image-container">
+                <img
+                  src={currentImage}
+                  alt="Ryan Yee - Software Developer"
+                  className={`hero__image ${isPoked ? 'hero__image--poked' : ''}`}
+                  onClick={handleImageClick}
+                  style={{ cursor: 'pointer' }}
+                />
+                <div className="hero__image-overlay"></div>
+
+                {/* Small status bubble - always visible */}
+                <div className="hero__speech-bubble">
+                  <div className="hero__speech-content">
+                    {bubbleMessage}
+                    {isLoading && <span className="hero__typing-dots">...</span>}
+                  </div>
+                </div>
               </div>
-              <div className="hero__speech-tail"></div>
             </div>
+
+            {/* Conversation Thread - appears when there are messages */}
+            {conversations.length > 0 && (
+              <div className="hero__chat-thread" ref={chatThreadRef}>
+                {conversations.map((conv, index) => (
+                  <div
+                    key={index}
+                    className={`hero__chat-message hero__chat-message--${conv.type}`}
+                  >
+                    {conv.type === 'ai' && (
+                      <div className="hero__chat-avatar">
+                        <img src={ryan} alt="Ryan" />
+                      </div>
+                    )}
+                    <div className="hero__chat-bubble">
+                      <p>{conv.message}</p>
+                    </div>
+                  </div>
+                ))}
+                {isLoading && (
+                  <div className="hero__chat-message hero__chat-message--ai">
+                    <div className="hero__chat-avatar">
+                      <img src={ryan} alt="Ryan" />
+                    </div>
+                    <div className="hero__chat-bubble hero__chat-bubble--typing">
+                      <span className="hero__typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
-          
-          {/* Chat Input Section - Below the cartoon image */}
+
+          {/* Chat Input Section */}
           <div className="hero__chat-section">
             <div className="hero__chat-container">
               <input
                 type="text"
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
-                onKeyPress={handleKeyPress}
+                onKeyDown={handleKeyDown}
                 placeholder="Ask me anything..."
                 className="hero__chat-input"
                 disabled={isLoading}
