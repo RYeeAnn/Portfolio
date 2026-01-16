@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './About.scss';
+import dnaLogo from '../../assets/dnaLogo.png';
 import atriaLogo from '../../assets/atriaLogo.jpeg';
 import codeninjasLogo from '../../assets/codeninjasLogo.jpeg';
 import sniffandbarkLogo from '../../assets/sniffandbarkLogo.jpeg';
@@ -22,9 +23,19 @@ function About() {
     const experiences = [
         {
             id: 0,
+            role: 'Full Stack Developer',
+            company: 'Dynamic Needs Analysis',
+            dates: 'Nov 2025 – Present',
+            logo: dnaLogo,
+            description: 'Full-stack SaaS financial planning platform with React, TypeScript, and Azure PostgreSQL',
+            fullDescription: 'Contributing to a full-stack SaaS financial planning platform using React, TypeScript, Express.js, and Azure PostgreSQL, spanning 30+ REST API endpoints and 500+ UI components used by financial advisors. Collaborated on Helix, an AI conversational assistant leveraging OpenAI GPT-4 and Azure AI Search (RAG) for semantic retrieval and context-aware conversations. Implemented internationalization (i18n) across 3 languages. Contributed to a shared design system with Tailwind CSS and Radix UI across 60+ components. Supported security hardening with JWT auth and Zod validation.',
+            techStack: ['React', 'TypeScript', 'Express.js', 'Azure PostgreSQL', 'OpenAI GPT-4', 'Azure AI Search', 'Tailwind CSS', 'Radix UI', 'i18next', 'Zod', 'JWT', 'Webflow']
+        },
+        {
+            id: 1,
             role: 'Software Developer',
             company: 'Atria Community',
-            dates: 'May 2024 – Present',
+            dates: 'May 2024 – Nov 2025',
             logo: atriaLogo,
             description: 'Full-stack development of community platform with Django, React, and PostgreSQL',
             fullDescription: 'Led full-stack development of Townhall, a scalable volunteering platform connecting users to local community initiatives. Built 15+ RESTful APIs with Django, developed mobile-first UIs from Figma with Next.js, and shipped core features including onboarding, posts, comments, media uploads, and real-time chat using WebSockets and Redis.',
@@ -32,7 +43,7 @@ function About() {
             link: 'https://atriacoop.netlify.app'
         },
         {
-            id: 1,
+            id: 2,
             role: 'Code Instructor',
             company: 'Code Ninjas',
             dates: 'Sept 2024 – Present',
@@ -42,7 +53,7 @@ function About() {
             techStack: ['JavaScript', 'Unity']
         },
         {
-            id: 2,
+            id: 3,
             role: 'Web Developer',
             company: 'Sniff & Bark',
             dates: 'Feb 2024 – May 2024',
