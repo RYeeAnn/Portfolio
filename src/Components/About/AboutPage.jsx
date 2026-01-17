@@ -12,7 +12,7 @@ function AboutPage() {
         <div className="about-page">
             <div className="about-page__container">
                 <div className="about-page__content">
-                    <h1 className="about-page__title">Meet the Developer!</h1>
+                    <h1 className="about-page__title">About Me</h1>
                     
                     <div className="about-page__main">
                         <div className="about-page__image">
@@ -22,28 +22,24 @@ function AboutPage() {
                         <div className="about-page__text">
                             <div className="about-page__story">
                                 <p>
-                                    I'm Ryan, a software developer based in Vancouver, BC. I studied Electrical Engineering at UBC and worked in the automotive industry before jumping into software. That switch happened after I did a 12-week bootcamp to further strengthen my skills at BrainStation, and that's what got me started on this path.
+                                    I'm a Full Stack Developer with experience building SaaS platforms, AI-powered features, and scalable web applications. My work spans React/TypeScript frontends, Express.js and PostgreSQL backends, and AI integrations using OpenAI GPT-4 and Azure AI Search.
                                 </p>
-                                
+
                                 <p>
-                                    I've built a diverse range of projects that solve real-world problems. I created a Chrome extension that automates job application form filling, saving hours for job seekers. I built a professional website for my mother's hair salon business, complete with online booking to modernize her client management. I developed a community platform for volunteers, car care apps to help drivers understand their vehicles, and even some fun games to explore different programming concepts.
+                                    My path to software wasn't linear. I studied Electrical Engineering at UBC, worked in the automotive industry, then made the jump through BrainStation's intensive bootcamp.
                                 </p>
-                                
+
                                 <p>
-                                    What I really love is creating things that people actually find useful and enjoy using. Whether it's a productivity tool, a business website, or an educational game, I focus on building solutions that make a real difference in people's lives.
+                                    I build things that solve real problems. A Chrome extension that cuts job applications from 20 minutes to 5. A booking website for my mom's hair salon. A volunteer platform with real-time chat. I care about the details, both in the architecture and the user experience.
                                 </p>
-                                
+
                                 <p>
-                                    In my spare time, you'll find me checking out new coffee shops around the city, working on my car, playing games, playing badminton, or playing volleyball.
-                                </p>
-                                
-                                <p>
-                                    I hand-coded this portfolio using React and SCSS to showcase my journey as a software developer.
+                                    Outside of work, I'm either on a volleyball court, exploring Vancouver's coffee scene, or tinkering with my car.
                                 </p>
                             </div>
-                            
+
                             <div className="about-page__location">
-                                <span>– Based in Vancouver, BC</span>
+                                <span>Vancouver, BC</span>
                             </div>
                         </div>
                     </div>
