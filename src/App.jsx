@@ -8,6 +8,7 @@ import AboutPage from './Components/About/AboutPage';
 import Projects from './Components/Projects/Projects';
 import ProjectDetail from './Components/Projects/ProjectDetail';
 import Contact from './Components/Contact/Contact';
+import NotFound from './Components/NotFound/NotFound';
 
 export const ThemeContext = createContext();
 
@@ -29,7 +30,7 @@ function ScrollHandler() {
       // Instant reset - no animation
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
-  }, [location.pathname]);
+  }, [location.pathname, location.state]);
 
   return null;
 }
@@ -66,6 +67,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/project/:projectId" element={<ProjectDetail />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </Router>
