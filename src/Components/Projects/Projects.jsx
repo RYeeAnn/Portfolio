@@ -58,14 +58,13 @@ function Projects() {
                 <h3 className="projects__project-title">Applying Assistant</h3>
               </div>
               <p className="projects__project-description">
-                A Chrome extension that automates job application form filling with smart field detection and one-click professional templates. Reduces application time from 20+ minutes to 3-5 minutes.
+                A Chrome extension that automates job application form filling with smart field detection and one-click professional templates. Reduces application time from 20+ minutes to 3-5 minutes. <a href="https://chromewebstore.google.com/detail/applying-assistant/jemddgjafimcndlkmbjkpimnedbmccee" className="projects__inline-link" onClick={(e) => e.stopPropagation()}>Get it on Chrome Web Store</a>
               </p>
               <div className="projects__project-tech">
                 {renderTechStack("JavaScript, Chrome Extensions API, HTML, CSS")}
               </div>
               <div className="projects__project-links">
-              <a href="https://applyingassistant.netlify.app/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
-                <a href="https://chromewebstore.google.com/detail/applying-assistant/jemddgjafimcndlkmbjkpimnedbmccee" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>Install Extension</a>
+                <a href="https://applyingassistant.netlify.app/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
                 <span className="projects__link projects__link--secondary">View Details →</span>
               </div>
             </div>

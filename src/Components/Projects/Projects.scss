@@ -74,6 +74,9 @@
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
     &:hover {
       transform: translateY(-6px);
@@ -127,6 +130,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    flex: 1;
   }
 
   &__project-header {
@@ -208,6 +212,16 @@
     opacity: 0.8;
     font-size: 0.9rem;
     flex-grow: 1;
+  }
+
+  &__inline-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__project-tech {

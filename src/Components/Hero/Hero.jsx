@@ -94,7 +94,7 @@ function Hero() {
           
           
           <div className="hero__cta">
-            <a href="#projects" className="hero__cta-button hero__cta-button--primary">
+            <a href="#about" className="hero__cta-button hero__cta-button--primary">
               View My Work
             </a>
             <a href="/contact" className="hero__cta-button hero__cta-button--secondary">
