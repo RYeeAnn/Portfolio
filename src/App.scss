@@ -3,37 +3,47 @@
 :root {
   // Light theme variables - Clean minimal palette
   --bg-color: #fafafa;
-  --text-color: #2d3748;
+  --text-color: #1e293b;
+  --text-secondary: #64748b;
   --card-bg: #ffffff;
-  --accent-color: #4a5568;
+  --accent-color: #3b82f6;
   --border-color: #e2e8f0;
   --shadow-color: rgba(0, 0, 0, 0.04);
   --hero-bg: #f7fafc;
   --timeline-line: #e2e8f0;
-  --tech-pill-bg: #edf2f7;
-  --tech-pill-text: #4a5568;
-  --link-color: #4a5568;
+  --tech-pill-bg: #f1f5f9;
+  --tech-pill-text: #475569;
+  --link-color: #3b82f6;
   --section-bg: #ffffff;
 }
 
 [data-theme="dark"] {
   // Dark theme variables - Softer dark palette
-  --bg-color: #1a202c;
-  --text-color: #f7fafc;
-  --card-bg: #2d3748;
-  --accent-color: #81e6d9;
-  --border-color: #4a5568;
-  --shadow-color: rgba(0, 0, 0, 0.2);
-  --hero-bg: #2d3748;
-  --timeline-line: #4a5568;
-  --tech-pill-bg: #4a5568;
-  --tech-pill-text: #f7fafc;
-  --link-color: #81e6d9;
-  --section-bg: #1a202c;
+  --bg-color: #0f172a;
+  --text-color: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --card-bg: #1e293b;
+  --accent-color: #60a5fa;
+  --border-color: #334155;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --hero-bg: #1e293b;
+  --timeline-line: #334155;
+  --tech-pill-bg: #334155;
+  --tech-pill-text: #e2e8f0;
+  --link-color: #60a5fa;
+  --section-bg: #0f172a;
 }
 
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+*:not(input):not(textarea):not(button) {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -45,9 +55,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
 }
 
 .App {
   background-color: var(--bg-color);
   min-height: 100vh;
+}
+
+// Smooth scroll for anchor links
+a[href^="#"] {
+  scroll-behavior: smooth;
+}
+
+// Focus visible styles for accessibility
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+// Selection styling
+::selection {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] ::selection {
+  background: rgba(96, 165, 250, 0.3);
 }

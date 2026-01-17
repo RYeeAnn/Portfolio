@@ -87,8 +87,8 @@ function Header() {
           </RouterLink>
         </div>
 
-        <div className="header__right-section">
-          {/* Desktop Navigation */}
+        {/* Centered Desktop Navigation */}
+        <div className="header__center">
           <div className="header__links desktop-nav">
             <RouterLink
               to="/about"
@@ -119,27 +119,27 @@ function Header() {
               Contact
             </RouterLink>
           </div>
+        </div>
 
-          <div className="header__controls">
-            <button 
-              className="header__theme-toggle" 
-              onClick={toggleTheme}
-              aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {isDarkMode ? '☀️' : '🌙'}
-            </button>
+        <div className="header__controls">
+          <button
+            className="header__theme-toggle"
+            onClick={toggleTheme}
+            aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {isDarkMode ? '☀️' : '🌙'}
+          </button>
 
-            {/* Mobile Burger Menu Button */}
-            <button 
-              className={`header__burger ${isMenuOpen ? 'open' : ''}`}
-              onClick={toggleMenu}
-              aria-label="Toggle navigation menu"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
+          {/* Mobile Burger Menu Button */}
+          <button
+            className={`header__burger ${isMenuOpen ? 'open' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </nav>
 

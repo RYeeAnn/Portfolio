@@ -2,8 +2,17 @@
 @use "../../partials/variables.scss" as *;
 
 .projects {
-  background-color: var(--section-bg);
-  padding: 3rem 1rem;
+  background-color: var(--bg-color);
+  padding: 4rem 1rem;
+  position: relative;
+
+  @media (min-width: 768px) {
+    padding: 5rem 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 6rem 1rem;
+  }
 
   &__container {
     max-width: 1200px;
@@ -13,37 +22,53 @@
   &__header {
     text-align: center;
     margin-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      margin-bottom: 3.5rem;
+    }
   }
 
   &__title {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
     color: var(--text-color);
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
   }
 
   &__subtitle {
     font-size: 1rem;
     color: var(--text-color);
-    opacity: 0.7;
-    max-width: 500px;
+    opacity: 0.6;
+    max-width: 550px;
     margin: 0 auto;
-    line-height: 1.5;
+    line-height: 1.6;
+
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+    }
   }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+      gap: 2rem;
+    }
   }
 
   &__project {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 0;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid var(--border-color);
     overflow: hidden;
     text-decoration: none;
@@ -51,8 +76,9 @@
     cursor: pointer;
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      border-color: rgba(59, 130, 246, 0.3);
     }
 
     &--linkable {
@@ -66,8 +92,8 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    border-radius: 12px 12px 0 0;
-    background: var(--card-bg);
+    border-radius: 16px 16px 0 0;
+    background: var(--bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,7 +104,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     // Special handling for extension screenshots
@@ -88,11 +114,11 @@
         padding: 1rem;
       }
     }
+  }
 
-    &:hover {
-      img, video {
-        transform: scale(1.05);
-      }
+  &__project:hover &__project-image {
+    img, video {
+      transform: scale(1.08);
     }
   }
 
@@ -283,10 +309,10 @@
 
 @media (max-width: 480px) {
   .projects {
-    padding: 1.5rem 1rem;
+    padding: 2.5rem 1rem;
 
     &__title {
-      font-size: 1.8rem;
+      font-size: 1.75rem;
     }
 
     &__subtitle {
@@ -294,14 +320,42 @@
     }
 
     &__project-content {
-      padding: 1rem;
-    }
-
-    &__project-image {
-      // Aspect ratio handles height responsively
+      padding: 1.25rem;
     }
   }
 }
-  
-  
-  
+
+// Dark theme adjustments
+[data-theme="dark"] {
+  .projects {
+    &__project {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+        border-color: rgba(96, 165, 250, 0.4);
+      }
+    }
+
+    &__project-image {
+      background: var(--card-bg);
+    }
+
+    &__link {
+      &--primary,
+      &--secondary {
+        &:hover {
+          background: rgba(96, 165, 250, 0.15);
+          border-color: rgba(96, 165, 250, 0.5);
+        }
+      }
+    }
+
+    &__tech-pill {
+      &:hover {
+        background: var(--accent-color);
+        color: #0f172a;
+      }
+    }
+  }
+}

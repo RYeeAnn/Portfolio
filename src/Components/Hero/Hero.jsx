@@ -88,6 +88,8 @@ function Hero() {
         <div className="hero__content">
           <div className="hero__intro">
             <h1 className="hero__name">Ryan Yee</h1>
+            <p className="hero__tagline">Full Stack Developer</p>
+            <p className="hero__location">Based in Vancouver, BC</p>
           </div>
           
           

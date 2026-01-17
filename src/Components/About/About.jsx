@@ -19,7 +19,6 @@ function About() {
         setSelectedExperience(null);
     };
 
-    // Experience data with full details for modal
     const experiences = [
         {
             id: 0,
@@ -29,7 +28,8 @@ function About() {
             logo: dnaLogo,
             description: 'Full-stack SaaS financial planning platform with React, TypeScript, and Azure PostgreSQL',
             fullDescription: 'Contributing to a full-stack SaaS financial planning platform using React, TypeScript, Express.js, and Azure PostgreSQL, spanning 30+ REST API endpoints and 500+ UI components used by financial advisors. Collaborated on Helix, an AI conversational assistant leveraging OpenAI GPT-4 and Azure AI Search (RAG) for semantic retrieval and context-aware conversations. Implemented internationalization (i18n) across 3 languages. Contributed to a shared design system with Tailwind CSS and Radix UI across 60+ components. Supported security hardening with JWT auth and Zod validation.',
-            techStack: ['React', 'TypeScript', 'Express.js', 'Azure PostgreSQL', 'OpenAI GPT-4', 'Azure AI Search', 'Tailwind CSS', 'Radix UI', 'i18next', 'Zod', 'JWT', 'Webflow']
+            techStack: ['React', 'TypeScript', 'Express.js', 'Azure PostgreSQL', 'OpenAI GPT-4', 'Azure AI Search', 'Tailwind CSS', 'Radix UI', 'i18next', 'Zod', 'JWT', 'Webflow'],
+            current: true
         },
         {
             id: 1,
@@ -50,7 +50,8 @@ function About() {
             logo: codeninjasLogo,
             description: 'Teaching JavaScript and Unity to kids aged 7-14',
             fullDescription: 'Teach kids aged 7–14 the foundations of JavaScript, Unity, and game development through hands-on lessons in a high-energy, mentor-style environment.',
-            techStack: ['JavaScript', 'Unity']
+            techStack: ['JavaScript', 'Unity'],
+            current: true
         },
         {
             id: 3,
@@ -69,32 +70,37 @@ function About() {
             <div className="about__container">
                 <div className="about__header">
                     <h2 className="about__title">Experience</h2>
-                    <p className="about__subtitle">Professional journey and key roles</p>
+                    <p className="about__subtitle">My professional journey</p>
                 </div>
-                
-                <div className="about__content">
-                    <div className="about__experience">
-                        {experiences.map((experience) => (
-                            <div key={experience.id} className="experience__item" onClick={() => handleExperienceClick(experience)}>
-                                <div className="experience__content">
-                                    <div className="experience__header">
-                                        <div className="experience__logo">
-                                            <img src={experience.logo} alt={experience.company} />
-                                        </div>
-                                        <div className="experience__details">
-                                            <h3 className="experience__role">{experience.role}</h3>
-                                            <span className="experience__dates">{experience.dates}</span>
-                                        </div>
+
+                <div className="timeline">
+                    {experiences.map((experience, index) => (
+                        <div
+                            key={experience.id}
+                            className={`timeline__item ${experience.current ? 'timeline__item--current' : ''}`}
+                            onClick={() => handleExperienceClick(experience)}
+                        >
+                            <div className="timeline__marker">
+                                <div className="timeline__dot"></div>
+                                {index < experiences.length - 1 && <div className="timeline__line"></div>}
+                            </div>
+
+                            <div className="timeline__content">
+                                <div className="timeline__date">{experience.dates}</div>
+                                <div className="timeline__card">
+                                    <div className="timeline__logo">
+                                        <img src={experience.logo} alt={experience.company} />
                                     </div>
-                                    <p className="experience__company">{experience.company}</p>
-                                    <p className="experience__description">{experience.description}</p>
-                                    <div className="experience__click-hint">
-                                        <span>Click to view more details</span>
+                                    <div className="timeline__info">
+                                        <h3 className="timeline__role">{experience.role}</h3>
+                                        <p className="timeline__company">{experience.company}</p>
+                                        <p className="timeline__description">{experience.description}</p>
+                                        <span className="timeline__hint">Click for details</span>
                                     </div>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </div>
 
@@ -105,7 +111,7 @@ function About() {
                         <button className="experience-modal__close" onClick={closeModal}>
                             <span>×</span>
                         </button>
-                        
+
                         <div className="experience-modal__header">
                             <div className="experience-modal__logo">
                                 <img src={selectedExperience.logo} alt={selectedExperience.company} />
@@ -116,7 +122,7 @@ function About() {
                                 <p className="experience-modal__dates">{selectedExperience.dates}</p>
                             </div>
                         </div>
-                        
+
                         <div className="experience-modal__body">
                             <p className="experience-modal__description">
                                 {selectedExperience.link ? (
@@ -129,7 +135,7 @@ function About() {
                                     selectedExperience.fullDescription
                                 )}
                             </p>
-                            
+
                             <div className="experience-modal__tech">
                                 <h4>Technologies & Skills</h4>
                                 <div className="experience-modal__tech-tags">
