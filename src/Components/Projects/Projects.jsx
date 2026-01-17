@@ -36,7 +36,7 @@ function Projects() {
                 <h3 className="projects__project-title">Ruby's Hair Salon</h3>
               </div>
               <p className="projects__project-description">
-                A professional website built for my mother's private hair salon business. Features online booking, service showcase, and a modern interface to help transition from manual notebook scheduling to a professional digital presence.
+                A freelance project for my mother's private hair salon business. Features online booking integration, service showcase, and responsive design. Helped transition from manual notebook scheduling to a digital booking system, reducing scheduling conflicts and missed appointments.
               </p>
               <div className="projects__project-tech">
                 {renderTechStack("React, TypeScript, Tailwind CSS")}
@@ -80,7 +80,7 @@ function Projects() {
                 <h3 className="projects__project-title">Townhall</h3>
               </div>
               <p className="projects__project-description">
-                A full-stack community platform built for volunteer collaboration, featuring user onboarding, post/comment creation, media uploads, and more. I led API development, frontend UI implementation from Figma, and helped architect the backend using Django with a layered structure.
+                A full-stack community platform connecting volunteers to local initiatives. Built 15+ RESTful APIs, implemented real-time chat with WebSockets, and developed mobile-first UIs from Figma designs. Led API development and helped architect the backend using Django with a scalable layered structure.
               </p>
               <div className="projects__project-tech">
                 {renderTechStack("Python, Django, Django Channels, React/Next.js, JavaScript, REST APIs, PostgreSQL/SQLite, Render, WebSockets, Redis, Netlify, Cloudinary")}
@@ -102,7 +102,7 @@ function Projects() {
                 <h3 className="projects__project-title">Speedie</h3>
               </div>
               <p className="projects__project-description">
-                Speedie is an app designed to help everyday drivers understand their car better. It features an interactive dashboard that explains vehicle warning lights with urgency levels, repair advice, and educational videos.
+                An educational app helping everyday drivers understand vehicle warning lights. Features an interactive dashboard with urgency levels, repair cost estimates, and curated educational videos. Built with progressive disclosure UX patterns to reduce information overwhelm for non-technical users.
               </p>
               <div className="projects__project-tech">
                 {renderTechStack("React, TypeScript, Tailwind")}
@@ -124,7 +124,7 @@ function Projects() {
                 <h3 className="projects__project-title">DinoType</h3>
               </div>
               <p className="projects__project-description">
-                A type racer game built with Pygame and hosted on GitHub Pages using Pygbag. Players can test their typing speed in an interactive dinosaur-themed interface. Simply click the link to play directly in your browser!
+                A typing speed game built with Python/Pygame and deployed to the web using Pygbag for WebAssembly compilation. Features real-time WPM tracking and an engaging dinosaur-themed interface. Demonstrates cross-platform deployment of desktop Python games to the browser.
               </p>
               <div className="projects__project-tech">
                 {renderTechStack("Python, Pygame, Pygbag")}
@@ -146,7 +146,7 @@ function Projects() {
                 <h3 className="projects__project-title">Shnake</h3>
               </div>
               <p className="projects__project-description">
-                A simple snake game inspired by classic games that was played as a kid. Created and coded using Javascript and React.js. My first ever "game" I have coded.
+                A classic snake game built with React, featuring keyboard controls, score tracking, and increasing difficulty. My first game development project that taught me state management patterns, game loop architecture, and collision detection algorithms.
               </p>
               <div className="projects__project-tech">
                 {renderTechStack("JavaScript, React, Sass")}

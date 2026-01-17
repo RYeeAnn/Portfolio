@@ -103,15 +103,14 @@ function Hero() {
           </div>
           
           <div className="hero__social">
-            <a 
-              href="https://drive.google.com/file/d/1ciabuYpmWIZupG3qZkWc_lvtAqCJGdVA/view?usp=sharing" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="hero__social-link"
-              aria-label="Resume"
+            <a
+              href="/Ryan_Yee_Resume.pdf"
+              download="Ryan_Yee_Resume.pdf"
+              className="hero__social-link hero__social-link--download"
+              aria-label="Download Resume"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
               </svg>
               Resume
             </a>

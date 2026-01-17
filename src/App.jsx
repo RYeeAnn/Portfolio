@@ -13,10 +13,11 @@ export const ThemeContext = createContext();
 
 function ScrollHandler() {
   const location = useLocation();
+
+  // Instant scroll to top on route change (runs before paint)
   useEffect(() => {
     if (location.pathname === '/' && location.state && location.state.scrollTo) {
       const { scrollTo, offset = 0 } = location.state;
-      // Give the DOM a tick to render
       setTimeout(() => {
         const el = document.getElementById(scrollTo);
         if (el) {
@@ -24,8 +25,12 @@ function ScrollHandler() {
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }, 0);
+    } else {
+      // Instant reset - no animation
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
-  }, [location]);
+  }, [location.pathname]);
+
   return null;
 }
 
