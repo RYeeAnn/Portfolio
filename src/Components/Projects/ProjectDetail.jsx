@@ -31,6 +31,7 @@ import RHSFigma from '../../assets/RHS-Figma.png';
 import ApplyingAssistantFigma from '../../assets/ApplyingAssistant-Figma.png';
 import AtriaFigma from '../../assets/Atria-Figma.png';
 import SpeedieFigma from '../../assets/Speedie-Figma.png';
+import SolidryHero from '../../assets/Solidry.png';
 
 // Simplified project data
 const projectData = {
@@ -140,6 +141,24 @@ The website features an online booking system, service showcase, contact informa
 		githubUrl: null,
 		images: [RHS],
 		tags: ['Freelance', 'Full Stack Development']
+	},
+	'solidry': {
+		title: 'Solidry',
+		subtitle: 'AI-Powered Code Review Assistant',
+		heroImage: SolidryHero,
+		description: 'An AI-powered code review assistant that automates quality analysis for SOLID and DRY principles, code hygiene, complexity issues, and dead code detection.',
+		detailedDescription: `As a developer who rigorously applies SOLID and DRY principles in every project, I needed a fast, automated way to validate my code quality decisions and catch violations early. Manual code reviews for principle adherence are time-consuming, and I wanted instant feedback with transparency about accuracy—not just "here's what's wrong" but "here's how confident you should be in this analysis."
+
+Built to solve a personal workflow need, Solidry provides instant, transparent feedback for maintaining high code quality standards without manual review overhead. The app features dual-mode analysis (AI-powered via Claude 3.5 Sonnet or pattern-based demo mode), a unique confidence scoring system that provides transparency about result reliability, and line-by-line code annotations with severity levels.
+
+The application includes real-time SOLID principle violation detection (SRP, OCP, LSP, ISP, DIP), code hygiene analysis (console.log, var usage, any types, TODOs), dead code detection, and complexity analysis. It features quality scoring (0-100) with letter grades (A-F), git diff support for PR reviews, and selective analysis options—all wrapped in a professional, tool-first design inspired by Cursor and Notion.
+
+Key technical highlights include integration with Anthropic Claude SDK using Claude 3.5 Sonnet with 200K context window, comprehensive testing with 33 passing unit tests (100% pass rate), and achieving Grade A (93/100) SOLID compliance in its own codebase. The project demonstrates production-ready error handling, full TypeScript type safety, and complete documentation including accuracy metrics and limitations.`,
+		techStack: ['Next.js 15', 'React 19', 'TypeScript 5.7', 'Tailwind CSS', 'Anthropic Claude SDK', 'Node.js', 'Vitest', 'ESLint 9'],
+		liveUrl: 'https://solidry.netlify.app',
+		githubUrl: null,
+		images: [SolidryHero],
+		tags: ['Full Stack Development', 'AI/ML', 'Developer Tools']
 	}
 };
 

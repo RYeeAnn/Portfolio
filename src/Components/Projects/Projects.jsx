@@ -9,6 +9,7 @@ import RHSFigma from '../../assets/RHS-Figma.png'
 import ApplyingAssistantFigma from '../../assets/ApplyingAssistant-Figma.png'
 import AtriaFigma from '../../assets/Atria-Figma.png'
 import SpeedieFigma from '../../assets/Speedie-Figma.png'
+import SolidryHero from '../../assets/Solidry.png'
 
 function renderTechStack(techString) {
   return techString.split(',').map(tech => (
@@ -26,6 +27,28 @@ function Projects() {
         </div>
 
                 <div className="projects__grid">
+          {/* Solidry Project */}
+          <Link to="/project/solidry" className="projects__project projects__project--linkable">
+            <div className="projects__project-image">
+              <img src={SolidryHero} alt="Solidry Code Review Assistant" />
+            </div>
+            <div className="projects__project-content">
+              <div className="projects__project-header">
+                <h3 className="projects__project-title">Solidry</h3>
+              </div>
+              <p className="projects__project-description">
+                An AI-powered code review assistant built with Next.js 15, React 19, and Claude 3.5 Sonnet for intelligent analysis of SOLID/DRY principles, code hygiene, and complexity issues. Features dual-mode analysis (AI + pattern-based demo), unique confidence scoring for result transparency, real-time quality grades (A-F), line-by-line annotations, and git diff support. Built to automate my personal workflow of maintaining strict SOLID principle adherence in daily development.
+              </p>
+              <div className="projects__project-tech">
+                {renderTechStack("Next.js 15, React 19, TypeScript 5.7, Tailwind CSS, Anthropic Claude SDK, Vitest")}
+              </div>
+              <div className="projects__project-links">
+                <a href="https://solidry.netlify.app" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
+                <span className="projects__link projects__link--secondary">View Details →</span>
+              </div>
+            </div>
+          </Link>
+
           {/* Ruby's Hair Salon Project */}
           <Link to="/project/ruby-hair-salon" className="projects__project projects__project--linkable">
             <div className="projects__project-image">
