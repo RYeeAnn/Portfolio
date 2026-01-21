@@ -37,10 +37,10 @@ function Projects() {
                 <h3 className="projects__project-title">Solidry</h3>
               </div>
               <p className="projects__project-description">
-                An AI-powered code review assistant built with Next.js 15, React 19, and Claude 3.5 Sonnet for intelligent analysis of SOLID/DRY principles, code hygiene, and complexity issues. Features dual-mode analysis (AI + pattern-based demo), unique confidence scoring for result transparency, real-time quality grades (A-F), line-by-line annotations, and git diff support. Built to automate my personal workflow of maintaining strict SOLID principle adherence in daily development.
+                An AI-powered code review assistant built with Next.js, React, and Claude 3.5 Sonnet for intelligent analysis of SOLID/DRY principles, code hygiene, and complexity issues. Features dual-mode analysis (AI + pattern-based demo), unique confidence scoring for result transparency, real-time quality grades (A-F), line-by-line annotations, and git diff support. Built to automate my personal workflow of maintaining strict SOLID principle adherence in daily development.
               </p>
               <div className="projects__project-tech">
-                {renderTechStack("Next.js 15, React 19, TypeScript 5.7, Tailwind CSS, Anthropic Claude SDK, Vitest")}
+                {renderTechStack("Next.js, React, TypeScript, Tailwind CSS, Anthropic Claude SDK, Vitest")}
               </div>
               <div className="projects__project-links">
                 <a href="https://solidry.netlify.app" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
