@@ -47,8 +47,8 @@ function Hero() {
       }
     } catch (error) {
       console.error('Chat error:', error);
-      setConversations(prev => [...prev, { type: 'ai', message: "Sorry, I'm having trouble responding right now!" }]);
-      setBubbleMessage("Error!");
+      setConversations(prev => [...prev, { type: 'ai', message: "The chat server is currently offline. Feel free to reach out via the Contact page instead!" }]);
+      setBubbleMessage("Server offline");
     } finally {
       setIsLoading(false);
     }
@@ -89,11 +89,19 @@ function Hero() {
           <div className="hero__intro">
             <h1 className="hero__name">Ryan Yee</h1>
             <p className="hero__tagline">Full Stack Developer</p>
+            <div className="hero__skills">
+              <span>TypeScript</span>
+              <span>React</span>
+              <span>Python</span>
+              <span>Django</span>
+              <span>Node.js</span>
+              <span>PostgreSQL</span>
+            </div>
           </div>
 
 
           <div className="hero__cta">
-            <a href="#about" className="hero__cta-button hero__cta-button--primary">
+            <a href="#projects" className="hero__cta-button hero__cta-button--primary">
               View My Work
             </a>
             <a href="/contact" className="hero__cta-button hero__cta-button--secondary">

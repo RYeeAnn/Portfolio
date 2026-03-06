@@ -122,6 +122,29 @@
     }
   }
 
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+      justify-content: flex-start;
+    }
+
+    span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #3b82f6;
+      background: rgba(59, 130, 246, 0.08);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      padding: 0.3em 0.75em;
+      border-radius: 20px;
+      letter-spacing: 0.01em;
+    }
+  }
+
   &__tagline {
     font-size: 1.125rem;
     font-weight: 600;
@@ -938,6 +961,12 @@
 
     &__tagline {
       color: #cbd5e1;
+    }
+
+    &__skills span {
+      color: #60a5fa;
+      background: rgba(96, 165, 250, 0.1);
+      border-color: rgba(96, 165, 250, 0.25);
     }
 
     &__location {

@@ -1,21 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProjectDetail.scss';
-import ShnakeGif from '../../assets/ShnakeGif.gif';
-import Shnake1 from '../../assets/Shnake1.png';
-import Shnake2 from '../../assets/Shnake2.png';
-import simonSays from '../../assets/simon-says.gif';
 import DinoType from '../../assets/DynoType.png';
 import Speedie from '../../assets/speedie.png';
-import Atria from '../../assets/Atria.png';
-// New screenshots
-import Atria1 from '../../assets/Atria1.png';
-import Atria2 from '../../assets/Atria2.png';
-import Atria3 from '../../assets/Atria3.png';
-import Atria4 from '../../assets/Atria4.png';
-import Atria5 from '../../assets/Atria5.png';
-import Atria6 from '../../assets/Atria6.png';
-import Atria7 from '../../assets/Atria7.png';
 import Speedie2 from '../../assets/Speedie2.png';
 import Speedie3 from '../../assets/Speedie3.png';
 import Speedie4 from '../../assets/Speedie4.png';
@@ -29,22 +16,42 @@ import ApplyingAssistantVideo from '../../assets/ApplyingAssistantVideo.mov';
 import RHS from '../../assets/RHS.png';
 import RHSFigma from '../../assets/RHS-Figma.png';
 import ApplyingAssistantFigma from '../../assets/ApplyingAssistant-Figma.png';
-import AtriaFigma from '../../assets/Atria-Figma.png';
 import SpeedieFigma from '../../assets/Speedie-Figma.png';
-import SolidryHero from '../../assets/Solidry.png';
+import TownhallHero from '../../assets/Townhall.png';
+import Townhall2 from '../../assets/Townhall2.png';
+import Townhall3 from '../../assets/Townhall3.png';
+import Townhall4 from '../../assets/Townhall4.png';
+import Townhall5 from '../../assets/Townhall5.png';
 
 // Simplified project data
 const projectData = {
+	'townhall': {
+		title: 'Townhall',
+		subtitle: 'Full-Stack Community Platform',
+		heroImage: TownhallHero,
+		description: 'A full-stack community platform I\'m actively contributing to, built for volunteer collaboration with real-time communication and media support.',
+		detailedDescription: `Townhall is a community platform designed to connect volunteers with local initiatives. It was built in collaboration with the Vancouver Food Justice Coalition (VFJC), whose members use the platform to coordinate volunteer efforts and community engagement. I joined the project as a core contributor and took ownership across both the frontend and backend.
+
+I built 15+ RESTful endpoints covering user management, posts, comments, and media uploads. I also implemented real-time notifications using Django Channels and WebSockets, and integrated Cloudinary for media handling. On the frontend, I translated Figma designs into responsive React components.
+
+The backend follows a layered architecture, with serializers, services, and views kept separate, which made the codebase easier to extend as the feature set grew. This project is still actively in development and I continue to contribute new features and bug fixes.`,
+		techStack: ['Python', 'Django', 'Django Channels', 'React', 'Next.js', 'PostgreSQL', 'WebSockets', 'Redis', 'Cloudinary', 'Netlify', 'Render'],
+		liveUrl: 'https://atriacoop.netlify.app/',
+		githubUrl: 'https://github.com/AtriaCoop/townhallfrontend',
+		githubBackendUrl: 'https://github.com/AtriaCoop/new-townhall-backend',
+		images: [TownhallHero, Townhall2, Townhall3, Townhall4, Townhall5],
+		tags: ['Full Stack Development', 'Team Project']
+	},
 	'applying-assistant': {
 		title: 'Applying Assistant',
 		subtitle: 'Chrome Extension for Job Applications',
 		heroImage: ApplyingAssistantFigma,
-		description: 'A Chrome extension that automates job application form filling with smart field detection and one-click templates.',
-		detailedDescription: `As someone actively job searching, I was spending hours rewriting the same responses to common questions like "Where do you see yourself in 5 years?" and "What is your greatest strength/weakness?" I built this project to solve a personal problem of spending too much time answering repetitive questions in job applications.
+		description: 'A Chrome extension that auto-fills job application forms with one-click templates, cutting application time from 20+ minutes to under 5.',
+		detailedDescription: `While job searching, I found myself rewriting the same answers to questions like "Where do you see yourself in 5 years?" across dozens of applications. I built this extension to solve that problem for myself.
 
-The Chrome extension automatically detects form fields on job application pages and provides one-click templates for common questions. It intelligently recognizes different field types and suggests relevant pre-written responses that I can customize on the fly. No more copying and pasting from a separate document or retyping the same answers over and over.
+The extension detects form fields on job application pages and offers pre-written templates with one click. The trickiest part was making field detection work reliably across different job sites. Each platform structures their HTML differently, so I had to write flexible selectors that could adapt without breaking.
 
-Building this taught me a lot about the Chrome Extensions API, content script injection, and DOM manipulation. The biggest challenge was making the field detection work across different job sites with varying HTML structures. I had to create flexible selectors that could adapt to different form layouts while still being reliable enough to fill the right fields with the right content.`,
+It's published on the Chrome Web Store and actively used. Building it taught me a lot about content script injection, the Chrome Extensions lifecycle, and DOM manipulation across third-party pages.`,
 		techStack: ['JavaScript', 'Chrome Extensions API', 'HTML', 'CSS'],
 		liveUrl: `https://applyingassistant.netlify.app/`,
 		chromeStoreUrl: 'https://chromewebstore.google.com/detail/applying-assistant/jemddgjafimcndlkmbjkpimnedbmccee',
@@ -52,32 +59,14 @@ Building this taught me a lot about the Chrome Extensions API, content script in
 		images: [ApplyingAssistant2, ApplyingAssistant3, ApplyingAssistant4, ApplyingAssistant5, ApplyingAssistant6],
 		tags: ['Browser Extension', 'Productivity Tool']
 	},
-	'townhall': {
-		title: 'Townhall',
-		subtitle: 'Full-Stack Community Platform',
-		heroImage: AtriaFigma,
-		description: 'A full-stack community platform built for volunteer collaboration, featuring user onboarding, post/comment creation, media uploads, and real-time communication.',
-		detailedDescription: `Townhall is a comprehensive community platform designed to facilitate volunteer collaboration and community engagement. As the lead developer, I was responsible for architecting the entire system from the ground up.
-
-The platform features a robust user management system with secure authentication, real-time communication through WebSockets, and a sophisticated media handling system. I implemented a layered backend architecture using Django that ensures scalability and maintainability.
-
-Key features include user onboarding and profile management, real-time post and comment system, media upload and management, WebSocket-based notifications, and responsive design for all devices.`,
-		techStack: ['Python', 'Django', 'React/Next.js', 'PostgreSQL', 'WebSockets', 'Redis'],
-		liveUrl: 'https://atriacoop.netlify.app/',
-		githubUrl: null,
-		images: [Atria, Atria1, Atria2, Atria3, Atria4, Atria5, Atria6, Atria7],
-		tags: ['Full Stack Development', 'UX Research']
-	},
 	'speedie': {
 		title: 'Speedie',
 		subtitle: 'Car Care Companion App',
 		heroImage: SpeedieFigma,
 		description: 'An app designed to help everyday drivers understand their car better with interactive dashboard that explains vehicle warning lights, urgency levels, and repair advice.',
-		detailedDescription: `Speedie is a comprehensive car care companion app that demystifies vehicle warning lights and provides actionable advice for drivers. The app features an interactive dashboard that explains vehicle warning lights with urgency levels, repair advice, and educational videos.
+		detailedDescription: `Speedie helps everyday drivers understand their car's warning lights without having to Google everything. You tap a warning light, get a plain-English explanation of what it means, how urgent it is, and what to do next.
 
-I designed and developed the entire application with a focus on user experience and accessibility. The app includes a playful radial menu that lays the foundation for future tools like a service scheduler, AI mechanic assistant, and mileage tracker.
-
-The biggest challenge was taking complex automotive information and making it digestible for everyday drivers. I used progressive disclosure to present information in digestible chunks, implemented a modular component system with TypeScript for type safety, and conducted accessibility testing to ensure the app works for everyone.`,
+I designed and built the whole thing myself, from Figma mockups to the finished app. The trickiest part was organizing the information in a way that didn't overwhelm someone who just saw their check engine light turn on for the first time. The app also has a radial menu I built as a starting point for future features like a service scheduler and mileage tracker.`,
 		techStack: ['React', 'TypeScript', 'Tailwind CSS'],
 		liveUrl: 'https://speedie.vercel.app/',
 		githubUrl: 'https://github.com/RYeeAnn/speedie',
@@ -89,41 +78,13 @@ The biggest challenge was taking complex automotive information and making it di
 		subtitle: 'Type Racing Game',
 		heroImage: DinoType,
 		description: 'A type racer game built with Pygame and hosted on GitHub Pages using Pygbag. Players can test their typing speed in an interactive dinosaur-themed interface.',
-		detailedDescription: `DinoType is a personal project to explore game development and Python programming. The game challenges players to type quickly and accurately while avoiding obstacles and competing against time.
+		detailedDescription: `DinoType is a typing speed game built with Python and Pygame, compiled to WebAssembly with Pygbag so it runs directly in the browser with no install needed. Players race through typing prompts while a dinosaur animates on screen, with difficulty scaling as speed increases.
 
-Built with Pygame, the game was converted to run in web browsers using Pygbag, making it accessible to anyone with just a click—no installation required. This project helped me learn game development concepts including game loops, collision detection, animation, and state management, while also exploring how to deploy Python games to the web.`,
+I built the full game loop, collision detection, animation, and state management in Python, then figured out the Pygbag build pipeline to get it running on GitHub Pages. It was my first time deploying a Python application to the web without a server.`,
 		techStack: ['Python', 'Pygame', 'Pygbag'],
 		liveUrl: 'https://ryeeann.github.io/DinoType/',
 		githubUrl: 'https://github.com/RYeeAnn/dinotype',
 		images: [DinoType],
-		tags: ['Game Development']
-	},
-	'shnake': {
-		title: 'Shnake',
-		subtitle: 'Classic Snake Game',
-		heroImage: ShnakeGif,
-		description: 'A classic snake game built with React to practice state management and game logic implementation.',
-		detailedDescription: `A classic snake game inspired by the games I played as a kid. Created and coded using JavaScript and React.js, this was my first ever "game" I have coded.
-
-The project helped me understand interactive state management, timing functions, collision detection, and how to handle user input in a real-time environment. It was a fun way to practice React while building something nostalgic and engaging.`,
-		techStack: ['JavaScript', 'React', 'Sass'],
-		liveUrl: 'https://shnakey.netlify.app/',
-		githubUrl: 'https://github.com/RYeeAnn/Shnake',
-		images: [ShnakeGif, Shnake1, Shnake2],
-		tags: ['Game Development']
-	},
-	'simon-says': {
-		title: 'Simon Says',
-		subtitle: 'Memory Game',
-		heroImage: simonSays,
-		description: 'A classic memory game to test short-term memory skills, built with React and modern JavaScript.',
-		detailedDescription: `A simple and classic game to test your short-term memory skills. Built with React and JavaScript for interactive gameplay.
-
-This project helped me practice state management patterns, sequence handling, audio integration, and creating engaging user interfaces. It was a great way to explore React's capabilities while building something fun and interactive.`,
-		techStack: ['JavaScript', 'React', 'Sass'],
-		liveUrl: null,
-		githubUrl: 'https://github.com/RYeeAnn/simon-says',
-		images: [simonSays],
 		tags: ['Game Development']
 	},
 	'ruby-hair-salon': {
@@ -135,31 +96,13 @@ This project helped me practice state management patterns, sequence handling, au
 
 I built this website to modernize her business and create a professional online presence. Instead of just giving out a phone number, she can now share this application with potential clients, allowing them to learn about her services and book appointments online. It provides a polished, professional baseline for referrals while maintaining the intimate, private nature of her salon.
 
-The website features an online booking system, service showcase, contact information, and a gallery of her work. This project was particularly meaningful as it directly solved a real-world problem for my family business and helped my mother streamline her client management process.`,
+The website features an online booking system, service showcase, contact information, and a gallery of her work.`,
 		techStack: ['React', 'TypeScript', 'Tailwind CSS'],
 		liveUrl: 'https://www.rubyshairsalon.ca/',
 		githubUrl: null,
 		images: [RHS],
-		tags: ['Freelance', 'Full Stack Development']
+		tags: ['Freelance', 'Front-End Development']
 	},
-	'solidry': {
-		title: 'Solidry',
-		subtitle: 'AI-Powered Code Review Assistant',
-		heroImage: SolidryHero,
-		description: 'An AI-powered code review assistant that automates quality analysis for SOLID and DRY principles, code hygiene, complexity issues, and dead code detection.',
-		detailedDescription: `As a developer who rigorously applies SOLID and DRY principles in my professional workflow, I needed a fast, automated way to validate my code quality decisions and catch violations early. Manual code reviews for principle adherence are time-consuming, and I wanted instant feedback with transparency about accuracy. Not just "here's what's wrong" but "here's how confident you should be in this analysis."
-
-Built to solve a personal workflow need, Solidry provides instant, transparent feedback for maintaining high code quality standards without manual review overhead. The app features dual-mode analysis (AI-powered via Claude Sonnet 4 or pattern-based demo mode), a unique confidence scoring system that provides transparency about result reliability, and line-by-line code annotations with severity levels.
-
-The application includes real-time SOLID principle violation detection (SRP, OCP, LSP, ISP, DIP), code hygiene analysis (console.log, var usage, any types, TODOs), dead code detection, and complexity analysis. It features quality scoring (0-100) with letter grades (A-F), git diff support for PR reviews, and selective analysis options, all wrapped in a professional, tool-first design inspired by Cursor and Notion.
-
-Key technical highlights include integration with Anthropic Claude SDK using Claude Sonnet 4, comprehensive testing with 33 passing unit tests (100% pass rate), and achieving Grade A (93/100) SOLID compliance in its own codebase. The project demonstrates production-ready error handling, full TypeScript type safety, and complete documentation including accuracy metrics and limitations.`,
-		techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Anthropic Claude SDK', 'Node.js', 'Vitest', 'ESLint'],
-		liveUrl: 'https://solidry.netlify.app',
-		githubUrl: null,
-		images: [SolidryHero],
-		tags: ['Full Stack Development', 'AI/ML', 'Developer Tools']
-	}
 };
 
 function ProjectDetail() {
@@ -222,7 +165,12 @@ function ProjectDetail() {
 								)}
 								{project.githubUrl && (
 									<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-detail__link project-detail__link--secondary">
-										View Code
+										{project.githubBackendUrl ? "Frontend Repo" : "View Code"}
+									</a>
+								)}
+								{project.githubBackendUrl && (
+									<a href={project.githubBackendUrl} target="_blank" rel="noopener noreferrer" className="project-detail__link project-detail__link--secondary">
+										Backend Repo
 									</a>
 								)}
 							</div>

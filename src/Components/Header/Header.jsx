@@ -125,10 +125,11 @@ function Header() {
           {/* Social Links */}
           <div className="header__social">
             <a
-              href="/Ryan_Yee_Resume.pdf"
-              download="Ryan_Yee_Resume.pdf"
+              href="https://drive.google.com/file/d/1aTXUkPDDVAp7jFNxKcoDUUF9H0OWYnAL/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="header__social-link"
-              aria-label="Download Resume"
+              aria-label="View Resume"
               title="Resume"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -217,8 +218,9 @@ function Header() {
           {/* Social Links in Mobile Menu */}
           <div className="header__mobile-social">
             <a
-              href="/Ryan_Yee_Resume.pdf"
-              download="Ryan_Yee_Resume.pdf"
+              href="https://drive.google.com/file/d/1aTXUkPDDVAp7jFNxKcoDUUF9H0OWYnAL/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="header__mobile-social-link"
               onClick={closeMenu}
             >

@@ -22,7 +22,7 @@ function AboutPage() {
                         <div className="about-page__text">
                             <div className="about-page__story">
                                 <p>
-                                    I'm a Full Stack Developer with experience building SaaS platforms, AI-powered features, and scalable web applications. My work spans React/TypeScript frontends, Express.js and PostgreSQL backends, and AI integrations using OpenAI GPT-4 and Azure AI Search.
+                                    I'm a Full Stack Developer with experience building SaaS platforms, AI-powered features, and scalable web applications. My work spans React/TypeScript frontends, Python/Django and Node.js/Express backends, PostgreSQL databases, and AI integrations using OpenAI GPT-4 and Azure AI Search.
                                 </p>
 
                                 <p>
@@ -30,7 +30,7 @@ function AboutPage() {
                                 </p>
 
                                 <p>
-                                    I build things that solve real problems. A Chrome extension that cuts job applications from 20 minutes to 5. A booking website for my mom's hair salon. A volunteer platform with real-time chat. I care about the details, both in the architecture and the user experience.
+                                    I build things that solve real problems. A volunteer platform with real-time chat built for the Vancouver Food Justice Coalition. A Chrome extension that cuts job application time from 20 minutes to 5. A booking website for my mom's hair salon. I care about the details, both in the architecture and the user experience.
                                 </p>
 
                                 <p>

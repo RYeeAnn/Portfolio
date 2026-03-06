@@ -26,19 +26,19 @@ function About() {
             company: 'Dynamic Needs Analysis',
             dates: 'Nov 2025 – Present',
             logo: dnaLogo,
-            description: 'Full-stack SaaS financial planning platform with React, TypeScript, and Azure PostgreSQL',
-            fullDescription: 'Contributing to a full-stack SaaS financial planning platform using React, TypeScript, Express.js, and Azure PostgreSQL, spanning 30+ REST API endpoints and 500+ UI components used by financial advisors. Collaborated on Helix, an AI conversational assistant leveraging OpenAI GPT-4 and Azure AI Search (RAG) for semantic retrieval and context-aware conversations. Implemented internationalization (i18n) across 3 languages. Contributed to a shared design system with Tailwind CSS and Radix UI across 60+ components. Supported security hardening with JWT auth and Zod validation.',
+            description: 'Building features on a SaaS financial planning platform used by financial advisors',
+            fullDescription: 'Working on a large SaaS financial planning platform used by financial advisors in production. I contributed to Helix, an AI assistant built on OpenAI GPT-4, by handling document uploads and chunking them for indexing with Azure AI Search so advisors can query their own data. I also shipped production features used by real users, hardened security on several HTTP endpoints, and refactored the i18n internationalization setup to fix TypeScript compile errors that were blocking pushes to main. The codebase has 30+ API endpoints and hundreds of UI components, so a lot of the work involves understanding existing systems carefully before touching them.',
             techStack: ['React', 'TypeScript', 'Express.js', 'Azure PostgreSQL', 'OpenAI GPT-4', 'Azure AI Search', 'Tailwind CSS', 'Radix UI', 'i18next', 'Zod', 'JWT', 'Webflow'],
             current: true
         },
         {
             id: 1,
-            role: 'Software Developer',
+            role: 'Full Stack Developer',
             company: 'Atria Community',
             dates: 'May 2024 – Nov 2025',
             logo: atriaLogo,
-            description: 'Full-stack development of community platform with Django, React, and PostgreSQL',
-            fullDescription: 'Led full-stack development of Townhall, a scalable volunteering platform connecting users to local community initiatives. Built 15+ RESTful APIs with Django, developed mobile-first UIs from Figma with Next.js, and shipped core features including onboarding, posts, comments, media uploads, and real-time chat using WebSockets and Redis.',
+            description: 'Full-stack development of community platform with Python, Django, React, and PostgreSQL',
+            fullDescription: 'Took ownership of full-stack development on Townhall, a volunteering platform built in collaboration with the Vancouver Food Justice Coalition (VFJC). Built 15+ RESTful APIs with Django, developed mobile-first UIs from Figma with Next.js, and shipped core features including onboarding, posts, comments, media uploads, and real-time chat using WebSockets and Redis.',
             techStack: ['Python', 'Django', 'React', 'Next.js', 'JavaScript', 'PostgreSQL', 'Redis', 'REST APIs', 'WebSockets', 'Cloudinary'],
             link: 'https://atriacoop.netlify.app'
         },
@@ -70,7 +70,6 @@ function About() {
             <div className="about__container">
                 <div className="about__header">
                     <h2 className="about__title">Experience</h2>
-                    <p className="about__subtitle">My professional journey</p>
                 </div>
 
                 <div className="timeline">
