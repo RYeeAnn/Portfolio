@@ -53,7 +53,7 @@ The extension detects form fields on job application pages and offers pre-writte
 
 It's published on the Chrome Web Store and actively used. Building it taught me a lot about content script injection, the Chrome Extensions lifecycle, and DOM manipulation across third-party pages.`,
 		techStack: ['JavaScript', 'Chrome Extensions API', 'HTML', 'CSS'],
-		liveUrl: `https://applyingassistant.netlify.app/`,
+		liveUrl: 'https://chromewebstore.google.com/detail/applying-assistant/jemddgjafimcndlkmbjkpimnedbmccee',
 		chromeStoreUrl: 'https://chromewebstore.google.com/detail/applying-assistant/jemddgjafimcndlkmbjkpimnedbmccee',
 		githubUrl: 'https://github.com/RYeeAnn/ApplyingAssistant',
 		images: [ApplyingAssistant2, ApplyingAssistant3, ApplyingAssistant4, ApplyingAssistant5, ApplyingAssistant6],

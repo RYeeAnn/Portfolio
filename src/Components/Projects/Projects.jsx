@@ -30,7 +30,7 @@ function Projects() {
             </div>
             <div className="projects__project-content">
               <div className="projects__project-header">
-                <h3 className="projects__project-title">Townhall <span className="projects__project-badge">Active</span></h3>
+                <h3 className="projects__project-title">Townhall</h3>
               </div>
               <p className="projects__project-description">
                 A full-stack community platform I'm actively contributing to, built in collaboration with the Vancouver Food Justice Coalition (VFJC). Took ownership of both the frontend and backend, building 15+ RESTful APIs, implementing real-time chat with WebSockets, and translating Figma designs into responsive UIs.
@@ -83,7 +83,7 @@ function Projects() {
                 {renderTechStack("JavaScript, Chrome Extensions API, HTML, CSS")}
               </div>
               <div className="projects__project-links">
-                <a href="https://applyingassistant.netlify.app/" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
+                <a href="https://chromewebstore.google.com/detail/applying-assistant/jemddgjafimcndlkmbjkpimnedbmccee" className="projects__link projects__link--primary" onClick={(e) => e.stopPropagation()}>View Live</a>
                 <span className="projects__link projects__link--secondary">View Details →</span>
               </div>
             </div>
