@@ -125,7 +125,7 @@ function Header() {
           {/* Social Links */}
           <div className="header__social">
             <a
-              href="https://drive.google.com/file/d/1aTXUkPDDVAp7jFNxKcoDUUF9H0OWYnAL/view?usp=sharing"
+              href="https://drive.google.com/file/d/1bTU5GHDCxfQrxpz77UmE4QCWrGCAw6YZ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="header__social-link"
@@ -218,7 +218,7 @@ function Header() {
           {/* Social Links in Mobile Menu */}
           <div className="header__mobile-social">
             <a
-              href="https://drive.google.com/file/d/1aTXUkPDDVAp7jFNxKcoDUUF9H0OWYnAL/view?usp=sharing"
+              href="https://drive.google.com/file/d/1bTU5GHDCxfQrxpz77UmE4QCWrGCAw6YZ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="header__mobile-social-link"
