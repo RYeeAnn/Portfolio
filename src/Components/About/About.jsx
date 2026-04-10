@@ -6,149 +6,105 @@ import codeninjasLogo from '../../assets/codeninjasLogo.jpeg';
 import sniffandbarkLogo from '../../assets/sniffandbarkLogo.jpeg';
 
 function About() {
-    const [selectedExperience, setSelectedExperience] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [expandedId, setExpandedId] = useState(null);
 
-    const handleExperienceClick = (experience) => {
-        setSelectedExperience(experience);
-        setIsModalOpen(true);
-    };
+  const toggle = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setSelectedExperience(null);
-    };
+  const experiences = [
+    {
+      id: 0,
+      role: 'Full Stack Developer',
+      company: 'Dynamic Needs Analysis',
+      dates: 'Nov 2025 – Present',
+      logo: dnaLogo,
+      fullDescription: 'Working on a large SaaS financial planning platform used by financial advisors in production. I contributed to Helix, an AI assistant built on OpenAI GPT-4, by handling document uploads and chunking them for indexing with Azure AI Search so advisors can query their own data. I also shipped production features used by real users, hardened security on several HTTP endpoints, and refactored the i18n internationalization setup to fix TypeScript compile errors that were blocking pushes to main. The codebase has 30+ API endpoints and hundreds of UI components, so a lot of the work involves understanding existing systems carefully before touching them.',
+      techStack: ['React', 'TypeScript', 'Express.js', 'Azure PostgreSQL', 'OpenAI GPT-4', 'Azure AI Search', 'Tailwind CSS', 'Radix UI', 'i18next', 'Zod', 'JWT', 'Webflow'],
+      current: true,
+    },
+    {
+      id: 1,
+      role: 'Full Stack Developer',
+      company: 'Atria Community',
+      dates: 'May 2024 – Nov 2025',
+      logo: atriaLogo,
+      fullDescription: 'Took ownership of full-stack development on Townhall, a volunteering platform built in collaboration with the Vancouver Food Justice Coalition (VFJC). Built 15+ RESTful APIs with Django, developed mobile-first UIs from Figma with Next.js, and shipped core features including onboarding, posts, comments, media uploads, and real-time chat using WebSockets and Redis.',
+      techStack: ['Python', 'Django', 'React', 'Next.js', 'JavaScript', 'PostgreSQL', 'Redis', 'REST APIs', 'WebSockets', 'Cloudinary'],
+      link: 'https://atriacoop.netlify.app',
+    },
+    {
+      id: 2,
+      role: 'Code Instructor',
+      company: 'Code Ninjas',
+      dates: 'Sept 2024 – Present',
+      logo: codeninjasLogo,
+      fullDescription: 'Teach kids aged 7–14 the foundations of JavaScript, Unity, and game development through hands-on lessons in a high-energy, mentor-style environment.',
+      techStack: ['JavaScript', 'Unity'],
+      current: true,
+    },
+    {
+      id: 3,
+      role: 'Web Developer',
+      company: 'Sniff & Bark',
+      dates: 'Feb 2024 – May 2024',
+      logo: sniffandbarkLogo,
+      fullDescription: 'Built custom features and internal tools for a Shopify-based e-commerce store, including solutions for order automation, dynamic pricing, and GDPR compliance, using JavaScript and XLSX integrations.',
+      techStack: ['JavaScript', 'Shopify', 'XLSX'],
+    },
+  ];
 
-    const experiences = [
-        {
-            id: 0,
-            role: 'Full Stack Developer',
-            company: 'Dynamic Needs Analysis',
-            dates: 'Nov 2025 – Present',
-            logo: dnaLogo,
-            description: 'Building features on a SaaS financial planning platform used by financial advisors',
-            fullDescription: 'Working on a large SaaS financial planning platform used by financial advisors in production. I contributed to Helix, an AI assistant built on OpenAI GPT-4, by handling document uploads and chunking them for indexing with Azure AI Search so advisors can query their own data. I also shipped production features used by real users, hardened security on several HTTP endpoints, and refactored the i18n internationalization setup to fix TypeScript compile errors that were blocking pushes to main. The codebase has 30+ API endpoints and hundreds of UI components, so a lot of the work involves understanding existing systems carefully before touching them.',
-            techStack: ['React', 'TypeScript', 'Express.js', 'Azure PostgreSQL', 'OpenAI GPT-4', 'Azure AI Search', 'Tailwind CSS', 'Radix UI', 'i18next', 'Zod', 'JWT', 'Webflow'],
-            current: true
-        },
-        {
-            id: 1,
-            role: 'Full Stack Developer',
-            company: 'Atria Community',
-            dates: 'May 2024 – Nov 2025',
-            logo: atriaLogo,
-            description: 'Full-stack development of community platform with Python, Django, React, and PostgreSQL',
-            fullDescription: 'Took ownership of full-stack development on Townhall, a volunteering platform built in collaboration with the Vancouver Food Justice Coalition (VFJC). Built 15+ RESTful APIs with Django, developed mobile-first UIs from Figma with Next.js, and shipped core features including onboarding, posts, comments, media uploads, and real-time chat using WebSockets and Redis.',
-            techStack: ['Python', 'Django', 'React', 'Next.js', 'JavaScript', 'PostgreSQL', 'Redis', 'REST APIs', 'WebSockets', 'Cloudinary'],
-            link: 'https://atriacoop.netlify.app'
-        },
-        {
-            id: 2,
-            role: 'Code Instructor',
-            company: 'Code Ninjas',
-            dates: 'Sept 2024 – Present',
-            logo: codeninjasLogo,
-            description: 'Teaching JavaScript and Unity to kids aged 7-14',
-            fullDescription: 'Teach kids aged 7–14 the foundations of JavaScript, Unity, and game development through hands-on lessons in a high-energy, mentor-style environment.',
-            techStack: ['JavaScript', 'Unity'],
-            current: true
-        },
-        {
-            id: 3,
-            role: 'Web Developer',
-            company: 'Sniff & Bark',
-            dates: 'Feb 2024 – May 2024',
-            logo: sniffandbarkLogo,
-            description: 'Built custom Shopify features and automation tools',
-            fullDescription: 'Built custom features and internal tools for a Shopify-based e-commerce store, including solutions for order automation, dynamic pricing, and GDPR compliance, using JavaScript and XLSX integrations.',
-            techStack: ['JavaScript', 'Shopify', 'XLSX']
-        }
-    ];
+  return (
+    <section className="experience" id="about">
+      <div className="experience__container">
+        <h2 className="experience__title">Experience</h2>
 
-    return (
-        <div className="about" id="about">
-            <div className="about__container">
-                <div className="about__header">
-                    <h2 className="about__title">Experience</h2>
+        <div className="experience__list">
+          {experiences.map((exp) => (
+            <div key={exp.id} className="experience__item">
+              <button
+                className="experience__header"
+                onClick={() => toggle(exp.id)}
+                aria-expanded={expandedId === exp.id}
+              >
+                <div className="experience__header-left">
+                  <img src={exp.logo} alt={exp.company} className="experience__logo" />
+                  <div className="experience__header-text">
+                    <span className="experience__role">
+                      {exp.role}
+                      {exp.current && <span className="experience__current"> (current)</span>}
+                    </span>
+                    <span className="experience__company">{exp.company}</span>
+                  </div>
                 </div>
-
-                <div className="timeline">
-                    {experiences.map((experience, index) => (
-                        <div
-                            key={experience.id}
-                            className={`timeline__item ${experience.current ? 'timeline__item--current' : ''}`}
-                            onClick={() => handleExperienceClick(experience)}
-                        >
-                            <div className="timeline__marker">
-                                <div className="timeline__dot"></div>
-                                {index < experiences.length - 1 && <div className="timeline__line"></div>}
-                            </div>
-
-                            <div className="timeline__content">
-                                <div className="timeline__date">{experience.dates}</div>
-                                <div className="timeline__card">
-                                    <div className="timeline__logo">
-                                        <img src={experience.logo} alt={experience.company} />
-                                    </div>
-                                    <div className="timeline__info">
-                                        <h3 className="timeline__role">{experience.role}</h3>
-                                        <p className="timeline__company">{experience.company}</p>
-                                        <p className="timeline__description">{experience.description}</p>
-                                        <span className="timeline__hint">Click for details</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                <div className="experience__header-right">
+                  <span className="experience__dates">{exp.dates}</span>
+                  <span className="experience__toggle">{expandedId === exp.id ? '−' : '+'}</span>
                 </div>
+              </button>
+
+              {expandedId === exp.id && (
+                <div className="experience__detail">
+                  <p className="experience__detail-text">
+                    {exp.link ? (
+                      <>
+                        {exp.fullDescription.split('Townhall')[0]}
+                        <a href={exp.link} target="_blank" rel="noopener noreferrer">Townhall</a>
+                        {exp.fullDescription.split('Townhall')[1]}
+                      </>
+                    ) : (
+                      exp.fullDescription
+                    )}
+                  </p>
+                  <p className="experience__tech">{exp.techStack.join(' · ')}</p>
+                </div>
+              )}
             </div>
-
-            {/* Experience Modal */}
-            {isModalOpen && selectedExperience && (
-                <div className="experience-modal" onClick={closeModal}>
-                    <div className="experience-modal__content" onClick={(e) => e.stopPropagation()}>
-                        <button className="experience-modal__close" onClick={closeModal}>
-                            <span>×</span>
-                        </button>
-
-                        <div className="experience-modal__header">
-                            <div className="experience-modal__logo">
-                                <img src={selectedExperience.logo} alt={selectedExperience.company} />
-                            </div>
-                            <div className="experience-modal__info">
-                                <h2 className="experience-modal__role">{selectedExperience.role}</h2>
-                                <h3 className="experience-modal__company">{selectedExperience.company}</h3>
-                                <p className="experience-modal__dates">{selectedExperience.dates}</p>
-                            </div>
-                        </div>
-
-                        <div className="experience-modal__body">
-                            <p className="experience-modal__description">
-                                {selectedExperience.link ? (
-                                    <>
-                                        {selectedExperience.fullDescription.split('Townhall')[0]}
-                                        <a href={selectedExperience.link} target="_blank" rel="noopener noreferrer">Townhall</a>
-                                        {selectedExperience.fullDescription.split('Townhall')[1]}
-                                    </>
-                                ) : (
-                                    selectedExperience.fullDescription
-                                )}
-                            </p>
-
-                            <div className="experience-modal__tech">
-                                <h4>Technologies & Skills</h4>
-                                <div className="experience-modal__tech-tags">
-                                    {selectedExperience.techStack.map((tech) => (
-                                        <span key={tech} className="tech-tag">{tech}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
+          ))}
         </div>
-    );
+      </div>
+    </section>
+  );
 }
 
 export default About;

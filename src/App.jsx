@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.scss';
 import Header from './Components/Header/Header';
@@ -8,14 +8,12 @@ import AboutPage from './Components/About/AboutPage';
 import Projects from './Components/Projects/Projects';
 import ProjectDetail from './Components/Projects/ProjectDetail';
 import Contact from './Components/Contact/Contact';
+import Footer from './Components/Footer/Footer';
 import NotFound from './Components/NotFound/NotFound';
-
-export const ThemeContext = createContext();
 
 function ScrollHandler() {
   const location = useLocation();
 
-  // Instant scroll to top on route change (runs before paint)
   useEffect(() => {
     if (location.pathname === '/' && location.state && location.state.scrollTo) {
       const { scrollTo, offset = 0 } = location.state;
@@ -27,7 +25,6 @@ function ScrollHandler() {
         }
       }, 0);
     } else {
-      // Instant reset - no animation
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
   }, [location.pathname, location.state]);
@@ -36,42 +33,27 @@ function ScrollHandler() {
 }
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const saved = localStorage.getItem('darkMode');
-    return saved ? JSON.parse(saved) : false;
-  });
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-  }, [isDarkMode]);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
-      <Router>
-        <ScrollHandler />
-        <div className="App">
-          <Header />
-          <Routes>
-            <Route path="/" element={
-              <>
-                <Hero />
-                <About />
-                <Projects />
-              </>
-            } />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/project/:projectId" element={<ProjectDetail />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-      </Router>
-    </ThemeContext.Provider>
+    <Router>
+      <ScrollHandler />
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <About />
+              <Projects />
+            </>
+          } />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/project/:projectId" element={<ProjectDetail />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
