@@ -25,6 +25,24 @@ import Townhall5 from '../../assets/Townhall5.png';
 
 // Simplified project data
 const projectData = {
+	'rally': {
+		title: 'Rally',
+		subtitle: 'Sports Captain Toolkit for Recreational Leagues',
+		heroImage: null,
+		description: 'Rally is a full-stack web app that helps recreational sports captains manage rosters, track per-player payments, and send payment reminders. Also supports non-captains logging personal dues for leagues they play in but don\'t run.',
+		detailedDescription: `Managing a recreational sports league sounds simple until you're the captain. Someone has to collect fees from six people, remember who paid half, figure out who still owes what, and send a group message without it being awkward. Rally is the tool I built to solve exactly that.
+
+The app covers the full lifecycle of a league season. Captains create events with a total cost, set their own slot as a "captain share" that gets subtracted before the remainder is split evenly across the roster. As players pay in (fully or partially), Rally recalculates outstanding balances in real time and generates a ready-to-paste payment reminder for WhatsApp, iMessage, or Instagram DM.
+
+The trickier problem was the non-captain case. Most payment-tracking apps assume you are always the one in charge. Rally handles the reality that you might captain one league on Saturday and be just a player in two others during the week. Non-captain events bypass the roster infrastructure entirely and track a single personal payment against an amount owed.
+
+Other decisions worth noting: auto cost-splitting uses an is_amount_custom flag so manually adjusted player amounts survive subsequent edits to the total; the dashboard aggregates spending across both event types; and the UI deliberately avoids the generic gradient-heavy aesthetic that makes most apps look the same.`,
+		techStack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Vite', 'React Router v6', 'Recharts', 'Node.js', 'Express', 'Prisma ORM', 'PostgreSQL', 'JWT', 'bcrypt'],
+		liveUrl: 'https://rally-app.netlify.app',
+		githubUrl: null,
+		images: [],
+		tags: ['Full Stack Development', 'Product Design']
+	},
 	'townhall': {
 		title: 'Townhall',
 		subtitle: 'Full-Stack Community Platform',
@@ -177,7 +195,7 @@ function ProjectDetail() {
 						</div>
 						
 						<div className="project-detail__hero-image">
-							<img src={project.heroImage} alt={project.title} />
+							{project.heroImage && <img src={project.heroImage} alt={project.title} />}
 							{projectId === 'applying-assistant' && (
 								<div className="project-detail__hero-video">
 									<video 
