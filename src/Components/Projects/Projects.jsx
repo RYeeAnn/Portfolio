@@ -22,8 +22,8 @@ const projects = [
   {
     id: 'ruby-hair-salon',
     name: "Ruby's Hair Salon",
-    subtitle: 'Freelance booking site for a private salon',
-    description: "Freelance project for my mother's private hair salon. Replaced a manual notebook with an online booking system. Clients browse services and book appointments without calling.",
+    subtitle: 'Booking site for a private salon',
+    description: "Project for my mother's private hair salon. Replaced a manual notebook with an online booking system. Clients browse services and book appointments without calling.",
     tech: 'React · TypeScript · Tailwind CSS',
     live: 'https://www.rubyshairsalon.ca/',
   },
