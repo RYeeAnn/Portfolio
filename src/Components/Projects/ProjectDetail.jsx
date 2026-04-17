@@ -7,29 +7,32 @@ import Speedie2 from '../../assets/Speedie2.png';
 import Speedie3 from '../../assets/Speedie3.png';
 import Speedie4 from '../../assets/Speedie4.png';
 import Speedie5 from '../../assets/Speedie5.png';
-import ApplyingAssistant2 from '../../assets/ApplyingAssistant2.png';
-import ApplyingAssistant3 from '../../assets/ApplyingAssistant3.png';
-import ApplyingAssistant4 from '../../assets/ApplyingAssistant4.png';
-import ApplyingAssistant5 from '../../assets/ApplyingAssistant5.png';
-import ApplyingAssistant6 from '../../assets/ApplyingAssistant6.png';
 import ApplyingAssistantVideo from '../../assets/ApplyingAssistantVideo.mov';
 import RHS from '../../assets/RHS.png';
 import RHSFigma from '../../assets/RHS-Figma.png';
-import ApplyingAssistantFigma from '../../assets/ApplyingAssistant-Figma.png';
 import SpeedieFigma from '../../assets/Speedie-Figma.png';
 import TownhallHero from '../../assets/Townhall.png';
 import Townhall2 from '../../assets/Townhall2.png';
 import Townhall3 from '../../assets/Townhall3.png';
 import Townhall4 from '../../assets/Townhall4.png';
 import Townhall5 from '../../assets/Townhall5.png';
+import Rally1 from '../../assets/Rally.png';
+import Rally2 from '../../assets/Rally2.png';
+import Rally3 from '../../assets/Rally3.png';
+import Rally4 from '../../assets/Rally4.png';
 
 // Simplified project data
 const projectData = {
 	'rally': {
 		title: 'Rally',
 		subtitle: 'Sports Captain Toolkit for Recreational Leagues',
-		heroImage: null,
+		heroImage: Rally2,
 		description: 'Rally is a full-stack web app that helps recreational sports captains manage rosters, track per-player payments, and send payment reminders. Also supports non-captains logging personal dues for leagues they play in but don\'t run.',
+		motivation: `I built Rally because it solves a real frustration from my own life. Whenever I'm the one organizing a recreational volleyball team, I'm responsible for collecting payments from six to eight players and keeping track of who's paid in full, who's paid half, and who still owes me. For a long time that meant manually combing through my bank's e-transfer history, keeping mental tabs on every player, and sending individual follow-up messages to whoever forgot. Every season, every league, the same tedious process.
+
+Beyond payments, there was another recurring problem: whenever I needed to register a team for a new league or tournament, organizers would ask for everyone's contact information upfront. I'd end up scrolling through old group chats hunting for email addresses. Rally solves both. It's a payment tracker and a lightweight contact book rolled into one tool built specifically for recreational sports captains.
+
+I genuinely believe projects are most worth building when they come from a real need. This one came from mine.`,
 		detailedDescription: `Managing a recreational sports league sounds simple until you're the captain. Someone has to collect fees from six people, remember who paid half, figure out who still owes what, and send a group message without it being awkward. Rally is the tool I built to solve exactly that.
 
 The app covers the full lifecycle of a league season. Captains create events with a total cost, set their own slot as a "captain share" that gets subtracted before the remainder is split evenly across the roster. As players pay in (fully or partially), Rally recalculates outstanding balances in real time and generates a ready-to-paste payment reminder for WhatsApp, iMessage, or Instagram DM.
@@ -40,7 +43,7 @@ Other decisions worth noting: auto cost-splitting uses an is_amount_custom flag 
 		techStack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Vite', 'React Router v6', 'Recharts', 'Node.js', 'Express', 'Prisma ORM', 'PostgreSQL', 'JWT', 'bcrypt'],
 		liveUrl: 'https://rally-app.netlify.app',
 		githubUrl: null,
-		images: [],
+		images: [Rally2, Rally1, Rally3, Rally4],
 		tags: ['Full Stack Development', 'Product Design']
 	},
 	'townhall': {
@@ -63,7 +66,7 @@ The backend follows a layered architecture, with serializers, services, and view
 	'applying-assistant': {
 		title: 'Applying Assistant',
 		subtitle: 'Chrome Extension for Job Applications',
-		heroImage: ApplyingAssistantFigma,
+		heroImage: null,
 		description: 'A Chrome extension that auto-fills job application forms with one-click templates, cutting application time from 20+ minutes to under 5.',
 		detailedDescription: `While job searching, I found myself rewriting the same answers to questions like "Where do you see yourself in 5 years?" across dozens of applications. I built this extension to solve that problem for myself.
 
@@ -74,7 +77,7 @@ It's published on the Chrome Web Store and actively used. Building it taught me 
 		liveUrl: 'https://chromewebstore.google.com/detail/applying-assistant/jemddgjafimcndlkmbjkpimnedbmccee',
 		chromeStoreUrl: 'https://chromewebstore.google.com/detail/applying-assistant/jemddgjafimcndlkmbjkpimnedbmccee',
 		githubUrl: 'https://github.com/RYeeAnn/ApplyingAssistant',
-		images: [ApplyingAssistant2, ApplyingAssistant3, ApplyingAssistant4, ApplyingAssistant5, ApplyingAssistant6],
+		images: [],
 		tags: ['Browser Extension', 'Productivity Tool']
 	},
 	'speedie': {
@@ -195,7 +198,14 @@ function ProjectDetail() {
 						</div>
 						
 						<div className="project-detail__hero-image">
-							{project.heroImage && <img src={project.heroImage} alt={project.title} />}
+							{project.heroImage && (
+								<img
+									src={project.heroImage}
+									alt={project.title}
+									className="project-detail__hero-image-clickable"
+									onClick={() => openImageModal(project.heroImage)}
+								/>
+							)}
 							{projectId === 'applying-assistant' && (
 								<div className="project-detail__hero-video">
 									<video 
@@ -211,6 +221,16 @@ function ProjectDetail() {
 						</div>
 					</div>
 				</div>
+
+				{/* Why I Built This */}
+				{project.motivation && (
+					<div className="project-detail__detailed-description">
+						<h3>Why I Built This</h3>
+						{project.motivation.split('\n\n').map((para, i) => (
+							<p key={i}>{para}</p>
+						))}
+					</div>
+				)}
 
 				{/* Detailed Description */}
 				{project.detailedDescription && (
