@@ -37,11 +37,10 @@ function About() {
       id: 2,
       role: 'Code Instructor',
       company: 'Code Ninjas',
-      dates: 'Sept 2024 – Present',
+      dates: 'Sept 2024 – Nov 2025',
       logo: codeninjasLogo,
       fullDescription: 'Teach kids aged 7–14 the foundations of JavaScript, Unity, and game development through hands-on lessons in a high-energy, mentor-style environment.',
       techStack: ['JavaScript', 'Unity'],
-      current: true,
     },
     {
       id: 3,
