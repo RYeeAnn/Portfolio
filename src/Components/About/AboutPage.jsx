@@ -22,19 +22,19 @@ function AboutPage() {
                         <div className="about-page__text">
                             <div className="about-page__story">
                                 <p>
-                                    I'm a Full Stack Developer with experience building SaaS platforms, AI-powered features, and scalable web applications. My work spans React/TypeScript frontends, Python/Django and Node.js/Express backends, PostgreSQL databases, and AI integrations using OpenAI GPT-4 and Azure AI Search.
+                                    Hey, I'm Ryan!
                                 </p>
 
                                 <p>
-                                    My path to software wasn't linear. I studied Electrical Engineering at UBC, worked in the automotive industry, then made the jump through BrainStation's intensive bootcamp.
+                                    I'm a Full Stack Developer based in Vancouver with over two years of experience across fintech, community platforms, and software education. I've built financial planning tools and an AI assistant used by financial advisors, shipped a full-stack community platform from the ground up, and taught programming to kids on the side.
                                 </p>
 
                                 <p>
-                                    I build things that solve real problems. A volunteer platform with real-time chat built for the Vancouver Food Justice Coalition. A Chrome extension that cuts job application time from 20 minutes to 5. A booking website for my mom's hair salon. I care about the details, both in the architecture and the user experience.
+                                    I build things to solve problems I've actually faced. A payment and roster tool for recreational sports leagues. A website for my mom's salon when word of mouth was her only footprint. A Chrome extension to cut down the time spent applying to jobs. The motivation is usually the same: if something is genuinely frustrating, it's worth fixing.
                                 </p>
 
                                 <p>
-                                    Outside of work, I'm either on a volleyball court, exploring Vancouver's coffee scene, or tinkering with my car.
+                                    Outside of work, I'm on a volleyball court, hunting for good coffee around Vancouver, or working on my car.
                                 </p>
                             </div>
 
