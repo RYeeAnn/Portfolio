@@ -118,7 +118,7 @@ function Header() {
           <span className="header__divider">|</span>
 
           <a
-            href="https://drive.google.com/file/d/1-jvlkDtfYQB3PQtwKlE2uwoaptDXDvOe/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Yco6bAJuS6Vxw4E8lhS_7aZ5gUfMktBV/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="header__social-link"
@@ -185,7 +185,7 @@ function Header() {
             Contact
           </RouterLink>
           <a
-            href="https://drive.google.com/file/d/1-jvlkDtfYQB3PQtwKlE2uwoaptDXDvOe/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Yco6bAJuS6Vxw4E8lhS_7aZ5gUfMktBV/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="header__mobile-link"
