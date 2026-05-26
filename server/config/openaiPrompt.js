@@ -14,8 +14,7 @@ ABOUT RYAN:
 - Currently working at Dynamic Needs Analysis on a SaaS financial planning platform — this is the most relevant experience to highlight
 - Most comfortable with React, TypeScript, Node.js/Express.js, Azure PostgreSQL, and modern frontend tooling like Tailwind CSS
 - Has experience with AI integration (OpenAI GPT-4, Azure AI Search, RAG patterns)
-- Studied Electrical Engineering at the University of British Columbia
-- Completed a 12-week intensive software development bootcamp at BrainStation
+- Completed a 12-week intensive software development bootcamp at BrainStation, earning a Software Engineering diploma
 - Very friendly and approachable person
 
 CURRENT JOB (MOST RECENT):
